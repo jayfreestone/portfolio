@@ -71,7 +71,7 @@
 
 	> span {
 		display: block;
-		transform: rotate(-90deg) translateY(-450%);
+		transform: rotate(-90deg) translate3d(0, -450%, 0);
 		white-space: nowrap;
 		letter-spacing: 2px;
 		font-size: .8rem;
@@ -102,7 +102,7 @@
 	position: absolute;
 	transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
 	overflow: hidden;
-	transform: translateY(100%);
+	transform: translate3d(0, 100%, 0);
 
 	a {
 		color: $black;
@@ -140,18 +140,18 @@
 	flex-direction: row-reverse;
 
 	.work-preview__image {
-		transform: translate(0, 100%);
+		transform: translate3d(0, 100%, 0);
 
 		@include breakpoint(30em) {
-			transform: translate(-100%, 0);
+			transform: translate3d(-100%, 0, 0);
 		}
 	}
 
 	.work-preview__copy {
-		transform: translate(0, -100%);
+		transform: translate3d(0, -100%, 0);
 
 		@include breakpoint(30em) {
-			transform: translate(100%, 0);
+			transform: translate3d(100%, 0, 0);
 		}
 	}
 }
@@ -171,10 +171,10 @@
 	opacity: 0;
 	transition: all 1s ease-in-out;
 	font-size: .85rem;
-	transform: translate(0, -100%);
+	transform: translate3d(0, -100%, 0);
 
 	@include breakpoint(30em) {
-		transform: translate(-100%, 0);
+		transform: translate3d(-100%, 0, 0);
 		width: span(4 of 12);
 		display: flex;
 		align-items: center;
@@ -188,18 +188,18 @@
 	transition: all 1s ease-in-out;
 	opacity: 0;
 	transition: all 1s;
-	transform: translate(0, 100%);
+	transform: translate3d(0, 100%, 0);
 
 	@include breakpoint(30em) {
 		width: span(7 of 12);
-		transform: translate(100%, 0);
+		transform: translate3d(100%, 0, 0);
 	}
 }
 
 .work-preview--current {
 	.work-preview__image,
 	.work-preview__copy {
-		transform: translate(0, 0);
+		transform: translate3d(0, 0, 0);
 		opacity: 1;
 	}
 
@@ -213,23 +213,9 @@
 
 .work-preview--current,
 .work-preview--previous {
-	transform: translateY(0);
+	transform: translate3d(0, 0, 0);
 }
 
 .work-preview--1 {
-	transform: translateY(0);
+	transform: translate3d(0, 0, 0);
 }
-
-// .work-preview--previous {
-	// transform: translateY(-100%);
-
-	// .work-preview__image{
-	// 	transform: translateY(100%);
-	// }
-// }
-
-// .work-preview--next {
-// 	transform: translateY(100%);
-// }
-//
-
