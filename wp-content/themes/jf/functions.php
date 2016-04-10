@@ -129,15 +129,47 @@ add_action( 'wp_enqueue_scripts', 'enqueue_assets' );
 
 
 /**
+ * Get Recent Work
+ */
+function get_recent_work() {
+	$work = get_transient( 'recent_work' );
+
+	if ( false === $work ) {
+		$work = new WP_Query(array(
+			'post_type' => 'work',
+			'posts_per_page' => 6,
+			'orderby' => 'menu_order',
+			'order' => 'ASC',
+		));
+
+		set_transient( 'recent_work', $work, 12 * HOUR_IN_SECONDS );
+	}
+
+	return $work;
+}
+
+/**
+ * Delete Recent Work Transient
+ */
+function reset_recent_work() {
+	delete_transient( 'recent_work' );
+}
+
+/**
+ * Delete Recent Work Transient on Save
+ */
+function reset_recent_work_on_save() {
+	if ( 'work' === get_post_type() ) {
+		reset_recent_work();
+	}
+}
+add_action( 'save_post', 'reset_recent_work_on_save' );
+
+/**
  * Home Background images
  */
 function home_images() {
-	$work = new WP_Query(array(
-		'post_type' => 'work',
-		'posts_per_page' => 6,
-		'orderby' => 'menu_order',
-		'order' => 'ASC',
-	));
+	$work = get_recent_work();
 
 	if ( is_front_page() ) {
 ?>

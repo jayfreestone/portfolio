@@ -1,12 +1,7 @@
 <?php get_header(); ?>
 
 	<?php
-	$work = new WP_Query(array(
-		'post_type' => 'work',
-		'posts_per_page' => 6,
-		'orderby' => 'menu_order',
-		'order' => 'ASC',
-	));
+	$work = get_recent_work();
 	$workCount = $work->post_count;
 	?>
 
