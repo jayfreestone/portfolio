@@ -1,0 +1,14 @@
+.image-wrapper {
+	background: $grey;
+	position: relative;
+
+	> img {
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}
+
+.image-wrapper--about {
+	padding-bottom: 153.470437%;
+}

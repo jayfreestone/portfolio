@@ -1,0 +1,19 @@
+.contact {
+
+}
+
+.contact__content {
+	margin-bottom: 2rem;
+}
+
+.contact__form {
+	@include breakpoint(50em) {
+		@include span(6 of 12);
+	}
+}
+
+.contact__social {
+	@include breakpoint(50em) {
+		@include span(5 of 12 omega);
+	}
+}

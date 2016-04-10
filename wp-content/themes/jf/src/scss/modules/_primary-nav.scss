@@ -1,0 +1,31 @@
+.primary-nav {
+	@include delist();
+	margin: 0;
+	top: 1.3rem;
+	background: #fff;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	transition: all .3s;
+
+	@include breakpoint(40em) {
+		visibility: visible;
+		opacity: 1;
+		position: relative;
+		top: auto;
+		background: none;
+	}
+
+	li {
+		display: inline-block;
+
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
+	}
+
+	.current_page_item {
+		opacity: .3;
+	}
+}
+

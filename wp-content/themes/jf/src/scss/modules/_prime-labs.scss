@@ -1,0 +1,112 @@
+$pl-orange: #f75d37;
+$pl-blue: #4e4e5d;
+
+.prime-labs {
+
+}
+
+.prime-labs__section {
+	padding: 2rem 0;
+}
+
+.prime-labs__section--intro {
+	background-color: $pl-orange;
+	color: #fff;
+
+	a {
+		color: #fff;
+	}
+}
+
+.prime-labs__section--problems {
+	background-color: $pl-blue;
+	color: #fff;
+
+	ol {
+		counter-reset: problems;
+		list-style: none;
+		padding-left: 0;
+	}
+
+	li {
+		.js & {
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		&:before {
+			content: counter(problems) ". ";
+			counter-increment: problems;
+			margin-left: -1.2rem;
+			font-weight: bold;
+			font-style: italic;
+		}
+	}
+}
+
+.js .prime-labs__section--problems--is-active {
+	li {
+		visibility: visible;
+		opacity: 1;
+		transition: .3s all;
+
+		@for $i from 1 through 10 {
+			&:nth-child(#{$i}) { 
+				transition-delay: .3s * $i;
+			}
+		}
+	}
+}
+
+.prime-labs__box {
+	transition: all .3s;
+}
+
+.prime-labs__box--description {
+	@include span(6 of 12);
+
+	.js & {
+		transform: translateX(-110%);
+	}
+}
+
+.prime-labs__section--modular-boxes {
+	overflow: hidden;
+	background: $pl-orange;
+	color: #fff;
+}
+
+.prime-labs__box--ingredients {
+	@include span(6 of 12 omega);
+
+	.js & {
+		transform: translateX(110%);
+	}
+}
+
+.js .prime-labs__section--modular-boxes--is-active {
+	.prime-labs__box {
+		transform: translateX(0);
+	}
+	
+	.prime-labs__box--ingredients {
+		transition-delay: .3s;
+	}
+}
+
+.prime-labs__section--as-standard {
+	background: #223b4c;
+	color: #fff;
+
+	a {
+		color: #fff;
+	}
+}
+
+.prime-labs__section--day-life {
+	background-color: $pl-blue;
+	background-image: url('../../../img/primelabs/pills@2x.png');
+	background-position: left center;
+	background-size: 40%;
+	background-repeat: no-repeat;
+}

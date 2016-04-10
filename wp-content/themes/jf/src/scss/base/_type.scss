@@ -1,0 +1,73 @@
+@font-face {
+	font-family: 'Graphik Web';
+	src: url('../fonts/graphik/Graphik-BoldItalic-Web.eot');
+	src: url('../fonts/graphik/Graphik-BoldItalic-Web.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/graphik/Graphik-BoldItalic-Web.woff') format('woff');
+	font-weight:  700;
+	font-style:   italic;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: 'Graphik Web';
+	src: url('../fonts/graphik/Graphik-Bold-Web.eot');
+	src: url('../fonts/graphik/Graphik-Bold-Web.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/graphik/Graphik-Bold-Web.woff') format('woff');
+	font-weight:  700;
+	font-style:   normal;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: 'Graphik Web';
+	src: url('../fonts/graphik/Graphik-RegularItalic-Web.eot');
+	src: url('../fonts/graphik/Graphik-RegularItalic-Web.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/graphik/Graphik-RegularItalic-Web.woff') format('woff');
+	font-weight:  400;
+	font-style:   italic;
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: 'Graphik Web';
+	src: url('../fonts/graphik/Graphik-Regular-Web.eot');
+	src: url('../fonts/graphik/Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/graphik/Graphik-Regular-Web.woff') format('woff');
+	font-weight:  400;
+	font-style:   normal;
+	font-stretch: normal;
+}
+
+.heading-1,
+.heading-2,
+.heading-3 {
+	font-weight: 700;
+	font-style: italic;
+	margin-top: 0;
+}
+
+.heading-1 {
+	font-size: 1.5rem;
+
+	@include breakpoint(40em) {
+		font-size: 2.2rem;
+	}
+}
+
+.heading-2 {
+	font-size: 1.3rem;
+
+	@include breakpoint(40em) {
+		font-size: 1.8rem;
+	}
+}
+
+.heading-3 {
+	color: $red;
+	font-size: .9rem;
+}
+
+.hide-text {
+	position: absolute;
+	visibility: hidden;
+}

@@ -1,0 +1,46 @@
+@keyframes journalPreviewSlideIn {
+	0% {
+		opacity: 0;
+		transform: translateY(10%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.journal-preview {
+	margin-bottom: 2rem;
+	max-width: 35em;
+	opacity: 0;
+	animation: journalPreviewSlideIn .5s forwards;
+
+	@for $i from 1 through 10 {
+		&:nth-child(#{$i}) {
+			animation-delay:(#{$i*0.2s}); 
+		}
+	}
+}
+
+.journal-preview__date {
+	margin-top: 1rem;
+	display: block;
+	font-size: .9rem;
+}
+
+.journal-preview__title {
+	&:after {
+		content: '→';
+		font-family: Helvetica, Arial;
+		margin-left: 1rem;
+		color: $red;
+		transition: all .3s;
+		display: inline-block;
+	}
+
+	&:hover {
+		&:after {
+			transform: translateX(.5rem);
+		}
+	}
+}

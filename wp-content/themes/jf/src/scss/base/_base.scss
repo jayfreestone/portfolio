@@ -1,0 +1,95 @@
+html {
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.wf-active {
+	font-family: 'Graphik Web';
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	line-height: 1.4;
+	// margin-top: $header-height;
+
+	@include breakpoint(37.5em) {
+		line-height: 1.5;
+	}
+
+	// font-size: 1.1rem;
+}
+
+a {
+	text-decoration: none;
+	color: $red;
+}
+
+p {
+	margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1rem;
+
+	a {
+		color: $black;
+	}
+}
+
+input,
+textarea {
+	width: 100%;
+}
+
+img,
+video {
+	max-width: 100%;
+}
+
+blockquote {
+	border-left: 4px solid $grey;
+	margin-left: 0;
+	padding-left: 1rem;
+	font-style: italic;
+}
+
+cite {
+	font-style: normal;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+	&:focus {
+		outline: 0;
+	}
+}
+
+input[type=text],
+input[type=email] {
+	appearance: none;
+	background: none;
+	border: 0;
+	border-bottom: 1px solid $black;
+	padding: .5rem 0;
+}
+
+textarea {
+	border-bottom: 1px solid $black;
+	padding: .5rem;
+}
+
+button {
+
+}

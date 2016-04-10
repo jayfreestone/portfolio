@@ -1,0 +1,15 @@
+.dashboard {
+
+}
+
+.dashboard__header {
+	background-color: #9d0e12;
+	color: #fff;
+	padding: 6rem 0 3rem;
+}
+
+.dashboard__intro {
+	@include breakpoint(40em) {
+		@include span(6 of 12 omega);
+	}
+}
