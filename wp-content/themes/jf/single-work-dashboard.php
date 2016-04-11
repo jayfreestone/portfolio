@@ -8,5 +8,56 @@
 			</div>
 		</div>
 	</header>
+	<section class="dashboard__process cf">
+		<div class="dashboard__height">
+			<?php include 'img/dashboard/local.svg'; ?>
+		</div>
+		<div class="dashboard__process__inner">
+			<figure class="dashboard__figure dashboard__figure--local">
+				<?php include 'img/dashboard/local.svg'; ?>
+				<figcaption>Local</figcaption>
+			</figure>
+			<div class="dashboard__connector dashboard__connector--capistrano">
+				<div class="dashboard__connector__label">Capistrano</div>
+				<div class="dashboard__connector__line">
+					<span class="dashboard__connector__pulse"><span></span></span>
+				</div>
+			</div>
+			<figure class="dashboard__figure dashboard__figure--remote">
+				<?php include 'img/dashboard/server.svg'; ?>
+				<figcaption>Webserver</figcaption>
+			</figure>
+			<div class="dashboard__connector dashboard__connector--git">
+				<div class="dashboard__connector__label">Git (clone)</div>
+				<div class="dashboard__connector__line">
+					<span class="dashboard__connector__pulse"><span></span></span>
+				</div>
+			</div>
+			<figure class="dashboard__figure dashboard__figure--git">
+				<?php include 'img/dashboard/git.svg'; ?>
+				<figcaption>Git Server</figcaption>
+			</figure>
+			<div class="dashboard__connector dashboard__connector--files">
+				<div class="dashboard__connector__label">On server</div>
+				<div class="dashboard__connector__line">
+					<span class="dashboard__connector__pulse"><span></span></span>
+				</div>
+			</div>
+			<figure class="dashboard__figure dashboard__figure--files">
+				<?php include 'img/dashboard/files.svg'; ?>
+				<figcaption>Files</figcaption>
+			</figure>
+			<div class="dashboard__connector dashboard__connector--releases">
+				<div class="dashboard__connector__label">Build</div>
+				<div class="dashboard__connector__line">
+					<span class="dashboard__connector__pulse"><span></span></span>
+				</div>
+			</div>
+			<figure class="dashboard__figure dashboard__figure--release">
+				<?php include 'img/dashboard/release.svg'; ?>
+				<figcaption>Release</figcaption>
+			</figure>
+		</div>
+	</section>
 </article>
 <?php get_footer(); ?>

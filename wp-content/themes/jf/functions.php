@@ -121,6 +121,7 @@ function enqueue_assets() {
 		wp_enqueue_script( 'touchswipe','https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.15/jquery.touchSwipe.js', false, false, false );
 	}
 
+	wp_enqueue_script( 'tweenmax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js', false, false, true );
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/public/assets/css/main.css', false, false, 'all' );
 	wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/public/assets/js/main.js', false, false, true );
 	wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/node_modules/lazysizes/lazysizes.min.js', false, false, true );
