@@ -1,8 +1,12 @@
 let dashboard = (function () {
+	let headerSection = document.querySelector('.dashboard__header');
 	let processSection = document.querySelector('.dashboard__process');
 	let scrollSection = document.querySelector('.dashboard__site-scroll');
+	let groundSection = document.querySelector('.dashboard__groundwork');
 
 	function init() {
+
+		intro();
 
 		// init controller
 		var controller = new ScrollMagic.Controller();
@@ -27,10 +31,59 @@ let dashboard = (function () {
 		})
 		.addTo(controller); // assign the scene to the controller
 
+		// create a scene
+		new ScrollMagic.Scene({
+			triggerElement: groundSection,
+			offset: 50,
+			reverse: false
+		}).on('start', function () {
+			reactAnimation();
+		})
+		.addTo(controller); // assign the scene to the controller
+
+	}
+
+	function intro() {
+		let tl = new TimelineMax({delay: .5});
+		let image = headerSection.querySelector('img');
+
+		tl.from(image, 1, {y: '20%', opacity: 0});
+	}
+
+	function reactAnimation() {
+		let tl = new TimelineMax({delay: .5});
+		let logo = groundSection.querySelector('svg');
+		let paths = logo.querySelectorAll('path');
+
+		// tl.set(logo.querySelector('circle'), {opacity: 0});
+
+		for ( let i = 0; i < paths.length; i++ ) {
+			tl.to(paths[i], .4, { opacity: 1 });
+			// .from(paths[i], .5, {y: '-5%'}, 'logo' + i);
+		}
+
+		tl.to(logo.querySelector('circle'), 1, {opacity: 1});
+
+
+		tl.to(logo.querySelector('circle'), 1, {fill: '#9d0e12', delay: 1});
+
+
+		tl.to(logo.querySelector('circle'), 1, {fill: '#22b573', delay: 1});
+
+		tl.to(logo.querySelector('circle'), 1, {fill: '#00d8ff', delay: 1});
 	}
 
 	function siteScroll() {
-		let image = scrollSection.querySelector('img');
+		let scrollInner = scrollSection.querySelector('.dashboard__site-scroll__inner');
+
+		let tl = new TimelineMax({delay: 2});
+
+		tl.set(scrollInner, {height: 'auto'})
+		.from(scrollInner, 3, {height: '20rem', ease:Power2.easeOut});
+
+		setTimeout(function(){
+			tl.reverse(3);
+		}, 6000);
 	}
 
 	function animationProcess() {

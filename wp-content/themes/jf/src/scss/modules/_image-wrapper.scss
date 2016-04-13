@@ -1,6 +1,7 @@
 .image-wrapper {
 	background: $grey;
 	position: relative;
+	height: 0;
 
 	> img {
 		position: absolute;
@@ -11,4 +12,9 @@
 
 .image-wrapper--about {
 	padding-bottom: 153.470437%;
+}
+
+.image-wrapper--dashboard-intro {
+	padding-bottom: 56.3535912%;
+	background: none;
 }

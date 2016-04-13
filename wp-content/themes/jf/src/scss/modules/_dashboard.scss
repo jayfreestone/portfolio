@@ -1,5 +1,6 @@
 $ov-red: #9d0e12;
 $ov-black: #4d4d4d;
+$ov-grey: #f8f8f8;
 
 .dashboard {
 
@@ -7,17 +8,55 @@ $ov-black: #4d4d4d;
 
 .dashboard__section {
 	padding: 2rem 0;
+
+	@include breakpoint(40rem) {
+		padding: 4rem 0;
+	}
+
+	@include breakpoint(80rem) {
+		padding: 6rem 0;
+	}
+}
+
+.dashboard__section__left {
+	@include breakpoint(40em) {
+		@include span(6 of 12);
+	}
+}
+
+.dashboard__section__right {
+	@include breakpoint(40em) {
+		@include span(6 of 12 omega);
+	}
 }
 
 .dashboard__header {
 	background-color: $ov-red;
 	color: #fff;
-	padding: 6rem 0 3rem;
+	padding: 7rem 0 0;
+	overflow: hidden;
+
+	> .l-container {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+}
+
+.dashboard__header__image {
+	width: 100%;
+	align-self: flex-end;
+
+	@include breakpoint(40em) {
+		@include span(6 of 12 omega);
+	}
 }
 
 .dashboard__intro {
+	padding-bottom: 2rem;
+
 	@include breakpoint(40em) {
-		@include span(6 of 12 omega);
+		@include span(6 of 12);
 	}
 }
 
@@ -51,7 +90,6 @@ $ov-black: #4d4d4d;
 .dashboard__figure {
 	text-align: center;
 	font-weight: bold;
-	// font-style: italic;
 	text-transform: uppercase;
 
 	svg {
@@ -138,10 +176,23 @@ $ov-black: #4d4d4d;
 	background: $ov-black;
 }
 
+.dashboard__site-scroll,
+.dashboard__site-scroll__inner {
+	height: 20rem;
+}
+
 .dashboard__site-scroll {
 	background: $ov-red;
-	height: 20rem;
 	overflow: hidden;
+	position: relative;
+}
+
+.dashboard__site-scroll__inner {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 1rem;
 
 	img {
 		display: block;
@@ -149,5 +200,120 @@ $ov-black: #4d4d4d;
 		width: 40rem;
 		border-top: 2rem solid $ov-red;
 		border-bottom: 2rem solid $ov-red;
+
+		@include breakpoint(60rem) {
+			width: 50rem;
+		}
 	}
 }
+
+.dashboard__groundwork {
+	overflow: hidden;
+
+	> .l-container {
+		display: flex;
+	}
+}
+
+.dashboard__groundwork__logo {
+	position: relative;
+	width: 100%;
+
+	@include breakpoint(60rem) {
+		width: 40%;
+		margin-left: auto;
+	}
+
+	svg {
+		display: block;
+		max-width: 15rem;
+		margin: 0 auto;
+
+		@include breakpoint(60rem) {
+			position: absolute;
+			left: 0;
+			height: 100%;
+			right: -10%;
+			max-width: none;
+		}
+
+		@include breakpoint(100rem) {
+			height: 140%;
+			top: -20%;
+		}
+
+		path,
+		circle {
+			opacity: 0;
+		}
+	}
+}
+
+.dashboard__deployment {
+	background: $ov-grey;
+
+	> .l-container {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+}
+
+.dashboard__deployment__copy {
+	@include breakpoint(60rem) {
+		width: span(6 of 12);
+		order: 2;
+	}
+}
+
+.dashboard__deployment__image {
+	width: 100%;
+
+	@include breakpoint(60rem) {
+		width: span(5 of 12);
+		margin-right: auto;
+		order: 1;
+	}
+}
+
+.dashboard__terminal {
+	background: #333333;
+	border-radius: 10px;
+	min-height: 20rem;
+	border-top: 2rem solid #e6e6e6;
+}
+
+.dashboard__terminal__buttons {
+	margin-left: 1rem;
+	margin-top: -1.5rem;
+
+	span,
+	&:before,
+	&:after {
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+		margin-right: .5rem;
+		display: block;
+		float: left;
+		border: 1px solid rgba($black, .07);
+	}
+
+	&:before,
+	&:after {
+		content: '';
+	}
+
+	span {
+		background: #ffbd2e;
+	}
+
+	&:before {
+		background: #ff6159;
+	}
+
+	&:after {
+		background: #28ca41;	
+	}
+}
+

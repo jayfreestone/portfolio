@@ -1,3 +1,5 @@
+		</div>
+
 		<footer class="l-sitefooter">
 			<div class="l-container">
 				&copy; <?php echo date( 'Y' ) . ' ' . get_bloginfo( 'sitename' ); ?> 

@@ -6,13 +6,20 @@
 				<h1 class="heading-1"><?php the_field( 'title' ); ?></h1>
 				<?php the_field( 'intro' ); ?>
 			</div>
+			<div class="dashboard__header__image">
+				<div class="image-wrapper image-wrapper--dashboard-intro">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-ipad.png" alt="Dashboard on an iPad">
+				</div>
+			</div>
 		</div>
 	</header>
 
-	<section class="dashboard__section dashboard__setup">
+	<section class="dashboard__section dashboard__setup cf">
 		<div class="l-container">
-			<h2 class="heading-2"><?php the_field( 'setup_title' ); ?></h2>
-			<?php the_field( 'setup_copy' ); ?>
+			<div class="dashboard__section__left">
+				<h2 class="heading-2"><?php the_field( 'setup_title' ); ?></h2>
+				<?php the_field( 'setup_copy' ); ?>
+			</div>
 		</div>
 	</section>
 
@@ -69,28 +76,44 @@
 	</section>
 
 
-	<section class="dashboard__section dashboard__problems whiteout">
+	<section class="dashboard__section dashboard__problems whiteout cf">
 		<div class="l-container">
-			<h2 class="heading-2"><?php the_field( 'problem_title' ); ?></h2>
-			<?php the_field( 'problem_copy' ); ?>
+			<div class="dashboard__section__right">
+				<h2 class="heading-2"><?php the_field( 'problem_title' ); ?></h2>
+				<?php the_field( 'problem_copy' ); ?>
+			</div>
 		</div>
 	</section>
 
-	<section class="dashboard__section dashboard__groundwork">
+	<section class="dashboard__section dashboard__groundwork cf">
 		<div class="l-container">
-			<h2 class="heading-2"><?php the_field( 'groundwork_title' ); ?></h2>
-			<?php the_field( 'groundwork_copy' ); ?>
+			<div class="dashboard__section__left">
+				<h2 class="heading-2"><?php the_field( 'groundwork_title' ); ?></h2>
+				<?php the_field( 'groundwork_copy' ); ?>
+			</div>
+			<div class="dashboard__groundwork__logo">
+				<?php include ('img/dashboard/react.svg'); ?>
+			</div>
 		</div>
 	</section>
 
 	<section class="dashboard__site-scroll">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/site-scroll.png" alt="Dashboard screenshot">
+		<div class="dashboard__site-scroll__inner">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/site-scroll.png" alt="Dashboard screenshot">
+		</div>
 	</section>
 
-	<section class="dashboard__section dashboard__deployment">
+	<section class="dashboard__section dashboard__deployment cf">
 		<div class="l-container">
-			<h2 class="heading-2"><?php the_field( 'deployment_title' ); ?></h2>
-			<?php the_field( 'deployment_copy' ); ?>
+			<div class="dashboard__deployment__copy">
+				<h2 class="heading-2"><?php the_field( 'deployment_title' ); ?></h2>
+				<?php the_field( 'deployment_copy' ); ?>
+			</div>
+			<div class="dashboard__deployment__image">
+				<div class="dashboard__terminal">
+					<div class="dashboard__terminal__buttons"><span></span></div>
+				</div>
+			</div>
 		</div>
 	</section>
 
