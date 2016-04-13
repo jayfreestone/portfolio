@@ -1,16 +1,16 @@
 let header = (function () {
 	let header = document.querySelector('.l-siteheader');
-	let intro = document.querySelector('.dashboard__setup');
+	let main = document.querySelector('.site-main');
 
 	function init() {
-		if (intro) {
+		if (main) {
 
 			// init controller
 			var controller = new ScrollMagic.Controller();
 
 			// create a scene
 			new ScrollMagic.Scene({
-				triggerElement: intro,
+				triggerElement: main,
 				triggerHook: 'onLeave',
 			}).on('start', function () {
 				toggleWhiteout();
