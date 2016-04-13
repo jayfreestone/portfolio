@@ -8,6 +8,14 @@
 			</div>
 		</div>
 	</header>
+
+	<section class="dashboard__section dashboard__setup">
+		<div class="l-container">
+			<h2 class="heading-2"><?php the_field( 'setup_title' ); ?></h2>
+			<?php the_field( 'setup_copy' ); ?>
+		</div>
+	</section>
+
 	<section class="dashboard__process cf">
 		<div class="dashboard__height">
 			<?php include 'img/dashboard/local.svg'; ?>
@@ -59,5 +67,39 @@
 			</figure>
 		</div>
 	</section>
+
+
+	<section class="dashboard__section dashboard__problems whiteout">
+		<div class="l-container">
+			<h2 class="heading-2"><?php the_field( 'problem_title' ); ?></h2>
+			<?php the_field( 'problem_copy' ); ?>
+		</div>
+	</section>
+
+	<section class="dashboard__section dashboard__groundwork">
+		<div class="l-container">
+			<h2 class="heading-2"><?php the_field( 'groundwork_title' ); ?></h2>
+			<?php the_field( 'groundwork_copy' ); ?>
+		</div>
+	</section>
+
+	<section class="dashboard__site-scroll">
+		<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/site-scroll.png" alt="Dashboard screenshot">
+	</section>
+
+	<section class="dashboard__section dashboard__deployment">
+		<div class="l-container">
+			<h2 class="heading-2"><?php the_field( 'deployment_title' ); ?></h2>
+			<?php the_field( 'deployment_copy' ); ?>
+		</div>
+	</section>
+
+	<section class="dashboard__section dashboard__bonus">
+		<div class="l-container">
+			<h2 class="heading-2"><?php the_field( 'bonus_round_title' ); ?></h2>
+			<?php the_field( 'bonus_round_copy' ); ?>
+		</div>
+	</section>
+
 </article>
 <?php get_footer(); ?>

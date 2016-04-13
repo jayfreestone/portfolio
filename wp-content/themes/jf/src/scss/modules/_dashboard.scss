@@ -1,9 +1,16 @@
+$ov-red: #9d0e12;
+$ov-black: #4d4d4d;
+
 .dashboard {
 
 }
 
+.dashboard__section {
+	padding: 2rem 0;
+}
+
 .dashboard__header {
-	background-color: #9d0e12;
+	background-color: $ov-red;
 	color: #fff;
 	padding: 6rem 0 3rem;
 }
@@ -124,5 +131,23 @@
 
 	&:first-of-type {
 		position: relative;
+	}
+}
+
+.dashboard__problems {
+	background: $ov-black;
+}
+
+.dashboard__site-scroll {
+	background: $ov-red;
+	height: 20rem;
+	overflow: hidden;
+
+	img {
+		display: block;
+		margin: 0 auto;
+		width: 40rem;
+		border-top: 2rem solid $ov-red;
+		border-bottom: 2rem solid $ov-red;
 	}
 }
