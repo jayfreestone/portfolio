@@ -132,7 +132,7 @@ gulp.task('watch', function () {
 	gulp.watch(src + 'js/**/*.js', ['js']);
 	gulp.watch(src + 'img/*', ['img']);
 	gulp.watch(src + 'fonts/*', ['fonts']);
-	return buildScript('app.js', true); // Browserify watch for JS changes
+	return buildScript('main.js', true); // Browserify watch for JS changes
 });
 
 // Build all files
