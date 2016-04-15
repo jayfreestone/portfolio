@@ -1212,6 +1212,11 @@ textarea {
   background: none;
 }
 
+.intro {
+  padding: 7rem 0 0;
+  overflow: hidden;
+}
+
 @media only screen and (min-width: 40em) {
   .about__content {
     width: 57.62712%;
@@ -1595,43 +1600,8 @@ textarea {
   background-repeat: no-repeat;
 }
 
-.dashboard__section {
-  padding: 2rem 0;
-}
-
-@media only screen and (min-width: 40rem) {
-  .dashboard__section {
-    padding: 4rem 0;
-  }
-}
-
-@media only screen and (min-width: 80rem) {
-  .dashboard__section {
-    padding: 6rem 0;
-  }
-}
-
-@media only screen and (min-width: 40em) {
-  .dashboard__section__left {
-    width: 49.15254%;
-    float: left;
-    margin-right: 1.69492%;
-  }
-}
-
-@media only screen and (min-width: 40em) {
-  .dashboard__section__right {
-    width: 49.15254%;
-    float: right;
-    margin-right: 0;
-  }
-}
-
 .dashboard__header {
   background-color: #9d0e12;
-  color: #fff;
-  padding: 7rem 0 0;
-  overflow: hidden;
 }
 
 .dashboard__header > .l-container {
@@ -1896,91 +1866,13 @@ textarea {
   display: flex;
 }
 
-.dashboard__groundwork__logo {
-  position: relative;
-  width: 100%;
-}
-
-@media only screen and (min-width: 60rem) {
-  .dashboard__groundwork__logo {
-    width: 40%;
-    margin-left: auto;
-  }
-}
-
-.dashboard__groundwork__logo svg {
-  display: block;
-  max-width: 15rem;
-  margin: 0 auto;
-}
-
-@media only screen and (min-width: 60rem) {
-  .dashboard__groundwork__logo svg {
-    position: absolute;
-    left: 0;
-    height: 100%;
-    right: -10%;
-    max-width: none;
-  }
-}
-
-@media only screen and (min-width: 100rem) {
-  .dashboard__groundwork__logo svg {
-    height: 140%;
-    top: -20%;
-  }
-}
-
-.dashboard__groundwork__logo svg path,
-.dashboard__groundwork__logo svg circle {
+.dashboard__groundwork__logo path,
+.dashboard__groundwork__logo circle {
   opacity: 0;
 }
 
 .dashboard__deployment {
   background: #f8f8f8;
-}
-
-.dashboard__deployment > .l-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media only screen and (min-width: 60rem) {
-  .dashboard__deployment__copy {
-    width: 49.15254%;
-    -webkit-box-ordinal-group: 3;
-    -webkit-order: 2;
-       -moz-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
-}
-
-.dashboard__deployment__image {
-  width: 100%;
-}
-
-@media only screen and (min-width: 60rem) {
-  .dashboard__deployment__image {
-    width: 40.67797%;
-    margin-right: auto;
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-       -moz-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
 }
 
 .dashboard__terminal {
@@ -2058,6 +1950,65 @@ textarea {
     width: 40.67797%;
     float: right;
     margin-right: 0;
+  }
+}
+
+.chunk {
+  padding: 2rem 0;
+}
+
+@media only screen and (min-width: 40rem) {
+  .chunk {
+    padding: 4rem 0;
+  }
+}
+
+@media only screen and (min-width: 80rem) {
+  .chunk {
+    padding: 6rem 0;
+  }
+}
+
+.chunk__inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+     -moz-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+     -moz-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.chunk--swap .chunk__inner {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+@media only screen and (min-width: 40em) {
+  .chunk__primary {
+    width: 44.91525%;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+  .chunk__secondary {
+    width: 44.91525%;
   }
 }
 

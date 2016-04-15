@@ -9,7 +9,7 @@ let dashboard = (function () {
 		intro();
 
 		// init controller
-		var controller = new ScrollMagic.Controller();
+		let controller = new ScrollMagic.Controller();
 
 		// create a scene
 		new ScrollMagic.Scene({
@@ -44,33 +44,35 @@ let dashboard = (function () {
 	}
 
 	function intro() {
-		let tl = new TimelineMax({delay: .5});
+		let tl = new TimelineMax({ delay: 0.5 });
 		let image = headerSection.querySelector('img');
 
-		tl.from(image, 1, {y: '20%', opacity: 0});
+		tl.from(image, 1, { y: '20%', opacity: 0 });
 	}
 
 	function reactAnimation() {
-		let tl = new TimelineMax({delay: .5});
+		let tl = new TimelineMax({ delay: 0.5 });
+
 		let logo = groundSection.querySelector('svg');
-		let paths = logo.querySelectorAll('path');
+		let dot = logo.querySelector('#dot');
+		let paths = [
+			logo.querySelector('#left'),
+			logo.querySelector('#right'),
+			logo.querySelector('#middle')
+		];
 
-		// tl.set(logo.querySelector('circle'), {opacity: 0});
-
-		for ( let i = 0; i < paths.length; i++ ) {
-			tl.to(paths[i], .4, { opacity: 1 });
-			// .from(paths[i], .5, {y: '-5%'}, 'logo' + i);
+		for (let i = 0; i < paths.length; i++) {
+			calculateStroke(paths[i]);
+			tl.to(paths[i], 2, { 'stroke-dashoffset': 0, opacity: 1, ease: Power1.easeIn }, 'reactAnimation' );
 		}
 
-		tl.to(logo.querySelector('circle'), 1, {opacity: 1});
+		tl.to(dot, 1, { opacity: 1, delay: 0.5 });
+	}
 
-
-		tl.to(logo.querySelector('circle'), 1, {fill: '#9d0e12', delay: 1});
-
-
-		tl.to(logo.querySelector('circle'), 1, {fill: '#22b573', delay: 1});
-
-		tl.to(logo.querySelector('circle'), 1, {fill: '#00d8ff', delay: 1});
+	function calculateStroke(path) {
+		let length = path.getTotalLength();
+		path.style['stroke-dashoffset'] = length;
+		path.style['stroke-dasharray'] = length;
 	}
 
 	function siteScroll() {

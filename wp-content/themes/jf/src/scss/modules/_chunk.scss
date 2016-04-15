@@ -1,0 +1,36 @@
+.chunk {
+	padding: 2rem 0;
+
+	@include breakpoint(40rem) {
+		padding: 4rem 0;
+	}
+
+	@include breakpoint(80rem) {
+		padding: 6rem 0;
+	}
+}
+
+.chunk__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.chunk--swap {
+	.chunk__inner {
+		flex-direction: row-reverse;
+	}
+}
+
+.chunk__primary {
+	@include breakpoint(40em) {
+		width: span(5.5 of 12);
+	}
+}
+
+.chunk__secondary {
+	@include breakpoint(40em) {
+		width: span(5.5 of 12);
+	}
+}

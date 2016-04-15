@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <article class="dashboard">
-	<header class="dashboard__header cf">
+	<header class="intro dashboard__header whiteout cf">
 		<div class="l-container">
 			<div class="dashboard__intro">
 				<h1 class="heading-1"><?php the_field( 'title' ); ?></h1>
@@ -15,11 +15,14 @@
 	</header>
 
 	<div class="site-main">
-		<section class="dashboard__section dashboard__setup cf">
-			<div class="l-container">
-				<div class="dashboard__section__right">
+		<section class="chunk dashboard__section dashboard__setup cf">
+			<div class="chunk__inner l-container">
+				<div class="chunk__primary">
 					<h2 class="heading-2"><?php the_field( 'setup_title' ); ?></h2>
 					<?php the_field( 'setup_copy' ); ?>
+				</div>
+				<div class="chunk__secondary">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-ipad.png" alt="Dashboard on an iPad">
 				</div>
 			</div>
 		</section>
@@ -77,23 +80,26 @@
 		</section>
 		
 		
-		<section class="dashboard__section dashboard__problems whiteout cf">
-			<div class="l-container">
-				<div class="dashboard__section__left">
+		<section class="chunk chunk--swap dashboard__section dashboard__problems whiteout cf">
+			<div class="chunk__inner l-container">
+				<div class="chunk__primary">
 					<h2 class="heading-2"><?php the_field( 'problem_title' ); ?></h2>
 					<?php the_field( 'problem_copy' ); ?>
+				</div>
+				<div class="chunk__secondary">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-ipad.png" alt="Dashboard on an iPad">
 				</div>
 			</div>
 		</section>
 		
-		<section class="dashboard__section dashboard__groundwork cf">
-			<div class="l-container">
-				<div class="dashboard__section__right">
+		<section class="chunk dashboard__groundwork cf">
+			<div class="chunk__inner l-container">
+				<div class="chunk__primary">
 					<h2 class="heading-2"><?php the_field( 'groundwork_title' ); ?></h2>
 					<?php the_field( 'groundwork_copy' ); ?>
 				</div>
-				<div class="dashboard__groundwork__logo">
-					<?php include ('img/dashboard/react.svg'); ?>
+				<div class="chunk__secondary dashboard__groundwork__logo">
+					<?php include( 'img/dashboard/react.svg' ); ?>
 				</div>
 			</div>
 		</section>
@@ -104,13 +110,13 @@
 			</div>
 		</section>
 		
-		<section class="dashboard__section dashboard__deployment cf">
-			<div class="l-container">
-				<div class="dashboard__deployment__copy">
+		<section class="chunk chunk--swap dashboard__section dashboard__deployment cf">
+			<div class="chunk__inner l-container">
+				<div class="chunk__primary">
 					<h2 class="heading-2"><?php the_field( 'deployment_title' ); ?></h2>
 					<?php the_field( 'deployment_copy' ); ?>
 				</div>
-				<div class="dashboard__deployment__image">
+				<div class="chunk__secondary">
 					<div class="dashboard__terminal">
 						<div class="dashboard__terminal__buttons"><span></span></div>
 					</div>
@@ -118,10 +124,12 @@
 			</div>
 		</section>
 		
-		<section class="dashboard__section dashboard__bonus">
-			<div class="l-container">
-				<h2 class="heading-2"><?php the_field( 'bonus_round_title' ); ?></h2>
-				<?php the_field( 'bonus_round_copy' ); ?>
+		<section class="chunk dashboard__section dashboard__bonus">
+			<div class="chunk__inner l-container">
+				<div class="chunk__primary">
+					<h2 class="heading-2"><?php the_field( 'bonus_round_title' ); ?></h2>
+					<?php the_field( 'bonus_round_copy' ); ?>
+				</div>
 			</div>
 		</section>
 	</div>
