@@ -3,6 +3,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="preload" href="<?php get_template_directory_uri(); ?>/src/fonts/graphik/Graphik-Bold-Web.woff" as="font" type="font/woff" crossorigin>
 		<?php wp_head(); ?>
 		<script>
 			// If the font has already been loaded, add the class immediately
