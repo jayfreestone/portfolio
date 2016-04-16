@@ -7,12 +7,6 @@
 
 	<div class="work-preview-container">
 
-		<div class="work-preview__label">
-			<span>
-				<a href="" target="_blank">mail@jayfreestone.com</a>
-			</span>
-		</div>
-
 	<?php if ( $work->have_posts() ) : ?>
 
 		<nav class="work-preview-container__nav">
