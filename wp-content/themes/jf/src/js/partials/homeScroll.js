@@ -96,6 +96,7 @@ let homeScroll = (function () {
 			let nextNumber = nextSlide.id.substring(nextSlide.id.length -1);
 
 			if (currentNumber > nextNumber) {
+				console.log('going backwards');
 				// If we're going backwards
 				currentSlide.classList.add('work-preview--next');
 
@@ -104,10 +105,12 @@ let homeScroll = (function () {
 
 				for ( let i = 0; i < previousSlides.length; i++ ) {
 					previousSlides[i].classList.add('work-preview--next');
+					previousSlides[i].classList.remove('work-preview--previous');
 				}
 
 			} else {
 				// If we're going forwards
+				console.log('going forwards');
 				currentSlide.classList.add('work-preview--previous');
 			}
 
