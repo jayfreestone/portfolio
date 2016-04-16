@@ -21,6 +21,10 @@ body {
 		line-height: 1.5;
 	}
 
+	@include breakpoint(60.5em) {
+		line-height: 1.7;
+	}
+
 	// font-size: 1.1rem;
 }
 
@@ -68,9 +72,10 @@ cite {
 	font-style: normal;
 }
 
-input[type=text],
-input[type=email],
+input,
 textarea {
+	appearance: none;
+
 	&:focus {
 		outline: 0;
 	}
@@ -78,7 +83,6 @@ textarea {
 
 input[type=text],
 input[type=email] {
-	appearance: none;
 	background: none;
 	border: 0;
 	border-bottom: 1px solid $black;
@@ -92,4 +96,13 @@ textarea {
 
 button {
 
+}
+
+code {
+	background: rgba($red, .15);
+	color: $red;
+	padding: 0 .3rem;
+	border-radius: 3px;
+	font-family: 'Menlo', 'Consolas', 'Courier New';
+	font-size: .95rem;
 }

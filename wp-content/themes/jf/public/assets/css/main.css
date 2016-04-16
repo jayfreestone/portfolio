@@ -626,6 +626,12 @@ body {
   }
 }
 
+@media only screen and (min-width: 60.5em) {
+  body {
+    line-height: 1.7;
+  }
+}
+
 a {
   text-decoration: none;
   color: #e9204a;
@@ -674,17 +680,20 @@ cite {
   font-style: normal;
 }
 
-input[type=text]:focus,
-input[type=email]:focus,
+input,
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+input:focus,
 textarea:focus {
   outline: 0;
 }
 
 input[type=text],
 input[type=email] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
   background: none;
   border: 0;
   border-bottom: 1px solid black;
@@ -694,6 +703,16 @@ input[type=email] {
 textarea {
   border-bottom: 1px solid black;
   padding: .5rem;
+}
+
+code {
+  background: rgba(233, 32, 74, 0.15);
+  color: #e9204a;
+  padding: 0 .3rem;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  font-family: 'Menlo', 'Consolas', 'Courier New';
+  font-size: .95rem;
 }
 
 .primary-nav {
@@ -1866,9 +1885,10 @@ textarea {
   display: flex;
 }
 
-.dashboard__groundwork__logo path,
-.dashboard__groundwork__logo circle {
+.js .dashboard__groundwork__logo path {
   opacity: 0;
+  stroke: #00d8ff;
+  fill: #fff;
 }
 
 .dashboard__deployment {

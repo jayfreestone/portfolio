@@ -5,44 +5,32 @@ let dashboard = (function () {
 	let groundSection = document.querySelector('.dashboard__groundwork');
 
 	function init() {
-
 		intro();
-
-		// init controller
-		let controller = new ScrollMagic.Controller();
-
-		// create a scene
-		new ScrollMagic.Scene({
-			triggerElement: processSection,
-			offset: 50,
-			reverse: false
-		}).on('start', function () {
-			animationProcess();
-		})
-		.addTo(controller); // assign the scene to the controller
-
-		// create a scene
-		new ScrollMagic.Scene({
-			triggerElement: scrollSection,
-			offset: 50,
-			reverse: false
-		}).on('start', function () {
-			siteScroll();
-		})
-		.addTo(controller); // assign the scene to the controller
-
-		// create a scene
-		new ScrollMagic.Scene({
-			triggerElement: groundSection,
-			offset: 50,
-			reverse: false
-		}).on('start', function () {
-			reactAnimation();
-		})
-		.addTo(controller); // assign the scene to the controller
-
+		bindUIActions();
 	}
 
+	function bindUIActions() {
+		// Init controller
+		let controller = new ScrollMagic.Controller();
+
+		// Add scenes
+		addScene(controller, processSection, animationProcess);
+		addScene(controller, scrollSection, siteScroll);
+		addScene(controller, groundSection, reactAnimation);
+	}
+
+	// Adds a scene with predefined options to the controller
+	function addScene(controller, element, handler) {
+		let options = {
+			triggerElement: element,
+			offset: 50,
+			reverse: false
+		};
+
+		new ScrollMagic.Scene(options).on('start', handler).addTo(controller);
+	}
+
+	// Intro/Header animation
 	function intro() {
 		let tl = new TimelineMax({ delay: 0.5 });
 		let image = headerSection.querySelector('img');
@@ -50,44 +38,7 @@ let dashboard = (function () {
 		tl.from(image, 1, { y: '20%', opacity: 0 });
 	}
 
-	function reactAnimation() {
-		let tl = new TimelineMax({ delay: 0.5 });
-
-		let logo = groundSection.querySelector('svg');
-		let dot = logo.querySelector('#dot');
-		let paths = [
-			logo.querySelector('#left'),
-			logo.querySelector('#right'),
-			logo.querySelector('#middle')
-		];
-
-		for (let i = 0; i < paths.length; i++) {
-			calculateStroke(paths[i]);
-			tl.to(paths[i], 2, { 'stroke-dashoffset': 0, opacity: 1, ease: Power1.easeIn }, 'reactAnimation' );
-		}
-
-		tl.to(dot, 1, { opacity: 1, delay: 0.5 });
-	}
-
-	function calculateStroke(path) {
-		let length = path.getTotalLength();
-		path.style['stroke-dashoffset'] = length;
-		path.style['stroke-dasharray'] = length;
-	}
-
-	function siteScroll() {
-		let scrollInner = scrollSection.querySelector('.dashboard__site-scroll__inner');
-
-		let tl = new TimelineMax({delay: 2});
-
-		tl.set(scrollInner, {height: 'auto'})
-		.from(scrollInner, 3, {height: '20rem', ease:Power2.easeOut});
-
-		setTimeout(function(){
-			tl.reverse(3);
-		}, 6000);
-	}
-
+	// Pipeline/process animation
 	function animationProcess() {
 		let tl = new TimelineMax();
 		let inner = document.querySelector('.dashboard__process__inner');
@@ -180,6 +131,41 @@ let dashboard = (function () {
 		}
 	}
 
+	// Scrolling site image animation
+	function siteScroll() {
+		let scrollInner = scrollSection.querySelector('.dashboard__site-scroll__inner');
+
+		let tl = new TimelineMax({ delay: 2 });
+
+		tl.set(scrollInner, { height: 'auto' })
+		.from(scrollInner, 3, { height: '20rem', ease: Power2.easeOut });
+
+		setTimeout(function () {
+			tl.reverse(3);
+		}, 6000);
+	}
+
+	// React Logo Animation
+	function reactAnimation() {
+		let tl = new TimelineMax();
+
+		let logo = groundSection.querySelector('svg');
+		let paths = logo.querySelectorAll('path');
+
+		for (let i = 0; i < paths.length; i ++) {
+			setDash(paths[i]);
+		}
+
+		tl.to(paths, 5, { 'stroke-dashoffset': 0, opacity: '1', ease: Power1.easeIn })
+		.to(paths, 3, { 'fill': '#00d8ff', 'stroke': '#00d8ff' });
+	}
+
+	// Sets Dash array/offset on element
+	function setDash(path) {
+		let length = path.getTotalLength();
+		path.style['stroke-dashoffset'] = length;
+		path.style['stroke-dasharray'] = length;
+	}
 
 	return {
 		init: init

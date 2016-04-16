@@ -215,10 +215,14 @@ $ov-grey: #f8f8f8;
 // 			height: 140%;
 // 			top: -20%;
 // 		}
-//
-		path,
-		circle {
-			opacity: 0;
+//	
+		.js & {
+			path {
+				opacity: 0;
+				stroke: #00d8ff;
+				fill: #fff;
+			}
+
 		}
 // 	}
 }
