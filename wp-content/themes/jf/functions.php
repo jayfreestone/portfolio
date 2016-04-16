@@ -190,5 +190,7 @@ function home_images() {
 </style>
 <?php
 	}
+
+	wp_reset_postdata();
 }
 add_action( 'wp_head', 'home_images' );
