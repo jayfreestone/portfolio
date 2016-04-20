@@ -21,6 +21,14 @@
 
 		&:not(:last-child) {
 			margin-right: 1rem;
+
+			@include breakpoint(40em) {
+				margin-right: 2rem;
+			}
+
+			@include breakpoint(100em) {
+				margin-right: 3rem;
+			}
 		}
 	}
 

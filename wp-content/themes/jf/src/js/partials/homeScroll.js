@@ -1,3 +1,6 @@
+import vhBuggyfill from 'viewport-units-buggyfill';
+import hammerjs from 'hammerjs';
+
 let homeScroll = (function () {
 	let navItems;
 	let delta = 0;
@@ -18,6 +21,7 @@ let homeScroll = (function () {
 		if (nav) {
 			navItems = nav.querySelectorAll('a');
 		}
+		vhBuggyfill.init();
 		animateInitial();
 		bindUIEvents();
 	}
@@ -50,17 +54,37 @@ let homeScroll = (function () {
 		window.addEventListener('keydown', keyboardNav);
 		window.addEventListener('wheel', scrollNav);
 
+		// Stops touchmove working outright
+		window.addEventListener('touchmove', function(event) {
+			event.preventDefault();
+		});
 
+		// Sets up Hammer to handle touch events
+		let workContainer = document.querySelector('.work-preview-container');
+		let touch = new Hammer(workContainer);
+
+		// Enables vertical swipe detection
+		touch.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+
+		// Gestures that equal forward
+		touch.on('swipeup swipeleft', function(){
+			if (isTransitioning == false) {
+				advanceSlide();
+			}
+		});
+
+		// Gestures that equal backwards
+		touch.on('swipedown swiperight', function(){
+			if (isTransitioning == false) {
+				regressSlide();
+			}
+		});
+
+		// Hooks up navigation
 		for (let i = 0; i < navItems.length; i++) {
 			navItems[i].addEventListener('click', handleNav);
 		}
 		
-		// $('.work-preview-container').swipe({
-		// 	swipe:function(event, direction, distance, duration, fingerCount) {
-		// 		console.log( "You swiped " + direction );
-		// 	},
-		// 	allowPageScroll:'vertical'
-		// });
 	}
 
 	function handleNav(event) {
@@ -122,7 +146,6 @@ let homeScroll = (function () {
 
 	function scrollNav(e) {
 		e.preventDefault();
-		// console.log('fired');
 
 		let scrollThreshold = 40;
 

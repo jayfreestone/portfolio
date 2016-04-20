@@ -9,6 +9,7 @@ function jf_setup() {
 	 * Sets up image sizes
 	 */
 	add_image_size( 'homepage', '2000', '1500', true );
+	add_image_size( 'fullwidth', '6000', '3376', true );
 
 	/**
 	 * Registers custom menus

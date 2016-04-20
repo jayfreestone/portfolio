@@ -1,9 +1,11 @@
 .l-sitefooter {
 	text-align: right;
 	width: 100%;
+	padding: 1rem 0;
 
 	.home & {
 		position: fixed;
-		bottom: 1rem;
+		bottom: 0rem;
+		background: #fff;
 	}
 }

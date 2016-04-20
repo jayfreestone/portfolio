@@ -1,7 +1,6 @@
 .l-siteheader {
 	background: #fff;
 	height: 4rem;
-	// max-height: $header-height;
 	padding: 1rem 0;
 	position: fixed;
 	left: 0;
@@ -11,22 +10,9 @@
 	z-index: 1000;
 	display: flex;
 	align-items: center;
-	// display: flex;
-	// align-items: center;
-	// animation: headerSlideIn 1s;
-	// animation-fill-mode: forwards;
-
-	// &,
-	> .l-container {
-		// justify-content: space-between;
-	}
 
 	> .l-container {
 		width: 100%;
-	}
-
-	@include breakpoint(40em) {
-		// background: none;
 	}
 
 	a {

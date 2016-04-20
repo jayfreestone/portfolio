@@ -12,3 +12,9 @@
 		padding-right: 4rem;
 	}
 }
+
+.l-container--full {
+	.site-content & {
+		max-width: none;
+	}
+}

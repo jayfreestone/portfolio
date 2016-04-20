@@ -10,6 +10,18 @@
 	}
 }
 
+.chunk--swap {
+	.chunk__inner {
+		flex-direction: row-reverse;
+	}
+}
+
+.chunk--single {
+	.chunk__inner {
+		justify-content: space-around;
+	}
+}
+
 .chunk__inner {
 	display: flex;
 	flex-wrap: wrap;
@@ -17,20 +29,14 @@
 	justify-content: space-between;
 }
 
-.chunk--swap {
-	.chunk__inner {
-		flex-direction: row-reverse;
-	}
-}
-
 .chunk__primary {
-	@include breakpoint(40em) {
+	@include breakpoint(60em) {
 		width: span(5.5 of 12);
 	}
 }
 
 .chunk__secondary {
-	@include breakpoint(40em) {
+	@include breakpoint(60em) {
 		width: span(5.5 of 12);
 	}
 }
