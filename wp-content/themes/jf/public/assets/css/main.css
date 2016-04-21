@@ -617,18 +617,21 @@ html {
 }
 
 body {
+  font-size: .9rem;
   line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media only screen and (min-width: 37.5em) {
   body {
+    font-size: 1rem;
     line-height: 1.5;
   }
 }
 
 @media only screen and (min-width: 60.5em) {
   body {
-    line-height: 1.7;
+    line-height: 1.6;
   }
 }
 
@@ -693,16 +696,11 @@ textarea:focus {
 }
 
 input[type=text],
-input[type=email] {
-  background: none;
-  border: 0;
-  border-bottom: 1px solid black;
-  padding: .5rem 0;
-}
-
+input[type=email],
 textarea {
-  border-bottom: 1px solid black;
-  padding: .5rem;
+  background: #f8f8f8;
+  border: 1px solid #e5e5e5;
+  padding: .5rem .7rem;
 }
 
 code {
@@ -2060,12 +2058,29 @@ code {
 }
 
 .work__copy {
-  max-width: 50rem;
-  margin: 0 auto 4rem;
+  max-width: 38rem;
+  margin-bottom: 4rem;
 }
 
 .work__image {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 40em) {
+  .work__image {
+    margin-bottom: 2rem;
+  }
+}
+
+.work__url:after {
+  content: '→';
+  font-family: Helvetica, Arial;
+  margin-left: .5rem;
+  color: #e9204a;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  display: inline-block;
 }
 
 .l-siteheader {
@@ -2236,12 +2251,18 @@ code {
 }
 
 .l-content {
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 @media only screen and (min-width: 40em) {
   .l-content {
     margin-top: 6rem;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .l-content {
+    margin-top: 7rem;
   }
 }
 

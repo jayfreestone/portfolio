@@ -1,7 +1,11 @@
 .l-content {
-	margin-top: 4rem;
+	margin-top: 5rem;
 
 	@include breakpoint(40em) {
 		margin-top: 6rem;
+	}
+
+	@include breakpoint(60em) {
+		margin-top: 7rem;
 	}
 }

@@ -14,15 +14,17 @@ html {
 }
 
 body {
+	font-size: .9rem;
 	line-height: 1.4;
-	// margin-top: $header-height;
+	-webkit-font-smoothing: antialiased;
 
 	@include breakpoint(37.5em) {
+		font-size: 1rem;
 		line-height: 1.5;
 	}
 
 	@include breakpoint(60.5em) {
-		line-height: 1.7;
+		line-height: 1.6;
 	}
 
 	// font-size: 1.1rem;
@@ -82,16 +84,11 @@ textarea {
 }
 
 input[type=text],
-input[type=email] {
-	background: none;
-	border: 0;
-	border-bottom: 1px solid $black;
-	padding: .5rem 0;
-}
-
+input[type=email],
 textarea {
-	border-bottom: 1px solid $black;
-	padding: .5rem;
+	background: #f8f8f8;
+	border: 1px solid #e5e5e5;
+	padding: .5rem .7rem;
 }
 
 button {

@@ -156,8 +156,8 @@ let dashboard = (function () {
 			setDash(paths[i]);
 		}
 
-		tl.to(paths, 5, { 'stroke-dashoffset': 0, opacity: '1', ease: Power1.easeIn })
-		.to(paths, 3, { 'fill': '#00d8ff', 'stroke': '#00d8ff' });
+		tl.to(paths, 3, { 'stroke-dashoffset': 0, opacity: '1', ease: Power1.easeIn })
+		.to(paths, 1, { 'fill': '#00d8ff', 'stroke': '#00d8ff', ease: Power1.easeIn });
 	}
 
 	// Sets Dash array/offset on element
