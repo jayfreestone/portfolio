@@ -1,19 +1,63 @@
-.contact {
-
+.page-contact {
+   .site-content {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-around;
+   }
 }
 
-.contact__content {
+.contact {
+   animation: 1s zoomIn;
+
+   @include breakpoint(25em) {
+	  text-align: center;
+   }
+}
+
+.contact__email {
+   color: $black;
+   padding-bottom: .3rem;
+   border-bottom: 3px solid $red;
+   display: inline-block;
+
+   @include breakpoint(50em) {
+	  font-size: 4rem;
+	  border-width: 5px;
+   }
+}
+
+.contact__email,
+.contact__copy {
 	margin-bottom: 2rem;
 }
 
-.contact__form {
-	@include breakpoint(50em) {
-		@include span(6 of 12);
-	}
+.contact__copy {
+   max-width: 40rem; 
+   margin-left: auto;
+   margin-right: auto;
 }
 
-.contact__social {
-	@include breakpoint(50em) {
-		@include span(5 of 12 omega);
-	}
+.contact__links {
+   @include delist();
+
+   li {
+	  margin-bottom: 1rem;
+
+	  @include breakpoint(25em) {
+		 display: inline-block;
+		 margin-left: 2rem;
+
+		 &:first-child {
+			margin-left: 0;
+		 }
+	  }
+
+	  &:after {
+		 @include arrow();
+
+		 @include breakpoint(25em) {
+			display: none;
+		 }
+	  }
+   }
 }
