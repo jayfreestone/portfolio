@@ -3,36 +3,35 @@
 }
 
 .about__content {
-	@include breakpoint(40em) {
-		@include span(7 of 12);
-	}
+	margin-bottom: 2rem;
 
 	@include breakpoint(60em) {
-		width: span(5 of 12);
-	}
-}
-
-.about__currently {
-	@include breakpoint(40em) {
-		@include span(4 of 12 omega);
-		@include push(1 of 12);
-
-		.link-widget {
-			margin: 0;
-		}
+		@include span(5 of 12);
 	}
 
-	@include breakpoint(60em) {
+	@include breakpoint(75em) {
+		@include span(5 of 12);
+	}
+
+	@include breakpoint(90em) {
 		@include span(3 of 12);
 	}
 }
 
 .about__image {
-	@include full();
+	// @include full();
 	margin-bottom: 1.5rem;
 
 	@include breakpoint(60em) {
-		@include span(3 of 12 omega);
+		@include span(6 of 12 omega);
+	}
+
+	@include breakpoint(75em) {
+		@include span(6 of 12 omega);
+	}
+
+	@include breakpoint(90em) {
+		@include span(8 of 12 omega);
 	}
 }
 

@@ -3,7 +3,7 @@
 	position: relative;
 	height: 0;
 
-	> img {
+	img {
 		position: absolute;
 		top: 0;
 		width: 100%;
@@ -17,7 +17,19 @@
 }
 
 .image-wrapper--about {
-	padding-bottom: 153.470437%;
+	padding-bottom: 138.1355932%;
+
+	@include breakpoint(32em) {
+	  padding-bottom: 66.6666667%; 
+	}
+
+	@include breakpoint(60em) {
+	   padding-bottom: 138.1355932%;
+	}
+
+	@include breakpoint(75em) {
+	  padding-bottom: 66.6666667%; 
+	}
 }
 
 .image-wrapper--dashboard-intro {
