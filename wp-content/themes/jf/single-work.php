@@ -2,8 +2,11 @@
 <article class="l-content work">
 	<div class="l-container l-container--full">
 		<div class="work__copy">
-			<h1 class="heading-1"><?php the_title(); ?></h1>
-			<?php the_field( 'page_content' ); ?>
+			<h1 class="heading-2"><?php the_title(); ?></h1>
+			<?php echo esc_html( wp_strip_all_tags( get_field( 'page_content' ) ) ); ?>
+			<?php if ( get_field( 'website_url' ) ) : ?>
+			   &nbsp; <a href="<?php the_field( 'website_url' ); ?>" target="blank" class="work__url">View</a>
+			<?php endif; ?>
 		</div>
 		<?php $images = get_field( 'work_images' ); ?>
 		<?php if ( $images ) : ?>

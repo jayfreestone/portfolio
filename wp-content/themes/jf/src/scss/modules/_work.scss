@@ -1,8 +1,22 @@
 .work__copy {
-	max-width: 50rem;
-	margin: 0 auto 4rem;
+	max-width: 38rem;
+	margin-bottom: 4rem;
 }
 
 .work__image  {
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
+
+	@include breakpoint(40em) {
+	   margin-bottom: 2rem;
+	}
+
+	// @include breakpoint(60em) {
+	//    margin-bottom: 4rem;
+	// }
+}
+
+.work__url {
+   &:after {
+	  @include arrow();
+   }
 }
