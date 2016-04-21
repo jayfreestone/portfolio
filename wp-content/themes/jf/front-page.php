@@ -42,7 +42,7 @@
 			<article id="work-preview--<?php echo $i; ?>" class="<?php echo $workClass; ?>" style="background-color: <?php the_field( 'homepage_background_color' ); ?>">
 				<div class="work-preview__copy">
 					<a href="<?php the_permalink(); ?>">
-						<h2 class="heading-1"><?php the_title(); ?></h2>
+					   <h2 class="heading-1 work-preview__title"><?php the_title(); ?></h2>
 						<?php the_field( 'homepage_intro' ); ?>
 						<span href="<?php the_permalink(); ?>" class="work-preview__link">
 							View Work

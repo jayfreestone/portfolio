@@ -94,14 +94,14 @@
 	p {
 		margin: 0;
 	}
+}
 
-	.heading-1 {
-		margin-bottom: .5rem;
-	}
+.work-preview__title {
+   margin-bottom: .5rem;
 
-	// & + .work-preview {
-	// 	margin-top: 2rem;
-	// }
+   @include breakpoint(80em) {
+	  font-size: 3.5rem;
+   }
 }
 
 .work-preview--whiteout {
@@ -172,6 +172,10 @@
 		display: flex;
 		align-items: center;
 		padding: 2rem;
+	}
+
+	@include breakpoint(120em) {
+	   font-size: 1rem;
 	}
 }
 
