@@ -17,6 +17,9 @@ body {
 	font-size: .9rem;
 	line-height: 1.4;
 	-webkit-font-smoothing: antialiased;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 
 	@include breakpoint(37.5em) {
 		font-size: 1rem;
