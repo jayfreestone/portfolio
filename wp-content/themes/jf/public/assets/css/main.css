@@ -2341,6 +2341,10 @@ code {
   fill: #e9204a;
 }
 
+.l-siteheader__sitename {
+  display: inline;
+}
+
 .l-siteheader__logo,
 .l-siteheader__sitename {
   margin-right: .3rem;

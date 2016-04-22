@@ -27,7 +27,7 @@ function jf_setup() {
 add_action( 'after_setup_theme', 'jf_setup' );
 
 /**
- * Use pardown to convert markdown
+ * Use parsedown to convert markdown
  */
 function md( $text ) {
 	$Parsedown = new Parsedown();
@@ -79,7 +79,6 @@ function change_post_menu_label() {
 }
 add_action( 'admin_menu', 'change_post_menu_label' );
 
-
 /**
  * Changes "Posts" admin labels
  */
@@ -107,8 +106,6 @@ function javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js');})(document.documentElement);</script>\n";
 }
 add_action( 'wp_head', 'javascript_detection', 0 );
-
-
 
 /**
  * Enqueues scripts & styles.
@@ -185,6 +182,7 @@ function get_recent_work() {
 		$work = new WP_Query(array(
 			'post_type' => 'work',
 			'posts_per_page' => 6,
+			'no_found_rows' => true,
 			'orderby' => 'menu_order',
 			'order' => 'ASC',
 		));
@@ -219,20 +217,20 @@ function home_images() {
 	$work = get_recent_work();
 
 	if ( is_front_page() ) {
-?>
-<style>
-	<?php $i = 0; ?>
-	<?php while ( $work->have_posts() ) : $work->the_post(); ?>
-		<?php
-		$i++;
-		$workImage = get_field( 'homepage_image' );
-		?>
-		.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-			background-image: url('<?php echo esc_url( $workImage['url'] ); ?>');
-		}
-	<?php endwhile; ?>
-</style>
-<?php
+	?>
+	<style>
+		<?php $i = 0; ?>
+		<?php while ( $work->have_posts() ) : $work->the_post(); ?>
+			<?php
+			$i++;
+			$workImage = get_field( 'homepage_image' );
+			?>
+			.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
+				background-image: url('<?php echo esc_url( $workImage['url'] ); ?>');
+			}
+		<?php endwhile; ?>
+	</style>
+	<?php
 	}
 
 	wp_reset_postdata();

@@ -42,7 +42,7 @@
 			<article id="work-preview--<?php echo esc_html( $i ); ?>" class="<?php echo esc_html( $workClass ); ?>" style="background-color: <?php the_field( 'homepage_background_color' ); ?>">
 				<div class="work-preview__copy">
 					<a href="<?php the_permalink(); ?>">
-					   <h2 class="heading-1 work-preview__title"><?php the_title(); ?></h2>
+						<h2 class="heading-1 work-preview__title"><?php the_title(); ?></h2>
 						<?php the_field( 'homepage_intro' ); ?>
 						<span href="<?php the_permalink(); ?>" class="work-preview__link">
 							View Work
@@ -51,7 +51,7 @@
 				</div>
 
 				<div class="work-preview__image">
-				<?php
+					<?php
 					$workImage = get_field( 'homepage_image' );
 					$homepage = $workImage['sizes']['homepage'];
 					?>
