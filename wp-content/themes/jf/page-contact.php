@@ -1,6 +1,6 @@
 
 <?php get_header(); ?>
- <div class="l-container l-container--full">
+ <div class="l-container">
 	   <div class="contact">
 	     <!-- <h1 class="heading&#45;1"><?php the_title(); ?></h1> -->
 	     <div class="contact__inner">

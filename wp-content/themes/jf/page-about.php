@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="l-content">
-	<div class="l-container l-container--full">
+	<div class="l-container">
 
 		<div class="about cf">
 			<div class="about__content">

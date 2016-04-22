@@ -2,19 +2,8 @@
 	padding-left: 1rem;
 	padding-right: 1rem;
 
-	.site-content & {
-		max-width: 100rem;
-		margin: 0 auto;
-	}
-
 	@include breakpoint(40em) {
 		padding-left: 4rem;
 		padding-right: 4rem;
-	}
-}
-
-.l-container--full {
-	.site-content & {
-		max-width: none;
 	}
 }
