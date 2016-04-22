@@ -160,6 +160,22 @@ function viewport_buggyfill_inline() {
 add_action( 'wp_footer', 'viewport_buggyfill_inline' );
 
 /**
+ * Handles returning font loading
+ */
+function fontLoaded() {
+	?>
+	<script>
+		// If the font has already been loaded, add the class immediately
+		var fontLoaded = localStorage.getItem( 'fontloaded' );
+		if (fontLoaded) {
+			document.querySelector('html').classList.add('wf-graphikweb-n4-active', 'wf-active');
+		}
+	</script>
+	<?php
+}
+add_action( 'wp_head', 'fontLoaded' );
+
+/**
  * Get Recent Work
  */
 function get_recent_work() {

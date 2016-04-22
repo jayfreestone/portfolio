@@ -5,13 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link rel="preload" href="<?php echo esc_url( get_template_directory_uri() ); ?>/src/fonts/graphik/Graphik-Bold-Web.woff" as="font" type="font/woff" crossorigin>
 		<?php wp_head(); ?>
-		<script>
-			// If the font has already been loaded, add the class immediately
-			var fontLoaded = localStorage.getItem( 'fontloaded' );
-			if (fontLoaded) {
-				document.querySelector('html').classList.add('wf-graphikweb-n4-active', 'wf-active');
-			}
-		</script>
 	</head>
 
 	<?php
