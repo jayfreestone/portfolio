@@ -1,36 +1,42 @@
-import waypoints from './../../../node_modules/waypoints/lib/noframework.waypoints.min.js';
-
 let primelabs = (function () {
+	// Init controller
+	let controller = new ScrollMagic.Controller();
+
 	let problemSection = document.querySelector('.prime-labs__section--problems');
 	let modularSection = document.querySelector('.prime-labs__section--modular-boxes');
 	let standardSection = document.querySelector('.prime-labs__section--as-standard');
 
 	function init() {
+		bindUIActions();
+	}
 
-		let problems = new Waypoint({
-			element: problemSection,
-			offset: '50%',
-			handler: function (direction) {
-				problemSection.classList.add('prime-labs__section--problems--is-active');
-			}
-		});
+	function bindUIActions() {
+		addScene(controller, problemSection, problemHandler);
+		addScene(controller, modularSection, modularHandler);
+		addScene(controller, standardSection, standardHandler);
+	}
 
-		let modular = new Waypoint({
-			element: modularSection,
-			offset: '60%',
-			handler: function(direction) {
-				modularSection.classList.add('prime-labs__section--modular-boxes--is-active');
-			}
-		});
+	// Adds a scene with predefined options to the controller
+	function addScene(controller, element, handler) {
+		let options = {
+			triggerElement: element,
+			offset: 50,
+			reverse: false
+		};
 
-		let standard = new Waypoint({
-			element: standardSection,
-			offset: '50%',
-			handler: function(direction) {
-				document.querySelector('.prime-labs__video').play();
-			}
-		});
+		new ScrollMagic.Scene(options).on('start', handler).addTo(controller);
+	}
 
+	function problemHandler() {
+		problemSection.classList.add('prime-labs__section--problems--is-active');
+	}
+
+	function modularHandler() {
+		modularSection.classList.add('prime-labs__section--modular-boxes--is-active');
+	}
+
+	function standardHandler() {
+		document.querySelector('.prime-labs__video').play();
 	}
 
 	return {
