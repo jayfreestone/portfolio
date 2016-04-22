@@ -15,9 +15,9 @@
 					</div>
 					<div class="chunk__secondary">
 						<picture>
-							<source srcset="<?php echo get_template_directory_uri(); ?>/img/primelabs/primelabs-collab.svg" media="(min-width: 40em)">
-							<source srcset="<?php echo get_template_directory_uri(); ?>/img/primelabs/primelabs-collab-mobile.svg">
-							<img class="primelabs__collab" src="<?php echo get_template_directory_uri(); ?>/img/primelabs/primelabs-collab-mobile.svg" alt="Prime Labs and Jay Freestone logos">
+							<source srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/img/primelabs/primelabs-collab.svg" media="(min-width: 40em)">
+							<source srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/img/primelabs/primelabs-collab-mobile.svg">
+							<img class="primelabs__collab" src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/primelabs/primelabs-collab-mobile.svg" alt="Prime Labs and Jay Freestone logos">
 						</picture>
 					</div>
 				</div>
@@ -89,7 +89,7 @@
 					<h2 class="heading-2">As Standard</h2>
 					<?php the_field( 'as_standard' ); ?>
 					<video class="prime-labs__video" width="870" height="473" loop>
-						<source src="<?php echo get_template_directory_uri(); ?>/img/primelabs/prime-labs-resize-video.mp4" type="video/mp4">
+						<source src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/primelabs/prime-labs-resize-video.mp4" type="video/mp4">
 						<!-- <source src="/img/casestudies/primelabs/prime&#45;labs&#45;resize&#45;video.webm" type="video/webm"> -->
 					</video>
 				</div>

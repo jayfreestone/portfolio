@@ -2,7 +2,7 @@
 
 		<footer class="l-sitefooter">
 			<div class="l-container">
-				&copy; <?php echo date( 'Y' ) . ' ' . get_bloginfo( 'sitename' ); ?> 
+				&copy; <?php echo esc_html( date( 'Y' ) . ' ' . get_bloginfo( 'sitename' ) ); ?> 
 			</div>
 		</footer>
 

@@ -8,7 +8,7 @@
 			</div>
 			<div class="dashboard__header__image">
 				<div class="image-wrapper image-wrapper--dashboard-intro">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-ipad.png" alt="Dashboard on an iPad">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad.png" alt="Dashboard on an iPad">
 				</div>
 			</div>
 		</div>
@@ -22,7 +22,7 @@
 					<?php the_field( 'setup_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-ipad.png" alt="Dashboard on an iPad">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad.png" alt="Dashboard on an iPad">
 				</div>
 			</div>
 		</section>
@@ -87,7 +87,7 @@
 					<?php the_field( 'problem_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-ipad.png" alt="Dashboard on an iPad">
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad.png" alt="Dashboard on an iPad">
 				</div>
 			</div>
 		</section>
@@ -106,7 +106,7 @@
 		
 		<section class="dashboard__site-scroll">
 			<div class="dashboard__site-scroll__inner">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/site-scroll.png" alt="Dashboard screenshot">
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/site-scroll.png" alt="Dashboard screenshot">
 			</div>
 		</section>
 		

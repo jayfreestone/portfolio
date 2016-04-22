@@ -184,8 +184,8 @@ function home_images() {
 		$i++;
 		$workImage = get_field( 'homepage_image' );
 		?>
-		.work-preview--<?php echo $i ?> .work-preview__image {
-			background-image: url('<?php echo $workImage['url']; ?>');
+		.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
+			background-image: url('<?php echo esc_url( $workImage['url'] ); ?>');
 		}
 	<?php endwhile; ?>
 </style>
@@ -198,10 +198,12 @@ add_action( 'wp_head', 'home_images' );
 
 //Page Slug Body Class
 function add_slug_body_class( $classes ) {
-   global $post;
-   if ( isset( $post ) ) {
-	  $classes[] = $post->post_type . '-' . $post->post_name;
-   }
-   return $classes;
+	global $post;
+
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+
+	return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );

@@ -12,7 +12,7 @@
 		<nav class="work-preview-container__nav">
 			<ul>
 				<?php for ( $x = 0; $x < $workCount; $x++ ) : ?>
-					<li class="work-preview-container__nav__item"><a href="work-preview--<?php echo $x + 1; ?>">0<?php echo $x + 1; ?></a></li>
+					<li class="work-preview-container__nav__item"><a href="work-preview--<?php echo esc_html( $x + 1 ); ?>">0<?php echo esc_html( $x + 1 ); ?></a></li>
 				<?php endfor ?>
 			</ul>
 		</nav>
@@ -34,12 +34,12 @@
 				$workClass .= ' work-preview--text-on-right';
 			}
 
-			if ($i >= 2) {
+			if ( $i >= 2 ) {
 				$workClass .= ' work-preview--next';
 			}
 		   	?>
 
-			<article id="work-preview--<?php echo $i; ?>" class="<?php echo $workClass; ?>" style="background-color: <?php the_field( 'homepage_background_color' ); ?>">
+			<article id="work-preview--<?php echo esc_html( $i ); ?>" class="<?php echo esc_html( $workClass ); ?>" style="background-color: <?php the_field( 'homepage_background_color' ); ?>">
 				<div class="work-preview__copy">
 					<a href="<?php the_permalink(); ?>">
 					   <h2 class="heading-1 work-preview__title"><?php the_title(); ?></h2>
@@ -51,13 +51,10 @@
 				</div>
 
 				<div class="work-preview__image">
-					<!-- <div class="image&#45;wrapper image&#45;wrapper&#45;&#45;home"> -->
-						<?php 
-						$workImage = get_field( 'homepage_image' );
-						$homepage = $workImage['sizes']['homepage'];
-						?>
-						<!-- <img class="lazyload" data&#45;src="<?php echo $homepage; ?>" alt="<?php the_title(); ?> Thumbnail"> -->
-					<!-- </div> -->
+				<?php
+					$workImage = get_field( 'homepage_image' );
+					$homepage = $workImage['sizes']['homepage'];
+					?>
 				</div>
 			</article>
 
