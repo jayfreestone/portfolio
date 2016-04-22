@@ -39,11 +39,11 @@
 			}
 		   	?>
 
-			<article id="work-preview--<?php echo esc_html( $i ); ?>" class="<?php echo esc_html( $workClass ); ?>" style="background-color: <?php the_field( 'homepage_background_color' ); ?>">
+			<article id="work-preview--<?php echo esc_html( $i ); ?>" class="<?php echo esc_html( $workClass ); ?>" style="background-color: <?php the_field( 'homepage_background_color' ); ?>" itemscope itemtype="http://schema.org/CreativeWork">
 				<div class="work-preview__copy">
 					<a href="<?php the_permalink(); ?>">
-						<h2 class="heading-1 work-preview__title"><?php the_title(); ?></h2>
-						<?php the_field( 'homepage_intro' ); ?>
+						<h2 class="heading-1 work-preview__title" itemprop="name"><?php the_title(); ?></h2>
+						<span itemprop="description"><?php the_field( 'homepage_intro' ); ?></span>
 						<span href="<?php the_permalink(); ?>" class="work-preview__link">
 							View Work
 						</span>

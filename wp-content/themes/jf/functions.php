@@ -8,7 +8,11 @@ function jf_setup() {
 	/**
 	 * Sets up image sizes
 	 */
-	add_image_size( 'homepage', '2000', '1500', true );
+	add_image_size( 'homepage-300', '300' );
+	add_image_size( 'homepage-600', '600');
+	add_image_size( 'homepage-1200', '1200' );
+	add_image_size( 'homepage', '2000' );
+
 	add_image_size( 'fullwidth-300', '300', '169', true );
 	add_image_size( 'fullwidth-600', '600', '338', true );
 	add_image_size( 'fullwidth-900', '900', '507', true );
@@ -166,7 +170,7 @@ add_action( 'wp_footer', 'viewport_buggyfill_inline' );
 /**
  * Handles returning font loading
  */
-function fontLoaded() {
+function font_loaded() {
 	?>
 	<script>
 		// If the font has already been loaded, add the class immediately
@@ -177,7 +181,7 @@ function fontLoaded() {
 	</script>
 	<?php
 }
-add_action( 'wp_head', 'fontLoaded' );
+add_action( 'wp_head', 'font_loaded' );
 
 /**
  * Get Recent Work
@@ -233,8 +237,62 @@ function home_images() {
 			$workImage = get_field( 'homepage_image' );
 			?>
 			.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-				background-image: url('<?php echo esc_url( $workImage['url'] ); ?>');
+				background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-300'] ); ?>');
 			}
+
+			@media only screen and (-webkit-min-device-pixel-ratio: 2),
+			only screen and (   min--moz-device-pixel-ratio: 2),
+			only screen and (     -o-min-device-pixel-ratio: 2/1),
+			only screen and (        min-device-pixel-ratio: 2),
+			only screen and (                min-resolution: 192dpi) and (min-width: 750px),
+			only screen and (                min-resolution: 2dppx) {
+				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
+					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-600'] ); ?>');
+				}
+			}
+
+			@media only screen and (min-width: 600px) {
+				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
+					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-600'] ); ?>');
+				}
+			}
+
+			@media
+			only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 600px),
+			only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 600px),
+			only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 600px),
+			only screen and (        min-device-pixel-ratio: 2)      and (min-width: 600px),
+			only screen and (                min-resolution: 192dpi) and (min-width: 600px),
+			only screen and (                min-resolution: 2dppx)  and (min-width: 600px) {
+				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
+					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-1200'] ); ?>');
+				}
+			}
+
+			@media only screen and (min-width: 1200px) {
+				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
+					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-1200'] ); ?>');
+				}
+			}
+
+			@media
+			only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1200px),
+			only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1200px),
+			only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1200px),
+			only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1200px),
+			only screen and (                min-resolution: 192dpi) and (min-width: 1200px),
+			only screen and (                min-resolution: 2dppx)  and (min-width: 1200px) {
+				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
+					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage'] ); ?>');
+				}
+			}
+
+			@media only screen and (min-width: 1600px) {
+				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
+					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage'] ); ?>');
+				}
+			}
+
 		<?php endwhile; ?>
 	</style>
 	<?php
