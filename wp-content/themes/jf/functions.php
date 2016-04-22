@@ -9,6 +9,13 @@ function jf_setup() {
 	 * Sets up image sizes
 	 */
 	add_image_size( 'homepage', '2000', '1500', true );
+	add_image_size( 'fullwidth-300', '300', '169', true );
+	add_image_size( 'fullwidth-600', '600', '338', true );
+	add_image_size( 'fullwidth-900', '900', '507', true );
+	add_image_size( 'fullwidth-1320', '1320', '743', true );
+	add_image_size( 'fullwidth-2000', '2000', '1125', true );
+	add_image_size( 'fullwidth-2640', '2640', '1485', true );
+	add_image_size( 'fullwidth-4000', '4000', '2250', true );
 	add_image_size( 'fullwidth', '6000', '3376', true );
 
 	/**
