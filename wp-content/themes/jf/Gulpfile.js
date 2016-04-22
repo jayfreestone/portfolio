@@ -70,6 +70,17 @@ gulp.task('js', function() {
 	return buildScript('main.js', false); // Runs once as watch is set to false
 });
 
+// External Scripts
+gulp.task('node-js', function() {
+	return gulp.src([
+		'node_modules/viewport-units-buggyfill/viewport-units-buggyfill.js',
+		'node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
+		'node_modules/gsap/src/minified/TweenMax.min.js',
+		'node_modules/hammerjs/hammer.min.js'
+	])
+	.pipe(gulp.dest(dist + 'js'));
+});
+
 function buildScript(file, watch) {
 	var props = {
 		entries: [src + 'js/' + file],
@@ -136,7 +147,7 @@ gulp.task('watch', function () {
 });
 
 // Build all files
-gulp.task('build', ['scss', 'js', 'img', 'fonts']);
+gulp.task('build', ['scss', 'js', 'node-js', 'img', 'fonts']);
 
 // Default task
 gulp.task('default', ['build', 'browser-sync', 'watch']);

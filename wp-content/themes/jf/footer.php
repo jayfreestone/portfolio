@@ -6,6 +6,8 @@
 			</div>
 		</footer>
 
+		<?php wp_footer(); ?>
+
 		<script>
 			// Load webfonts
 			var WebFontConfig = {
@@ -23,8 +25,6 @@
 			  s.parentNode.insertBefore(wf, s);
 			})(document);
 		</script>
-
-		<?php wp_footer(); ?>
 	</body>
 
 </html>

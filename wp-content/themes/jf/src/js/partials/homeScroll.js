@@ -1,6 +1,3 @@
-import vhBuggyfill from 'viewport-units-buggyfill';
-import hammerjs from 'hammerjs';
-
 let homeScroll = (function () {
 	let navItems;
 	let delta = 0;
@@ -21,7 +18,6 @@ let homeScroll = (function () {
 		if (nav) {
 			navItems = nav.querySelectorAll('a');
 		}
-		vhBuggyfill.init();
 		animateInitial();
 		bindUIEvents();
 	}
