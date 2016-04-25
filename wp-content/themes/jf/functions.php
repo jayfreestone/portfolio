@@ -9,9 +9,22 @@ function jf_setup() {
 	 * Sets up image sizes
 	 */
 	add_image_size( 'homepage-300', '300' );
-	add_image_size( 'homepage-600', '600');
+	add_image_size( 'homepage-600', '600' );
 	add_image_size( 'homepage-1200', '1200' );
 	add_image_size( 'homepage', '2000' );
+
+	add_image_size( 'landscape-300', '300', '200' );
+	add_image_size( 'landscape-600', '600', '400' );
+	add_image_size( 'landscape-900', '900', '600' );
+	add_image_size( 'landscape-1200', '1200', '800' );
+	add_image_size( 'landscape-1800', '1800', '1200' );
+	add_image_size( 'landscape-2400', '2400', '1600' );
+	add_image_size( 'landscape-3000', '3000', '2000' );
+
+	add_image_size( 'portrait-300', '300', '533' );
+	add_image_size( 'portrait-600', '600', '1066' );
+	add_image_size( 'portrait-900', '900', '1599' );
+	add_image_size( 'portrait-1200', '1200', '2132' );
 
 	add_image_size( 'fullwidth-300', '300', '169', true );
 	add_image_size( 'fullwidth-600', '600', '338', true );
