@@ -11,7 +11,7 @@ function jf_setup() {
 	add_image_size( 'homepage-300', '300' );
 	add_image_size( 'homepage-600', '600' );
 	add_image_size( 'homepage-1200', '1200' );
-	add_image_size( 'homepage', '2000' );
+	add_image_size( 'homepage-2400', '2400' );
 
 	add_image_size( 'landscape-300', '300', '200' );
 	add_image_size( 'landscape-600', '600', '400' );
@@ -234,81 +234,44 @@ function reset_recent_work_on_save() {
 }
 add_action( 'save_post', 'reset_recent_work_on_save' );
 
+function add_home_image( $image, $image_prefix, $image_size, $breakpoint, $number ) {
+	$css = '';
+
+	$css .= '.work-preview--' . esc_html( $number ) . ' .work-preview__image {';
+	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . $image_size] ) . ');';
+	$css .= '}';
+	$css .= '@media only screen and (-webkit-min-device-pixel-ratio: 2),';
+	$css .= 'only screen and (min--moz-device-pixel-ratio: 2),';
+	$css .= 'only screen and (-o-min-device-pixel-ratio: 2/1),';
+	$css .= 'only screen and (min-device-pixel-ratio: 2),';
+	$css .= 'only screen and (min-resolution: 192dpi) and (min-width: ' . $breakpoint . '),';
+	$css .= 'only screen and (min-resolution: 2dppx) {';
+	$css .= '.work-preview--' . esc_html( $number ) . ' .work-preview__image {';
+	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . $image_size] ) . ');';
+	$css .= '}';
+	$css .= '}';
+
+	return $css;
+}
+
 /**
  * Home Background images
  */
 function home_images() {
 	$work = get_recent_work();
+	$image_css = '';
 
 	if ( is_front_page() ) {
-	?>
-	<style>
-		<?php $i = 0; ?>
-		<?php while ( $work->have_posts() ) : $work->the_post(); ?>
-			<?php
+		$i = 0;
+		while ( $work->have_posts() ) : $work->the_post();
 			$i++;
 			$work_image = get_field( 'homepage_image' );
-			?>
-			.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-				background-image: url('<?php echo esc_url( $work_image['sizes']['homepage-300'] ); ?>');
-			}
+			$image_css .= add_home_image( $work_image, 'homepage', '300', '300px', $i );
+			$image_css .= add_home_image( $work_image, 'homepage', '600', '600px', $i );
+			$image_css .= add_home_image( $work_image, 'homepage', '1200', '1200px', $i );
+		 endwhile;
 
-			@media only screen and (-webkit-min-device-pixel-ratio: 2),
-			only screen and (   min--moz-device-pixel-ratio: 2),
-			only screen and (     -o-min-device-pixel-ratio: 2/1),
-			only screen and (        min-device-pixel-ratio: 2),
-			only screen and (                min-resolution: 192dpi) and (min-width: 750px),
-			only screen and (                min-resolution: 2dppx) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?>');
-				}
-			}
-
-			@media only screen and (min-width: 600px) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?>');
-				}
-			}
-
-			@media
-			only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 600px),
-			only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 600px),
-			only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 600px),
-			only screen and (        min-device-pixel-ratio: 2)      and (min-width: 600px),
-			only screen and (                min-resolution: 192dpi) and (min-width: 600px),
-			only screen and (                min-resolution: 2dppx)  and (min-width: 600px) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?>');
-				}
-			}
-
-			@media only screen and (min-width: 1200px) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?>');
-				}
-			}
-
-			@media
-			only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1200px),
-			only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1200px),
-			only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1200px),
-			only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1200px),
-			only screen and (                min-resolution: 192dpi) and (min-width: 1200px),
-			only screen and (                min-resolution: 2dppx)  and (min-width: 1200px) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage'] ); ?>');
-				}
-			}
-
-			@media only screen and (min-width: 1600px) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage'] ); ?>');
-				}
-			}
-
-		<?php endwhile; ?>
-	</style>
-	<?php
+		echo '<style>' . $image_css . '</style>';
 	}
 
 	wp_reset_postdata();
