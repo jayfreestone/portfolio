@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6979e645c21b574a56d296d240da3861",
-    "content-hash": "ba2086770db26cbbce39db28f7850f91",
+    "hash": "e1af30c0d4da7f560f0391a5287c8027",
+    "content-hash": "c8e33bb1f2407d7bb0e805c7bb37cc91",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -262,6 +262,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/nginx-helper/"
+        },
+        {
+            "name": "wpackagist-plugin/redis-cache",
+            "version": "1.2.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redis-cache/",
+                "reference": "tags/1.2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.2.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redis-cache/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",

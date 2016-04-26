@@ -27,7 +27,8 @@
     "advanced-custom-fields/advanced-custom-fields-pro": "5.3.7",
 	"wpackagist-plugin/wordpress-seo": "3.2.3",
 	"wpackagist-plugin/force-regenerate-thumbnails": "2.0.5",
-	"wpackagist-plugin/nginx-helper": "1.9.6"
+	"wpackagist-plugin/nginx-helper": "1.9.6",
+	"wpackagist-plugin/redis-cache": "1.2.3"
   },
   "require-dev": {
     "wpackagist-plugin/debug-bar": "*"
