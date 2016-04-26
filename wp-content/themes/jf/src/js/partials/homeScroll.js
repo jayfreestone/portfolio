@@ -39,11 +39,26 @@ let homeScroll = (function () {
 	}
 
 	function animateInitial() {
+		let firstWork = document.querySelector('.work-preview--1');
+		fadeBackgroundImage(firstWork.querySelector('.work-preview__image'));
+
 		setTimeout(function(){
-			let firstWork = document.querySelector('.work-preview--1');
 			firstWork.classList.add('work-preview--current');
 			navItems[0].parentNode.classList.add('work-preview-container__nav__item--is-active');
 		}, 200);
+	}
+
+	function fadeBackgroundImage(image) {
+		let backgroundStyle = window.getComputedStyle(image)['background-image'];
+		let backgroundImage = backgroundStyle.match(/\"(.*?)\"/)[0];
+		let imageTemp = document.createElement('img');
+		imageTemp.src = backgroundImage.replace(/"/g, '');
+
+		imageTemp.addEventListener('load', function() {
+			imageTemp.classList.remove('.is-hidden');
+		});
+
+		console.log(imageTemp);
 	}
 
 	function bindUIEvents() {
