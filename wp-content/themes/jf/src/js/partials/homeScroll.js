@@ -1,3 +1,5 @@
+import fadeBackgroundImage from './fadeBackgroundImage.js';
+
 let homeScroll = (function () {
 	let navItems;
 	let delta = 0;
@@ -55,23 +57,8 @@ let homeScroll = (function () {
 		let workImages = document.querySelectorAll('.work-preview__image');
 
 		for (let i = 0; i < workImages.length; i++) {
-			fadeBackgroundImage(workImages[i]);
+			fadeBackgroundImage.fade(workImages[i]);
 		}
-	}
-
-	// Fades in a background image once loaded
-	function fadeBackgroundImage(image) {
-		let backgroundStyle = window.getComputedStyle(image)['background-image'];
-		let backgroundImage = backgroundStyle.match(/\"(.*?)\"/)[0];
-		let imageTemp = document.createElement('img');
-		imageTemp.src = backgroundImage.replace(/"/g, '');
-
-		imageTemp.addEventListener('load', function() {
-			image.classList.remove('is-hidden');
-			console.log('loaded');
-		});
-
-		console.log(imageTemp);
 	}
 
 	function bindUIEvents() {
