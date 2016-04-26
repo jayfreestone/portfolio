@@ -211,8 +211,8 @@
 }
 
 @for $i from 1 through 10 {
-	.work-preview--(#{$i}) {
-		z-index: (#{$i + 10});
+	.work-preview--#{$i} {
+		z-index: ($i + 10);
 	}
 }
 
