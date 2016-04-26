@@ -1,8 +1,10 @@
+<!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="theme-color" content="#323232">
 		<link rel="preload" href="<?php echo esc_url( get_template_directory_uri() ); ?>/src/fonts/graphik/Graphik-Bold-Web.woff" as="font" type="font/woff" crossorigin>
 		<?php wp_head(); ?>
 	</head>
