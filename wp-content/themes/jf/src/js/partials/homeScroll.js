@@ -40,7 +40,9 @@ let homeScroll = (function () {
 
 	function animateInitial() {
 		let firstWork = document.querySelector('.work-preview--1');
-		fadeBackgroundImage(firstWork.querySelector('.work-preview__image'));
+		// fadeBackgroundImage(firstWork.querySelector('.work-preview__image'));
+
+		fadeImagesOnLoad();
 
 		setTimeout(function(){
 			firstWork.classList.add('work-preview--current');
@@ -48,6 +50,16 @@ let homeScroll = (function () {
 		}, 200);
 	}
 
+	// Displays background images only once loaded
+	function fadeImagesOnLoad() {
+		let workImages = document.querySelectorAll('.work-preview__image');
+
+		for (let i = 0; i < workImages.length; i++) {
+			fadeBackgroundImage(workImages[i]);
+		}
+	}
+
+	// Fades in a background image once loaded
 	function fadeBackgroundImage(image) {
 		let backgroundStyle = window.getComputedStyle(image)['background-image'];
 		let backgroundImage = backgroundStyle.match(/\"(.*?)\"/)[0];
@@ -55,7 +67,8 @@ let homeScroll = (function () {
 		imageTemp.src = backgroundImage.replace(/"/g, '');
 
 		imageTemp.addEventListener('load', function() {
-			imageTemp.classList.remove('.is-hidden');
+			image.classList.remove('is-hidden');
+			console.log('loaded');
 		});
 
 		console.log(imageTemp);

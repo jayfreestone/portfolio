@@ -15,3 +15,16 @@
 		color: #fff;
 	}
 }
+
+.is-hidden,
+.is-visible {
+	transition: all 1s;
+}
+
+.is-hidden {
+	opacity: 0 !important;
+}
+
+.is-visible {
+	opacity:1;
+}
