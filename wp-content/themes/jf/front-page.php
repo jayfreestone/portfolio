@@ -50,12 +50,7 @@
 					</a>
 				</div>
 
-				<div class="work-preview__image">
-					<?php
-					$work_image = get_field( 'homepage_image' );
-					$homepage = $work_image['sizes']['homepage'];
-					?>
-				</div>
+				<div class="work-preview__image is-hidden"></div>
 			</article>
 
 		<?php endwhile; ?>
