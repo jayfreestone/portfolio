@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e1af30c0d4da7f560f0391a5287c8027",
-    "content-hash": "c8e33bb1f2407d7bb0e805c7bb37cc91",
+    "hash": "118c6f2093db03fd8a0b06d320ef413a",
+    "content-hash": "0ab5b71ebf6d2e698998dad5b51c63cb",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -222,26 +222,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
-        },
-        {
-            "name": "wpackagist-plugin/force-regenerate-thumbnails",
-            "version": "2.0.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/force-regenerate-thumbnails/",
-                "reference": "tags/2.0.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/force-regenerate-thumbnails.2.0.5.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/force-regenerate-thumbnails/"
         },
         {
             "name": "wpackagist-plugin/nginx-helper",
