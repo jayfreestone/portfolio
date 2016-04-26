@@ -54,8 +54,8 @@ add_action( 'after_setup_theme', 'jf_setup' );
  * Use parsedown to convert markdown
  */
 function md( $text ) {
-	$Parsedown = new Parsedown();
-	return $Parsedown->text( $text );
+	$parsedown = new Parsedown();
+	return $parsedown->text( $text );
 }
 
 /**
@@ -247,10 +247,10 @@ function home_images() {
 		<?php while ( $work->have_posts() ) : $work->the_post(); ?>
 			<?php
 			$i++;
-			$workImage = get_field( 'homepage_image' );
+			$work_image = get_field( 'homepage_image' );
 			?>
 			.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-				background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-300'] ); ?>');
+				background-image: url('<?php echo esc_url( $work_image['sizes']['homepage-300'] ); ?>');
 			}
 
 			@media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -260,13 +260,13 @@ function home_images() {
 			only screen and (                min-resolution: 192dpi) and (min-width: 750px),
 			only screen and (                min-resolution: 2dppx) {
 				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-600'] ); ?>');
+					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?>');
 				}
 			}
 
 			@media only screen and (min-width: 600px) {
 				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-600'] ); ?>');
+					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?>');
 				}
 			}
 
@@ -278,13 +278,13 @@ function home_images() {
 			only screen and (                min-resolution: 192dpi) and (min-width: 600px),
 			only screen and (                min-resolution: 2dppx)  and (min-width: 600px) {
 				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-1200'] ); ?>');
+					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?>');
 				}
 			}
 
 			@media only screen and (min-width: 1200px) {
 				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-1200'] ); ?>');
+					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?>');
 				}
 			}
 
@@ -296,13 +296,13 @@ function home_images() {
 			only screen and (                min-resolution: 192dpi) and (min-width: 1200px),
 			only screen and (                min-resolution: 2dppx)  and (min-width: 1200px) {
 				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage'] ); ?>');
+					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage'] ); ?>');
 				}
 			}
 
 			@media only screen and (min-width: 1600px) {
 				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage'] ); ?>');
+					background-image: url('<?php echo esc_url( $work_image['sizes']['homepage'] ); ?>');
 				}
 			}
 
@@ -315,7 +315,9 @@ function home_images() {
 }
 add_action( 'wp_head', 'home_images' );
 
-//Page Slug Body Class
+/**
+ * Page Slug Body Class
+ */
 function add_slug_body_class( $classes ) {
 	global $post;
 
@@ -326,3 +328,15 @@ function add_slug_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
+
+/**
+ * Remove WP version from css and js
+ */
+function remove_wp_ver_css_js( $src ) {
+    if ( strpos( $src, 'ver=' ) ) {
+        $src = remove_query_arg( 'ver', $src );
+    }
+    return $src;
+}
+add_filter( 'style_loader_src', 'remove_wp_ver_css_js', 9999 );
+add_filter( 'script_loader_src', 'remove_wp_ver_css_js', 9999 );
