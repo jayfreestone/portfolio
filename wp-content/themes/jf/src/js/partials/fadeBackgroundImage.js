@@ -7,6 +7,7 @@ let fadeBackgroundImage = (function () {
 		console.log(backgroundStyle);
 		let backgroundImage = backgroundStyle.match(/\/\/([a-z0-9\-\.\/]+)/)[0];
 		let imageTemp = document.createElement('img');
+		imageTemp.src = backgroundImage.replace(/"/g, '');
 
 		imageTemp.addEventListener('load', function() {
 			image.classList.remove('is-hidden');
