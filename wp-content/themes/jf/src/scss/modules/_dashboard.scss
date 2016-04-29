@@ -10,9 +10,9 @@ $ov-grey: #f8f8f8;
 		align-items: center;
 		flex-wrap: wrap;
 
-		// @include breakpoint(40em) {
-		// 	flex-direction: row-reverse;
-		// }
+		@include breakpoint(60em) {
+			flex-direction: row-reverse;
+		}
 
 	}
 }
@@ -21,8 +21,8 @@ $ov-grey: #f8f8f8;
 	width: 100%;
 	align-self: flex-end;
 
-	@include breakpoint(40em) {
-		@include span(6 of 12 omega);
+	@include breakpoint(60em) {
+		width: span(6 of 12);
 	}
 }
 
@@ -30,7 +30,7 @@ $ov-grey: #f8f8f8;
 	padding-bottom: 2rem;
 
 	@include breakpoint(40em) {
-		@include span(6 of 12);
+		width: span(6 of 12);
 	}
 }
 
@@ -59,12 +59,15 @@ $ov-grey: #f8f8f8;
 
 .dashboard__height {
 	visibility: hidden;
+	padding: 1rem;
 }
 
 .dashboard__figure {
 	text-align: center;
 	font-weight: bold;
 	text-transform: uppercase;
+	margin-left: 0;
+	margin-right: 0;
 
 	svg {
 		height: 2rem;
@@ -147,7 +150,11 @@ $ov-grey: #f8f8f8;
 }
 
 .dashboard__problems {
-	background: $ov-black;
+	background-color: $ov-grey;
+	background-image: url('../../../img/dashboard/network.svg');
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: left center;
 }
 
 .dashboard__site-scroll,
@@ -190,32 +197,11 @@ $ov-grey: #f8f8f8;
 }
 
 .dashboard__groundwork__logo {
-// 	position: relative;
-// 	width: 100%;
-//
-// 	@include breakpoint(60rem) {
-// 		width: 40%;
-// 		margin-left: auto;
-// 	}
-//
-// 	svg {
-// 		display: block;
-// 		max-width: 15rem;
-// 		margin: 0 auto;
-//
-// 		@include breakpoint(60rem) {
-// 			position: absolute;
-// 			left: 0;
-// 			height: 100%;
-// 			right: -10%;
-// 			max-width: none;
-// 		}
-//
-// 		@include breakpoint(100rem) {
-// 			height: 140%;
-// 			top: -20%;
-// 		}
-//	
+	svg {
+		@include breakpoint(60rem) {
+			float: right;
+		}
+
 		.js & {
 			path {
 				opacity: 0;
@@ -224,7 +210,7 @@ $ov-grey: #f8f8f8;
 			}
 
 		}
-// 	}
+	}
 }
 
 .dashboard__deployment {
@@ -272,3 +258,10 @@ $ov-grey: #f8f8f8;
 	}
 }
 
+
+.dashboard__setup {
+	background-image: url('../../../img/dashboard/plug.svg');
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: right center;
+}

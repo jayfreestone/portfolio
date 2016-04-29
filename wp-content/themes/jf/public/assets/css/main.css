@@ -1118,7 +1118,9 @@ code {
 
 .work-preview__image {
   width: 100%;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
   -webkit-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
@@ -1765,6 +1767,18 @@ code {
           flex-wrap: wrap;
 }
 
+@media only screen and (min-width: 60em) {
+  .dashboard__header > .l-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
 .dashboard__header__image {
   width: 100%;
   -webkit-align-self: flex-end;
@@ -1772,11 +1786,9 @@ code {
           align-self: flex-end;
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60em) {
   .dashboard__header__image {
     width: 49.15254%;
-    float: right;
-    margin-right: 0;
   }
 }
 
@@ -1787,8 +1799,6 @@ code {
 @media only screen and (min-width: 40em) {
   .dashboard__intro {
     width: 49.15254%;
-    float: left;
-    margin-right: 1.69492%;
   }
 }
 
@@ -1827,12 +1837,15 @@ code {
 
 .dashboard__height {
   visibility: hidden;
+  padding: 1rem;
 }
 
 .dashboard__figure {
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .dashboard__figure svg {
@@ -1963,7 +1976,11 @@ code {
 }
 
 .dashboard__problems {
-  background: #4d4d4d;
+  background-color: #f8f8f8;
+  background-image: url("../../../img/dashboard/network.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: left center;
 }
 
 .dashboard__site-scroll,
@@ -2011,7 +2028,13 @@ code {
   display: flex;
 }
 
-.js .dashboard__groundwork__logo path {
+@media only screen and (min-width: 60rem) {
+  .dashboard__groundwork__logo svg {
+    float: right;
+  }
+}
+
+.js .dashboard__groundwork__logo svg path {
   opacity: 0;
   stroke: #00d8ff;
   fill: #fff;
@@ -2059,6 +2082,13 @@ code {
 
 .dashboard__terminal__buttons:after {
   background: #28ca41;
+}
+
+.dashboard__setup {
+  background-image: url("../../../img/dashboard/plug.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: right center;
 }
 
 .link-widget {
