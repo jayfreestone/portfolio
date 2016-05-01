@@ -114,11 +114,7 @@
 }
 
 .dashboard__problems {
-	background-color: #323435;
-	background-image: url('../../../img/dashboard/network.svg');
-	background-repeat: no-repeat;
-	background-size: 50%;
-	background-position: left center;
+	background-color: $ov-grey;
 }
 
 .dashboard__groundwork {
@@ -195,10 +191,6 @@
 
 
 .dashboard__setup {
-	background-image: url('../../../img/dashboard/plug.svg');
-	background-repeat: no-repeat;
-	background-size: 50%;
-	background-position: right center;
 }
 
 .dashboard__preview {
@@ -210,9 +202,11 @@
 		max-width: 80rem;
 		margin: 0 auto;
 		display: block;
+		margin-top: -12rem;
+		margin-bottom: -10rem;
 	}
 }
 
 .dashboard__bonus {
-	background: #323435;
+	background: $ov-grey;
 }

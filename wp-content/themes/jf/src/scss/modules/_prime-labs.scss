@@ -1,6 +1,3 @@
-$pl-orange: #f75d37;
-$pl-blue: #4e4e5d;
-
 .prime-labs {
 
 }
@@ -16,6 +13,10 @@ $pl-blue: #4e4e5d;
 .prime-labs__section--problems {
 	background-color: $pl-blue;
 	color: #fff;
+	background-image: url('../../../img/primelabs/network.svg');
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-position: left center;
 
 	ol {
 		counter-reset: problems;

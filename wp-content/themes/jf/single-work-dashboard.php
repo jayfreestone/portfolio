@@ -28,7 +28,7 @@
 			</div>
 		</section>
 		
-		<section class="chunk chunk--swap dashboard__section dashboard__problems whiteout cf">
+		<section class="chunk chunk--swap dashboard__section dashboard__problems cf">
 			<div class="chunk__inner l-container">
 				<div class="chunk__primary">
 					<h2 class="heading-1"><?php the_field( 'problem_title' ); ?></h2>
@@ -52,9 +52,7 @@
 		</section>
 
 		<section class="dashboard__preview">
-			<div class="l-container">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-ipad-flat.png" alt="Dashboard displayed on an iPad.">
-			</div>
+			<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-ipad-flat.png" alt="Dashboard displayed on an iPad.">
 		</section>
 		
 		<section class="chunk chunk--swap dashboard__section dashboard__deployment cf">
