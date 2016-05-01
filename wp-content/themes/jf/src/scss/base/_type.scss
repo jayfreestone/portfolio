@@ -52,6 +52,10 @@
 	@include breakpoint(40em) {
 		font-size: 2.2rem;
 	}
+
+	@include breakpoint(80em) {
+		font-size: 3rem;
+	}
 }
 
 .heading-2 {

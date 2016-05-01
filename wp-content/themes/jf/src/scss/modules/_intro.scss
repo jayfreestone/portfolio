@@ -1,5 +1,84 @@
 .intro {
-	padding: 7rem 0 0;
-	overflow: hidden;
+	text-align: center;
+	position: relative;
+	background-size: cover;
+	// background-position: center center;
 }
 
+.intro__copy {
+	padding: 7rem 0 5rem;
+
+	@include breakpoint(50rem) {
+		padding: 22rem 0 16rem;
+	}
+}
+
+.intro__title {
+	font-size: 4rem;
+	margin: .5rem 0;
+}
+
+.intro__description {
+	margin: 0 auto;
+	max-width: 45rem;
+}
+
+.intro__skillset {
+	@include delist();
+	padding: 1rem 0;
+	font-size: .8rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+
+	> li {
+		display: inline-block;
+
+		&:not(:last-child) {
+			&:after {
+				content: '/';
+				margin: 0 .5rem;
+			}
+		}
+	}
+}
+
+// .intro__backdrop {
+// 	position: fixed;
+// 	top: 0;
+// 	bottom: 0;
+// 	right: 0;
+// 	left: 0;
+// 	background-size: cover;
+// 	z-index: -1;
+// }
+
+
+.intro__overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.intro__overlay--dashboard {
+	background-color: rgba(#d0021b, .9);
+}
+
+.intro__overlay--prime-labs {
+	background-color: rgba($pl-orange, .3);
+}
+
+.intro__content {
+	position: relative;
+}
+
+.intro--dashboard {
+	background-color: #d0021b;
+	background-image: url('../../../img/dashboard/dashboard-background.jpg');
+}
+
+.intro--prime-labs {
+	background-color: rgba($pl-orange, .9);
+	background-image: url('../../../img/primelabs/prime-labs-background.jpg');
+}

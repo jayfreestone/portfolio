@@ -1,39 +1,3 @@
-$ov-red: #9d0e12;
-$ov-black: #4d4d4d;
-$ov-grey: #f8f8f8;
-
-.dashboard__header {
-	background-color: $ov-red;
-
-	> .l-container {
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-
-		// @include breakpoint(40em) {
-		// 	flex-direction: row-reverse;
-		// }
-
-	}
-}
-
-.dashboard__header__image {
-	width: 100%;
-	align-self: flex-end;
-
-	@include breakpoint(40em) {
-		@include span(6 of 12 omega);
-	}
-}
-
-.dashboard__intro {
-	padding-bottom: 2rem;
-
-	@include breakpoint(40em) {
-		@include span(6 of 12);
-	}
-}
-
 .dashboard__process {
 	background: #f9f9f9;
 	overflow: hidden;
@@ -59,12 +23,15 @@ $ov-grey: #f8f8f8;
 
 .dashboard__height {
 	visibility: hidden;
+	padding: 1rem;
 }
 
 .dashboard__figure {
 	text-align: center;
 	font-weight: bold;
 	text-transform: uppercase;
+	margin-left: 0;
+	margin-right: 0;
 
 	svg {
 		height: 2rem;
@@ -147,38 +114,7 @@ $ov-grey: #f8f8f8;
 }
 
 .dashboard__problems {
-	background: $ov-black;
-}
-
-.dashboard__site-scroll,
-.dashboard__site-scroll__inner {
-	height: 20rem;
-}
-
-.dashboard__site-scroll {
-	background: $ov-red;
-	overflow: hidden;
-	position: relative;
-}
-
-.dashboard__site-scroll__inner {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	padding: 0 1rem;
-
-	img {
-		display: block;
-		margin: 0 auto;
-		width: 40rem;
-		border-top: 2rem solid $ov-red;
-		border-bottom: 2rem solid $ov-red;
-
-		@include breakpoint(60rem) {
-			width: 50rem;
-		}
-	}
+	background-color: $ov-grey;
 }
 
 .dashboard__groundwork {
@@ -190,32 +126,11 @@ $ov-grey: #f8f8f8;
 }
 
 .dashboard__groundwork__logo {
-// 	position: relative;
-// 	width: 100%;
-//
-// 	@include breakpoint(60rem) {
-// 		width: 40%;
-// 		margin-left: auto;
-// 	}
-//
-// 	svg {
-// 		display: block;
-// 		max-width: 15rem;
-// 		margin: 0 auto;
-//
-// 		@include breakpoint(60rem) {
-// 			position: absolute;
-// 			left: 0;
-// 			height: 100%;
-// 			right: -10%;
-// 			max-width: none;
-// 		}
-//
-// 		@include breakpoint(100rem) {
-// 			height: 140%;
-// 			top: -20%;
-// 		}
-//	
+	svg {
+		@include breakpoint(60rem) {
+			float: right;
+		}
+
 		.js & {
 			path {
 				opacity: 0;
@@ -224,18 +139,20 @@ $ov-grey: #f8f8f8;
 			}
 
 		}
-// 	}
+	}
 }
 
 .dashboard__deployment {
-	background: $ov-grey;
+	// background: $ov-grey;
 }
 
 .dashboard__terminal {
 	background: #333333;
 	border-radius: 10px;
-	min-height: 20rem;
+	min-height: 25rem;
 	border-top: 2rem solid #e6e6e6;
+	max-width: 40rem;
+	box-shadow: 0px 10px 33px -2px rgba(0,0,0,0.20);
 }
 
 .dashboard__terminal__buttons {
@@ -272,3 +189,24 @@ $ov-grey: #f8f8f8;
 	}
 }
 
+
+.dashboard__setup {
+}
+
+.dashboard__preview {
+	background: $ov-grey;
+	padding: 4rem 0;
+
+	img {
+		width: 100%;
+		max-width: 80rem;
+		margin: 0 auto;
+		display: block;
+		margin-top: -12rem;
+		margin-bottom: -10rem;
+	}
+}
+
+.dashboard__bonus {
+	background: $ov-grey;
+}
