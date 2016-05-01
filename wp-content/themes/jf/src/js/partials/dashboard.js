@@ -1,10 +1,7 @@
 let dashboard = (function () {
-	let headerSection = document.querySelector('.dashboard__header');
-	let scrollSection = document.querySelector('.dashboard__site-scroll');
 	let groundSection = document.querySelector('.dashboard__groundwork');
 
 	function init() {
-		intro();
 		bindUIActions();
 	}
 
@@ -13,7 +10,6 @@ let dashboard = (function () {
 		let controller = new ScrollMagic.Controller();
 
 		// Add scenes
-		addScene(controller, scrollSection, siteScroll);
 		addScene(controller, groundSection, reactAnimation);
 	}
 
@@ -28,28 +24,6 @@ let dashboard = (function () {
 		new ScrollMagic.Scene(options).on('start', handler).addTo(controller);
 	}
 
-	// Intro/Header animation
-	function intro() {
-		let tl = new TimelineMax({ delay: 0.5 });
-		let image = headerSection.querySelector('img');
-
-		tl.from(image, 1, { y: '20%'})
-		  .to(image, 1, { opacity: 1 });
-	}
-
-	// Scrolling site image animation
-	function siteScroll() {
-		let scrollInner = scrollSection.querySelector('.dashboard__site-scroll__inner');
-
-		let tl = new TimelineMax({ delay: 2 });
-
-		tl.set(scrollInner, { height: 'auto' })
-		.from(scrollInner, 3, { height: '20rem', ease: Power2.easeOut });
-
-		setTimeout(function () {
-			tl.reverse(3);
-		}, 6000);
-	}
 
 	// React Logo Animation
 	function reactAnimation() {

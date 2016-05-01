@@ -27,9 +27,13 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
+	max-width: 120rem;
+	margin: 0 auto;
 }
 
 .chunk__primary {
+	max-width: 36rem;
+
 	@include breakpoint(60em) {
 		width: span(5.5 of 12);
 	}

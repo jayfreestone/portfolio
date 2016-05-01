@@ -474,6 +474,12 @@ th {
   }
 }
 
+@media only screen and (min-width: 80em) {
+  .heading-1 {
+    font-size: 3rem;
+  }
+}
+
 .heading-2, .journal-single h2 {
   font-size: 1.3rem;
 }
@@ -1360,8 +1366,69 @@ code {
 }
 
 .intro {
-  padding: 7rem 0 0;
-  overflow: hidden;
+  text-align: center;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+
+.intro__copy {
+  padding: 7rem 0 5rem;
+}
+
+@media only screen and (min-width: 50rem) {
+  .intro__copy {
+    padding: 15rem 0 11rem;
+  }
+}
+
+.intro__title {
+  font-size: 4rem;
+  margin: .5rem 0;
+}
+
+.intro__description {
+  margin: 0 auto;
+  max-width: 45rem;
+}
+
+.intro__skillset {
+  list-style: none;
+  padding-left: 0;
+  padding: 1rem 0;
+  font-size: .9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.intro__skillset > li {
+  display: inline-block;
+}
+
+.intro__skillset > li:not(:last-child):after {
+  content: '/';
+  margin: 0 .5rem;
+}
+
+.intro__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.intro__overlay--dashboard {
+  background-color: rgba(157, 14, 18, 0.9);
+}
+
+.intro__content {
+  position: relative;
+}
+
+.intro--dashboard {
+  background-color: rgba(171, 14, 18, 0.9);
+  background-image: url("../../../img/dashboard/dashboard-background--large.jpg");
 }
 
 .about__content {
@@ -1747,61 +1814,6 @@ code {
   background-repeat: no-repeat;
 }
 
-.dashboard__header {
-  background-color: #9d0e12;
-}
-
-.dashboard__header > .l-container {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-}
-
-@media only screen and (min-width: 60em) {
-  .dashboard__header > .l-container {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-    -webkit-flex-direction: row-reverse;
-       -moz-box-orient: horizontal;
-       -moz-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-  }
-}
-
-.dashboard__header__image {
-  width: 100%;
-  -webkit-align-self: flex-end;
-      -ms-flex-item-align: end;
-          align-self: flex-end;
-}
-
-@media only screen and (min-width: 60em) {
-  .dashboard__header__image {
-    width: 49.15254%;
-  }
-}
-
-.dashboard__intro {
-  padding-bottom: 2rem;
-}
-
-@media only screen and (min-width: 40em) {
-  .dashboard__intro {
-    width: 49.15254%;
-  }
-}
-
 .dashboard__process {
   background: #f9f9f9;
   overflow: hidden;
@@ -1976,44 +1988,11 @@ code {
 }
 
 .dashboard__problems {
-  background-color: #f8f8f8;
+  background-color: #323435;
   background-image: url("../../../img/dashboard/network.svg");
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: left center;
-}
-
-.dashboard__site-scroll,
-.dashboard__site-scroll__inner {
-  height: 20rem;
-}
-
-.dashboard__site-scroll {
-  background: #9d0e12;
-  overflow: hidden;
-  position: relative;
-}
-
-.dashboard__site-scroll__inner {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0 1rem;
-}
-
-.dashboard__site-scroll__inner img {
-  display: block;
-  margin: 0 auto;
-  width: 40rem;
-  border-top: 2rem solid #9d0e12;
-  border-bottom: 2rem solid #9d0e12;
-}
-
-@media only screen and (min-width: 60rem) {
-  .dashboard__site-scroll__inner img {
-    width: 50rem;
-  }
 }
 
 .dashboard__groundwork {
@@ -2040,16 +2019,15 @@ code {
   fill: #fff;
 }
 
-.dashboard__deployment {
-  background: #f8f8f8;
-}
-
 .dashboard__terminal {
   background: #333333;
   -webkit-border-radius: 10px;
           border-radius: 10px;
-  min-height: 20rem;
+  min-height: 25rem;
   border-top: 2rem solid #e6e6e6;
+  max-width: 40rem;
+  -webkit-box-shadow: 0px 10px 33px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 10px 33px -2px rgba(0, 0, 0, 0.2);
 }
 
 .dashboard__terminal__buttons {
@@ -2089,6 +2067,22 @@ code {
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: right center;
+}
+
+.dashboard__preview {
+  background: #f8f8f8;
+  padding: 4rem 0;
+}
+
+.dashboard__preview img {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: block;
+}
+
+.dashboard__bonus {
+  background: #323435;
 }
 
 .link-widget {
@@ -2251,6 +2245,12 @@ code {
      -moz-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.chunk__primary {
+  max-width: 36rem;
 }
 
 @media only screen and (min-width: 60em) {
@@ -2297,6 +2297,17 @@ code {
      -moz-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.badge {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-style: italic;
+  padding: .3rem .6rem;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  border: 1px solid #fff;
+  font-size: .7rem;
 }
 
 .l-siteheader {
