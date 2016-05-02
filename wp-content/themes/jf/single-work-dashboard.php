@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <article class="dashboard">
 	<header class="intro intro--dashboard whiteout cf">
+		<div class="intro__background intro__background--dashboard is-hidden"></div>
 		<div class="intro__overlay intro__overlay--dashboard"></div>
 		<div class="intro__content l-container">
 			<div class="intro__copy">
@@ -26,6 +27,7 @@
 					<?php the_field( 'setup_copy' ); ?>
 				</div>
 			</div>
+			<div class="dashboard__setup__bg is-hidden"></div>
 		</section>
 		
 		<section class="chunk chunk--swap dashboard__section dashboard__problems cf">
@@ -35,6 +37,7 @@
 					<?php the_field( 'problem_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube.jpg" alt="Photo of a rubix cube.">
 				</div>
 			</div>
 		</section>
@@ -62,9 +65,9 @@
 					<?php the_field( 'deployment_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
-					<div class="dashboard__terminal">
+					<pre class="dashboard__terminal">
 						<div class="dashboard__terminal__buttons"><span></span></div>
-					</div>
+					</pre>
 				</div>
 			</div>
 		</section>
@@ -74,6 +77,9 @@
 				<div class="chunk__primary">
 					<h2 class="heading-1"><?php the_field( 'bonus_round_title' ); ?></h2>
 					<?php the_field( 'bonus_round_copy' ); ?>
+				</div>
+				<div class="chunk__secondary">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dash-composer.png" alt="Composer Generator on OV Dash">
 				</div>
 			</div>
 		</section>

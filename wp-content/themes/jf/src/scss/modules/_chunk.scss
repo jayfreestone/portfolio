@@ -11,8 +11,10 @@
 }
 
 .chunk--swap {
-	.chunk__inner {
-		flex-direction: row-reverse;
+	@include breakpoint(70em) {
+		.chunk__inner {
+			flex-direction: row-reverse;
+		}
 	}
 }
 
@@ -31,16 +33,27 @@
 	margin: 0 auto;
 }
 
-.chunk__primary {
+.chunk__primary,
+.chunk__secondary {
+	width: 100%;
 	max-width: 36rem;
+	margin: 0 auto;
 
+	@include breakpoint(60em) {
+		margin: initial;
+	}
+}
+
+.chunk__primary {
 	@include breakpoint(60em) {
 		width: span(5.5 of 12);
 	}
 }
 
 .chunk__secondary {
+
 	@include breakpoint(60em) {
+		max-width: none;
 		width: span(5.5 of 12);
 	}
 }

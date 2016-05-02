@@ -1,3 +1,5 @@
+import fadeBackgroundImage from './fadeBackgroundImage.js';
+
 let dashboard = (function () {
 	let groundSection = document.querySelector('.dashboard__groundwork');
 
@@ -9,8 +11,16 @@ let dashboard = (function () {
 		// Init controller
 		let controller = new ScrollMagic.Controller();
 
+		// Fade in intro image
+		fadeIntro();
+
 		// Add scenes
 		addScene(controller, groundSection, reactAnimation);
+	}
+
+	function fadeIntro() {
+		let intro = document.querySelector('.intro__background');
+		fadeBackgroundImage.fade(intro);
 	}
 
 	// Adds a scene with predefined options to the controller

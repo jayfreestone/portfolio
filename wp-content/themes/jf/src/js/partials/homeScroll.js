@@ -44,7 +44,7 @@ let homeScroll = (function () {
 		let firstWork = document.querySelector('.work-preview--1');
 		// fadeBackgroundImage(firstWork.querySelector('.work-preview__image'));
 
-		fadeImagesOnLoad();
+		// fadeImagesOnLoad();
 
 		setTimeout(function(){
 			firstWork.classList.add('work-preview--current');
@@ -53,13 +53,13 @@ let homeScroll = (function () {
 	}
 
 	// Displays background images only once loaded
-	function fadeImagesOnLoad() {
-		let workImages = document.querySelectorAll('.work-preview__image');
-
-		for (let i = 0; i < workImages.length; i++) {
-			fadeBackgroundImage.fade(workImages[i]);
-		}
-	}
+	// function fadeImagesOnLoad() {
+	// 	let workImages = document.querySelectorAll('.work-preview__image');
+    //
+	// 	for (let i = 0; i < workImages.length; i++) {
+	// 		fadeBackgroundImage.fade(workImages[i]);
+	// 	}
+	// }
 
 	function bindUIEvents() {
 		window.addEventListener('keydown', keyboardNav);

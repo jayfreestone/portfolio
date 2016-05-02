@@ -4,6 +4,9 @@
 	font-style: italic;
 	padding: .3rem .6rem;
 	border-radius: 2px;
-	border: 1px solid #fff;
+	border-width: 1px;
+	border-style: solid;
+	border-color: $black;
+	border-color: currentColor;
 	font-size: .7rem;
 }

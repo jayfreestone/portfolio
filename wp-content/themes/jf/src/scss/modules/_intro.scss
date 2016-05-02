@@ -1,26 +1,58 @@
 .intro {
-	text-align: center;
 	position: relative;
+
+	@include breakpoint(60em) {
+		text-align: center;
+	}
+}
+
+.intro--dashboard {
+	background: #d2011a;
+}
+
+.intro__background {
 	background-size: cover;
-	// background-position: center center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: all .5s ease-in-out;
+}
+
+.intro__background--dashboard {
+	background-color: #d0021b;
+	background-image: url('../../../img/dashboard/dashboard-background.jpg');
 }
 
 .intro__copy {
-	padding: 7rem 0 5rem;
+	padding: 8rem 0 2rem;
 
-	@include breakpoint(50rem) {
+	@include breakpoint(45rem) {
 		padding: 22rem 0 16rem;
 	}
 }
 
 .intro__title {
-	font-size: 4rem;
-	margin: .5rem 0;
+	margin: 1rem 0;
+	font-size: 2rem;
+	line-height: 1.2;
+
+	@include breakpoint(45em) {
+		font-size: 3rem;
+	}
+
+	@include breakpoint(65em) {
+		font-size: 4rem;
+	}
 }
 
 .intro__description {
-	margin: 0 auto;
 	max-width: 45rem;
+
+	@include breakpoint(60em) {
+		margin: 0 auto;
+	}
 }
 
 .intro__skillset {
@@ -73,10 +105,6 @@
 	position: relative;
 }
 
-.intro--dashboard {
-	background-color: #d0021b;
-	background-image: url('../../../img/dashboard/dashboard-background.jpg');
-}
 
 .intro--prime-labs {
 	background-color: rgba($pl-orange, .9);
