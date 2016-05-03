@@ -9,7 +9,7 @@
 			<?php if ( have_rows( 'social_links' ) ) : ?>
 				<ul class="contact__links">
 					<?php while ( have_rows( 'social_links' ) ) : the_row(); ?>
-						<li><a href="<?php the_sub_field( 'link' ); ?>"><?php the_sub_field( 'name' ); ?></a></li>
+						<li><a href="<?php the_sub_field( 'link' ); ?>" target="_blank"><?php the_sub_field( 'name' ); ?></a></li>
 					<?php endwhile; ?>
 				</ul>
 			<?php endif; ?>
