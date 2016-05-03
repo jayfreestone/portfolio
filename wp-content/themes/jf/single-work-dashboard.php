@@ -9,14 +9,14 @@
 				<h1 class="heading-1 intro__title"><?php the_field( 'title' ); ?></h1>
 				<div class="intro__description"><?php the_field( 'intro' ); ?></div>
 			</div>
-			<ul class="intro__skillset">
-				<?php if ( have_rows( 'skills' ) ) : ?>
-					<?php while ( have_rows( 'skills' ) ) : the_row(); ?><!--
-						--><li><?php the_sub_field( 'skill' ); ?></li><!--
-					--><?php endwhile; ?>
-				<?php endif; ?>
-			</ul>
 		</div>
+		<ul class="intro__skillset l-container">
+			<?php if ( have_rows( 'skills' ) ) : ?>
+				<?php while ( have_rows( 'skills' ) ) : the_row(); ?><!--
+					--><li><?php the_sub_field( 'skill' ); ?></li><!--
+				--><?php endwhile; ?>
+			<?php endif; ?>
+		</ul>
 	</header>
 
 	<div class="site-main">

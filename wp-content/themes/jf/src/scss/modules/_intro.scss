@@ -1,5 +1,9 @@
 .intro {
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	max-height: 60rem;
 
 	@include breakpoint(60em) {
 		text-align: center;
@@ -26,15 +30,15 @@
 }
 
 .intro__copy {
-	padding: 8rem 0 2rem;
+	padding: 8rem 0 3rem;
 
-	@include breakpoint(40rem) {
-		padding: 14rem 0 12rem;
-	}
-
-	@include breakpoint(60rem) {
-		padding: 22rem 0 16rem;
-	}
+	// @include breakpoint(40rem) {
+	// 	padding: 14rem 0 12rem;
+	// }
+    //
+	// @include breakpoint(60rem) {
+	// 	padding: 22rem 0 16rem;
+	// }
 }
 
 .intro__title {
@@ -65,6 +69,7 @@
 	font-size: .8rem;
 	letter-spacing: 1px;
 	text-transform: uppercase;
+	z-index: 100;
 
 	> li {
 		display: inline-block;
@@ -107,6 +112,7 @@
 
 .intro__content {
 	position: relative;
+	margin: auto 0;
 }
 
 
