@@ -4,7 +4,7 @@
 let fadeBackgroundImage = (function () {
 	function fade(image) {
 		let backgroundStyle = window.getComputedStyle(image)['background-image'];
-		let backgroundImage = backgroundStyle.match(/\/\/([a-z0-9\-\.\/]+)/)[0];
+		let backgroundImage = backgroundStyle.match(/\/\/([a-z0-9:\-\.\/]+)/)[0];
 		let imageTemp = document.createElement('img');
 		imageTemp.src = backgroundImage.replace(/"/g, '');
 
