@@ -2,6 +2,7 @@ import fadeBackgroundImage from './fadeBackgroundImage.js';
 
 let dashboard = (function () {
 	let groundSection = document.querySelector('.dashboard__groundwork');
+	let deploymentSection = document.querySelector('.dashboard__deployment');
 
 	function init() {
 		bindUIActions();
@@ -16,6 +17,34 @@ let dashboard = (function () {
 
 		// Add scenes
 		addScene(controller, groundSection, reactAnimation);
+		addScene(controller, deploymentSection, terminalAnimation);
+	}
+
+	function terminalAnimation() {
+		let codeWindow = deploymentSection.querySelector('.dashboard__terminal code');
+
+		// let code = document.createElement('code');
+		// let codeNode = codeWindow.appendChild(code);
+
+		writeString('cap staging deploy', codeWindow);
+
+	}
+
+	function writeString(stringToType, placeToType) {
+		let i = 0;
+
+		(function writeChar() {
+			if (stringToType.length > i) {
+				placeToType.innerHTML = placeToType.innerHTML + stringToType[i];
+				i++;
+
+				let delay = Math.floor(Math.random() * (100)) + 140;
+
+				setTimeout(function(){
+					writeChar();
+				}, delay);
+			}
+		})()
 	}
 
 	function fadeIntro() {

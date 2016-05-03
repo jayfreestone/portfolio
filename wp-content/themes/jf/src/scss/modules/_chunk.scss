@@ -1,9 +1,5 @@
 .chunk {
-	padding: 2rem 0;
-
-	@include breakpoint(40rem) {
-		padding: 4rem 0;
-	}
+	padding: 4rem 0;
 
 	@include breakpoint(80rem) {
 		padding: 6rem 0;
@@ -11,7 +7,7 @@
 }
 
 .chunk--swap {
-	@include breakpoint(70em) {
+	@include breakpoint(60em) {
 		.chunk__inner {
 			flex-direction: row-reverse;
 		}
@@ -36,16 +32,12 @@
 .chunk__primary,
 .chunk__secondary {
 	width: 100%;
-	max-width: 36rem;
-	margin: 0 auto;
-
-	@include breakpoint(60em) {
-		margin: initial;
-	}
 }
 
 .chunk__primary {
+
 	@include breakpoint(60em) {
+		max-width: 32rem;
 		width: span(5.5 of 12);
 	}
 }

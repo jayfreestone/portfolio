@@ -37,7 +37,12 @@
 					<?php the_field( 'problem_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube.jpg" alt="Photo of a rubix cube.">
+					<img srcset="<?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube--xlarge.jpg 2000w,
+								 <?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube--large.jpg 1200w,
+								 <?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube--medium.jpg 700w,
+								 <?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube--small.jpg 250w"
+						 sizes="(min-width: 60em) 17vw, 33.33vw"
+						 src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube--medium.jpg" alt="Photo of a rubix cube.">
 				</div>
 			</div>
 		</section>
@@ -65,9 +70,10 @@
 					<?php the_field( 'deployment_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
-					<pre class="dashboard__terminal">
+					<div class="dashboard__terminal">
 						<div class="dashboard__terminal__buttons"><span></span></div>
-					</pre>
+						<code>~ </code>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -86,4 +92,12 @@
 	</div>
 
 </article>
+
+<?php
+if ( get_previous_post() ) {
+	previous_post_link( '%link', 'Next' );
+} else {
+	next_post_link( '%link', 'Previous' );
+}
+?>
 <?php get_footer(); ?>

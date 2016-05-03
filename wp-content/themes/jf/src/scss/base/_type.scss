@@ -48,6 +48,7 @@
 
 .heading-1 {
 	font-size: 1.5rem;
+	margin-bottom: 2rem;
 
 	@include breakpoint(40em) {
 		font-size: 2.2rem;

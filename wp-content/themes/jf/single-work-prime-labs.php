@@ -58,10 +58,12 @@
 					</div>
 				</div>
 			</section>
-			<section class="chunk">
+			<section class="chunk chunk--single">
 				<div class="chunk__inner l-container">
-					<h2 class="heading-1">Round & Round</h2>
-					<?php the_field( 'round_&_round' ); ?>
+					<div class="chunk__primary">
+						<h2 class="heading-1">Round & Round</h2>
+						<?php the_field( 'round_&_round' ); ?>
+					</div>
 				</div>
 			</section>
 			<section class="chunk prime-labs__section--modular-boxes">
