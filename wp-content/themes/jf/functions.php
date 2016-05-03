@@ -158,7 +158,7 @@ add_action( 'wp_enqueue_scripts', 'enqueue_assets' );
  */
 function js_async( $tag ) {
 
-	$scripts_to_async = array( 'viewport-units-buggyfill', 'picturefill', 'lazysizes' );
+	$scripts_to_async = array( 'picturefill', 'lazysizes' );
 
 	foreach ( $scripts_to_async as $async_script ) {
 		if ( true == strpos( $tag, $async_script ) ) {
@@ -178,7 +178,7 @@ function viewport_buggyfill_inline() {
 		echo '<script>window.viewportUnitsBuggyfill.init();</script>';
 	}
 }
-add_action( 'wp_footer', 'viewport_buggyfill_inline' );
+add_action( 'wp_footer', 'viewport_buggyfill_inline', 100 );
 
 /**
  * Handles returning font loading
