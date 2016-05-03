@@ -247,7 +247,7 @@ function add_home_image( $image, $image_prefix, $image_size, $breakpoint, $numbe
 	$css .= 'only screen and (min-resolution: 192dpi) and (min-width: ' . $breakpoint . '),';
 	$css .= 'only screen and (min-resolution: 2dppx) {';
 	$css .= '.work-preview--' . esc_html( $number ) . ' .work-preview__image {';
-	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . $image_size] ) . ');';
+	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . ((int)$image_size * 2)] ) . ');';
 	$css .= '}';
 	$css .= '}';
 
