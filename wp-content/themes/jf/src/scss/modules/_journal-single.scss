@@ -4,8 +4,9 @@
 }
 
 .journal-single {
-	max-width: 35rem;
+	max-width: 40rem;
 	margin: 0 auto;
+	z-index: 1;
 
 	@include breakpoint(60em) {
 		order: 2;
@@ -14,6 +15,7 @@
 
 	h2 {
 		@extend .heading-2;
+		margin-top: 3rem;
 	}
 
 	h3 {
