@@ -42,7 +42,10 @@
 			<article id="work-preview--<?php echo esc_html( $i ); ?>" class="<?php echo esc_html( $work_class ); ?>" style="background-color: <?php the_field( 'homepage_background_color' ); ?>" itemscope itemtype="http://schema.org/CreativeWork">
 				<div class="work-preview__copy">
 					<a href="<?php the_permalink(); ?>">
-						<span class="badge">Case Study</span>
+						<?php $type = get_the_terms( $post, 'type' ); ?>
+						<?php if ( $type ) : ?>
+							<span class="badge"><?php echo esc_html( $type[0]->name ); ?></span>
+						<?php endif; ?>
 						<h2 class="heading-1 work-preview__title" itemprop="name"><?php the_title(); ?></h2>
 						<span itemprop="description"><?php the_field( 'homepage_intro' ); ?></span>
 						<span class="work-preview__link">
@@ -51,7 +54,7 @@
 					</a>
 				</div>
 
-				<div class="work-preview__image is-hidden"></div>
+				<a class="work-preview__image is-hidden" href="<?php the_permalink(); ?>"></a>
 			</article>
 
 		<?php endwhile; ?>
