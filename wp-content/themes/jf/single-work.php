@@ -2,7 +2,7 @@
 <article class="l-content work" itemscope itemtype="http://schema.org/CreativeWork">
 	<div class="l-container">
 		<div class="work__copy">
-			<h1 class="heading-2" itemprop="name"><?php the_title(); ?></h1>
+			<h1 class="heading-1" itemprop="name"><?php the_title(); ?></h1>
 			<div itemprop="description">
 				<?php echo esc_html( wp_strip_all_tags( get_field( 'page_content' ) ) ); ?>
 				<?php if ( get_field( 'website_url' ) ) : ?>
@@ -29,13 +29,13 @@
 			<?php endforeach; ?>
 		<?php endif; ?>
 
-		<?php
-		if ( get_next_post() ) {
-			next_post_link( '%link', 'Next' );
-		} else {
-			previous_post_link( '%link', 'Previous' );
-		}
-	   	?>
+<?php
+if ( get_previous_post() ) {
+	previous_post_link( '%link', 'Next' );
+} else {
+	next_post_link( '%link', 'Previous' );
+}
+?>
 	</div>
 </article>
 <?php get_footer(); ?>
