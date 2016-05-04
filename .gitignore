@@ -7,3 +7,5 @@ wp-config.php
 db_backups/
 .idea/workspace.xml
 ov-deploy/
+config/database.yml
+config/global-config.rb
