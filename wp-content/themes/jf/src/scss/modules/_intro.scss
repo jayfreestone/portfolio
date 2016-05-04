@@ -1,5 +1,122 @@
 .intro {
-	padding: 7rem 0 0;
-	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	max-height: 60rem;
+
+	@include breakpoint(60em) {
+		text-align: center;
+	}
 }
 
+.intro--dashboard {
+	background: #d2011a;
+}
+
+.intro--prime-labs {
+	background-color: rgba($pl-orange, .9);
+	background-image: url('../../../img/primelabs/prime-labs-background.jpg');
+}
+
+.intro__background {
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: all .5s ease-in-out;
+}
+
+.intro__background--dashboard {
+	background-color: #d0021b;
+	background-image: url('../../../img/dashboard/dashboard-background--small.jpg');
+
+	@include breakpoint(47em) {
+		background-image: url('../../../img/dashboard/dashboard-background--medium.jpg');
+	}
+
+	@include breakpoint(98em) {
+		background-image: url('../../../img/dashboard/dashboard-background--large.jpg');
+	}
+
+	@include breakpoint(140em) {
+		background-image: url('../../../img/dashboard/dashboard-background--xlarge.jpg');
+	}
+
+	@include breakpoint(140em) {
+		background-image: url('../../../img/dashboard/dashboard-background--xlarge.jpg');
+	}
+
+	@include breakpoint(250em) {
+		background-image: url('../../../img/dashboard/dashboard-background--xxlarge.jpg');
+	}
+}
+
+.intro__overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.intro__overlay--dashboard {
+	background-color: rgba(#d0021b, .9);
+}
+
+.intro__overlay--prime-labs {
+	background-color: rgba($pl-orange, .3);
+}
+
+.intro__copy {
+	padding: 8rem 0 3rem;
+}
+
+.intro__title {
+	margin: 1rem 0;
+	font-size: 2rem;
+	line-height: 1.2;
+
+	@include breakpoint(45em) {
+		font-size: 3rem;
+	}
+
+	@include breakpoint(65em) {
+		font-size: 4rem;
+	}
+}
+
+.intro__description {
+	max-width: 32rem;
+
+	@include breakpoint(60em) {
+		margin: 0 auto;
+	}
+}
+
+.intro__skillset {
+	@include delist();
+	padding: 1rem 0;
+	font-size: .8rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	z-index: 100;
+
+	> li {
+		display: inline-block;
+
+		&:not(:last-child) {
+			&:after {
+				content: '/';
+				margin: 0 .5rem;
+			}
+		}
+	}
+}
+
+.intro__content {
+	position: relative;
+	margin: auto 0;
+}

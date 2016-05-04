@@ -18,7 +18,16 @@
 @mixin arrow() {	
 	content: '→';
 	font-family: Helvetica, Arial;
-	margin-left: .5rem;
+	padding-left: .5rem;
+	color: $red;
+	transition: all .3s;
+	display: inline-block;
+}
+
+@mixin arrow--left() {
+	content: '←';
+	font-family: Helvetica, Arial;
+	padding-right: .5rem;
 	color: $red;
 	transition: all .3s;
 	display: inline-block;

@@ -1,3 +1,5 @@
+import fadeBackgroundImage from './fadeBackgroundImage.js';
+
 let homeScroll = (function () {
 	let navItems;
 	let delta = 0;
@@ -39,12 +41,25 @@ let homeScroll = (function () {
 	}
 
 	function animateInitial() {
+		let firstWork = document.querySelector('.work-preview--1');
+		// fadeBackgroundImage(firstWork.querySelector('.work-preview__image'));
+
+		// fadeImagesOnLoad();
+
 		setTimeout(function(){
-			let firstWork = document.querySelector('.work-preview--1');
 			firstWork.classList.add('work-preview--current');
 			navItems[0].parentNode.classList.add('work-preview-container__nav__item--is-active');
 		}, 200);
 	}
+
+	// Displays background images only once loaded
+	// function fadeImagesOnLoad() {
+	// 	let workImages = document.querySelectorAll('.work-preview__image');
+    //
+	// 	for (let i = 0; i < workImages.length; i++) {
+	// 		fadeBackgroundImage.fade(workImages[i]);
+	// 	}
+	// }
 
 	function bindUIEvents() {
 		window.addEventListener('keydown', keyboardNav);

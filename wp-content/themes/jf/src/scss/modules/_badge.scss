@@ -1,0 +1,12 @@
+.badge {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-style: italic;
+	padding: .3rem .6rem;
+	border-radius: 2px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: $black;
+	border-color: currentColor;
+	font-size: .7rem;
+}

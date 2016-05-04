@@ -4,16 +4,33 @@
 }
 
 .journal-single {
-	max-width: 35rem;
+	z-index: 1;
+	width: 80%;
 	margin: 0 auto;
 
 	@include breakpoint(60em) {
 		order: 2;
 		width: span(8 of 12);
 	}
+}
+
+.journal-single__main {
+	max-width: 30rem;
+	margin: 0 auto;
+
+	> p:first-child {
+		font-size: 1.2rem;
+
+		@include breakpoint(60em) {
+			margin-left: -20%;
+			margin-right: -20%;
+			text-align: center;
+		}
+	}
 
 	h2 {
 		@extend .heading-2;
+		margin-top: 3rem;
 	}
 
 	h3 {
@@ -23,6 +40,10 @@
 
 .journal-single__header {
 	margin-bottom: 1rem;
+
+	@include breakpoint(40em) {
+		text-align: center;
+	}
 }
 
 .journal-single__title {

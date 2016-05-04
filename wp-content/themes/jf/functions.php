@@ -9,9 +9,22 @@ function jf_setup() {
 	 * Sets up image sizes
 	 */
 	add_image_size( 'homepage-300', '300' );
-	add_image_size( 'homepage-600', '600');
+	add_image_size( 'homepage-600', '600' );
 	add_image_size( 'homepage-1200', '1200' );
-	add_image_size( 'homepage', '2000' );
+	add_image_size( 'homepage-2400', '2400' );
+
+	add_image_size( 'landscape-300', '300', '200' );
+	add_image_size( 'landscape-600', '600', '400' );
+	add_image_size( 'landscape-900', '900', '600' );
+	add_image_size( 'landscape-1200', '1200', '800' );
+	add_image_size( 'landscape-1800', '1800', '1200' );
+	add_image_size( 'landscape-2400', '2400', '1600' );
+	add_image_size( 'landscape-3000', '3000', '2000' );
+
+	add_image_size( 'portrait-300', '300', '533' );
+	add_image_size( 'portrait-600', '600', '1066' );
+	add_image_size( 'portrait-900', '900', '1599' );
+	add_image_size( 'portrait-1200', '1200', '2132' );
 
 	add_image_size( 'fullwidth-300', '300', '169', true );
 	add_image_size( 'fullwidth-600', '600', '338', true );
@@ -41,8 +54,8 @@ add_action( 'after_setup_theme', 'jf_setup' );
  * Use parsedown to convert markdown
  */
 function md( $text ) {
-	$Parsedown = new Parsedown();
-	return $Parsedown->text( $text );
+	$parsedown = new Parsedown();
+	return $parsedown->text( $text );
 }
 
 /**
@@ -145,7 +158,7 @@ add_action( 'wp_enqueue_scripts', 'enqueue_assets' );
  */
 function js_async( $tag ) {
 
-	$scripts_to_async = array( 'viewport-units-buggyfill', 'picturefill', 'lazysizes' );
+	$scripts_to_async = array( 'picturefill', 'lazysizes' );
 
 	foreach ( $scripts_to_async as $async_script ) {
 		if ( true == strpos( $tag, $async_script ) ) {
@@ -165,7 +178,33 @@ function viewport_buggyfill_inline() {
 		echo '<script>window.viewportUnitsBuggyfill.init();</script>';
 	}
 }
-add_action( 'wp_footer', 'viewport_buggyfill_inline' );
+add_action( 'wp_footer', 'viewport_buggyfill_inline', 100 );
+
+/**
+ * Initializes webfont loader
+ */
+function web_font_loader() {
+	?>
+	<script>
+		// Load webfonts
+		var WebFontConfig = {
+			custom: {
+				families: ['Graphik Web']
+			},
+			active: function() {
+				localStorage.setItem( 'fontloaded', true );
+			}
+		};
+
+		(function(d) {
+		  var wf = d.createElement('script'), s = d.scripts[0];
+		  wf.src = '<?php echo get_template_directory_uri(); ?>/public/assets/js/webfontloader.js';
+		  s.parentNode.insertBefore(wf, s);
+		})(document);
+	</script>
+	<?php
+}
+add_action( 'wp_footer', 'web_font_loader', 100 );
 
 /**
  * Handles returning font loading
@@ -221,88 +260,53 @@ function reset_recent_work_on_save() {
 }
 add_action( 'save_post', 'reset_recent_work_on_save' );
 
+function add_home_image( $image, $image_prefix, $image_size, $breakpoint, $number ) {
+	$css = '';
+
+	$css .= '.work-preview--' . esc_html( $number ) . ' .work-preview__image {';
+	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . $image_size] ) . ');';
+	$css .= '}';
+	$css .= '@media only screen and (-webkit-min-device-pixel-ratio: 2),';
+	$css .= 'only screen and (min--moz-device-pixel-ratio: 2),';
+	$css .= 'only screen and (-o-min-device-pixel-ratio: 2/1),';
+	$css .= 'only screen and (min-device-pixel-ratio: 2),';
+	$css .= 'only screen and (min-resolution: 192dpi) and (min-width: ' . $breakpoint . '),';
+	$css .= 'only screen and (min-resolution: 2dppx) {';
+	$css .= '.work-preview--' . esc_html( $number ) . ' .work-preview__image {';
+	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . ((int)$image_size * 2)] ) . ');';
+	$css .= '}';
+	$css .= '}';
+
+	return $css;
+}
+
 /**
  * Home Background images
  */
 function home_images() {
 	$work = get_recent_work();
+	$image_css = '';
 
 	if ( is_front_page() ) {
-	?>
-	<style>
-		<?php $i = 0; ?>
-		<?php while ( $work->have_posts() ) : $work->the_post(); ?>
-			<?php
+		$i = 0;
+		while ( $work->have_posts() ) : $work->the_post();
 			$i++;
-			$workImage = get_field( 'homepage_image' );
-			?>
-			.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-				background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-300'] ); ?>');
-			}
+			$work_image = get_field( 'homepage_image' );
+			$image_css .= add_home_image( $work_image, 'homepage', '300', '300px', $i );
+			$image_css .= add_home_image( $work_image, 'homepage', '600', '600px', $i );
+			$image_css .= add_home_image( $work_image, 'homepage', '1200', '1200px', $i );
+		 endwhile;
 
-			@media only screen and (-webkit-min-device-pixel-ratio: 2),
-			only screen and (   min--moz-device-pixel-ratio: 2),
-			only screen and (     -o-min-device-pixel-ratio: 2/1),
-			only screen and (        min-device-pixel-ratio: 2),
-			only screen and (                min-resolution: 192dpi) and (min-width: 750px),
-			only screen and (                min-resolution: 2dppx) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-600'] ); ?>');
-				}
-			}
-
-			@media only screen and (min-width: 600px) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-600'] ); ?>');
-				}
-			}
-
-			@media
-			only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 600px),
-			only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 600px),
-			only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 600px),
-			only screen and (        min-device-pixel-ratio: 2)      and (min-width: 600px),
-			only screen and (                min-resolution: 192dpi) and (min-width: 600px),
-			only screen and (                min-resolution: 2dppx)  and (min-width: 600px) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-1200'] ); ?>');
-				}
-			}
-
-			@media only screen and (min-width: 1200px) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage-1200'] ); ?>');
-				}
-			}
-
-			@media
-			only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 1200px),
-			only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 1200px),
-			only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 1200px),
-			only screen and (        min-device-pixel-ratio: 2)      and (min-width: 1200px),
-			only screen and (                min-resolution: 192dpi) and (min-width: 1200px),
-			only screen and (                min-resolution: 2dppx)  and (min-width: 1200px) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage'] ); ?>');
-				}
-			}
-
-			@media only screen and (min-width: 1600px) {
-				.work-preview--<?php echo esc_html( $i ); ?> .work-preview__image {
-					background-image: url('<?php echo esc_url( $workImage['sizes']['homepage'] ); ?>');
-				}
-			}
-
-		<?php endwhile; ?>
-	</style>
-	<?php
+		echo '<style>' . $image_css . '</style>';
 	}
 
 	wp_reset_postdata();
 }
 add_action( 'wp_head', 'home_images' );
 
-//Page Slug Body Class
+/**
+ * Page Slug Body Class
+ */
 function add_slug_body_class( $classes ) {
 	global $post;
 
@@ -313,3 +317,15 @@ function add_slug_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
+
+/**
+ * Remove WP version from css and js
+ */
+function remove_wp_ver_css_js( $src ) {
+    if ( strpos( $src, 'ver=' ) ) {
+        $src = remove_query_arg( 'ver', $src );
+    }
+    return $src;
+}
+add_filter( 'style_loader_src', 'remove_wp_ver_css_js', 9999 );
+add_filter( 'script_loader_src', 'remove_wp_ver_css_js', 9999 );

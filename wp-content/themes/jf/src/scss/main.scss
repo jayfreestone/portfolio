@@ -14,13 +14,13 @@
 @import 'base/base';
 
 // Modules
+@import 'modules/lazyload';
 @import 'modules/primary-nav';
 @import 'modules/work-preview';
 @import 'modules/journal-preview';
 @import 'modules/image-wrapper';
 @import 'modules/intro';
 @import 'modules/about';
-@import 'modules/square';
 @import 'modules/journal-single';
 @import 'modules/prime-labs';
 @import 'modules/dashboard';
@@ -29,6 +29,8 @@
 @import 'modules/chunk';
 @import 'modules/work';
 @import 'modules/site-content';
+@import 'modules/badge';
+@import 'modules/nav-link';
 
 // Layout
 @import 'layout/l-siteheader';

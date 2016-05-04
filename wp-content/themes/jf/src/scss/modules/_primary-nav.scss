@@ -32,8 +32,10 @@
 		}
 	}
 
-	.current_page_item {
-		opacity: .3;
+	.single-work & .primary-nav__work,
+	.current_page_item,
+	.blog & .current_page_parent {
+		opacity: .4;
 	}
 }
 

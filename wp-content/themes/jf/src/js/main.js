@@ -4,9 +4,12 @@ import homeScroll from './partials/homeScroll.js';
 import journalNav from './partials/journalNav.js';
 import dashboard from './partials/dashboard.js';
 import header from './partials/header.js';
+import fadeIsHidden from './partials/fadeIsHidden.js';
 
 document.addEventListener('DOMContentLoaded', function () {
 	menu.init();
+
+	fadeIsHidden.init();
 
 	if (document.querySelector('.l-siteheader--white')) {
 		header.init();
