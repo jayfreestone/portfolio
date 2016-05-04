@@ -8,23 +8,6 @@
 
 		<?php wp_footer(); ?>
 
-		<script>
-			// Load webfonts
-			var WebFontConfig = {
-				custom: {
-					families: ['Graphik Web']
-				},
-				active: function() {
-					localStorage.setItem( 'fontloaded', true );
-				}
-			};
-
-			(function(d) {
-			  var wf = d.createElement('script'), s = d.scripts[0];
-			  wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
-			  s.parentNode.insertBefore(wf, s);
-			})(document);
-		</script>
 	</body>
 
 </html>

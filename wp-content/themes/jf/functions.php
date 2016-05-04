@@ -181,6 +181,32 @@ function viewport_buggyfill_inline() {
 add_action( 'wp_footer', 'viewport_buggyfill_inline', 100 );
 
 /**
+ * Initializes webfont loader
+ */
+function web_font_loader() {
+	?>
+	<script>
+		// Load webfonts
+		var WebFontConfig = {
+			custom: {
+				families: ['Graphik Web']
+			},
+			active: function() {
+				localStorage.setItem( 'fontloaded', true );
+			}
+		};
+
+		(function(d) {
+		  var wf = d.createElement('script'), s = d.scripts[0];
+		  wf.src = '//public/assets/js/webfontloader.js';
+		  s.parentNode.insertBefore(wf, s);
+		})(document);
+	</script>
+	<?php
+}
+add_action( 'wp_footer', 'web_font_loader', 100 );
+
+/**
  * Handles returning font loading
  */
 function font_loaded() {
