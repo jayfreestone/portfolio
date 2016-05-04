@@ -69,7 +69,7 @@ function acf_md( $field ) {
  * Add Markdown filter everywhere but the dashboard
  */
 if ( ! is_admin() ) {
-	add_filter( 'acf/load_value/type=textarea', 'acf_md', 10, 3 );
+	add_filter( 'acf/format_value/type=textarea', 'acf_md', 10, 3 );
 }
 
 /**
