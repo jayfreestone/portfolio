@@ -27,7 +27,7 @@
 			$work_class .= ' work-preview--' . $i;
 
 			if ( get_field( 'whiteout' ) ) {
-				$work_class .= ' work-preview--whiteout';
+				$work_class .= ' whiteout';
 			}
 
 			if ( get_field( 'text_on_right' ) ) {
