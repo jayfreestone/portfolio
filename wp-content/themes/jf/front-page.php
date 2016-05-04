@@ -12,7 +12,7 @@
 		<nav class="work-preview-container__nav">
 			<ul>
 				<?php for ( $x = 0; $x < $work_count; $x++ ) : ?>
-					<li class="work-preview-container__nav__item"><a href="work-preview--<?php echo esc_html( $x + 1 ); ?>">0<?php echo esc_html( $x + 1 ); ?></a></li>
+					<li class="work-preview-container__nav__item"><a href="#work-preview--<?php echo esc_html( $x + 1 ); ?>">0<?php echo esc_html( $x + 1 ); ?></a></li>
 				<?php endfor ?>
 			</ul>
 		</nav>
