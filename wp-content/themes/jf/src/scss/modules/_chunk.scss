@@ -35,7 +35,6 @@
 }
 
 .chunk__primary {
-
 	@include breakpoint(60em) {
 		max-width: 32rem;
 		width: span(5.5 of 12);
@@ -43,7 +42,6 @@
 }
 
 .chunk__secondary {
-
 	@include breakpoint(60em) {
 		max-width: none;
 		width: span(5.5 of 12);

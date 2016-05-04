@@ -329,30 +329,3 @@ function remove_wp_ver_css_js( $src ) {
 }
 add_filter( 'style_loader_src', 'remove_wp_ver_css_js', 9999 );
 add_filter( 'script_loader_src', 'remove_wp_ver_css_js', 9999 );
-
-
-/**
- * Adds class to next/previous links on Work pages
- */
-function post_link_attributes($direction, $output) {
-	global $post;
-
-	// Only add classes on Work Pages
-	if ( get_post_type() == 'work' ) {
-		$injection = 'class="nav-link nav-link nav-link--' . $direction . '"';
-		return str_replace('<a href=', '<a '.$injection.' href=', $output);
-	} else {
-		return $output;
-	}
-}
-
-function post_link_attributes_next( $output ) {
-	return post_link_attributes( 'next', $output );
-}
-
-function post_link_attributes_previous( $output ) {
-	return post_link_attributes( 'previous', $output );
-}
-
-add_filter('next_post_link', 'post_link_attributes_next');
-add_filter('previous_post_link', 'post_link_attributes_previous');

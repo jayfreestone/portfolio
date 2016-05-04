@@ -14,6 +14,11 @@
 	background: #d2011a;
 }
 
+.intro--prime-labs {
+	background-color: rgba($pl-orange, .9);
+	background-image: url('../../../img/primelabs/prime-labs-background.jpg');
+}
+
 .intro__background {
 	background-size: cover;
 	position: absolute;
@@ -26,19 +31,47 @@
 
 .intro__background--dashboard {
 	background-color: #d0021b;
-	background-image: url('../../../img/dashboard/dashboard-background.jpg');
+	background-image: url('../../../img/dashboard/dashboard-background--small.jpg');
+
+	@include breakpoint(47em) {
+		background-image: url('../../../img/dashboard/dashboard-background--medium.jpg');
+	}
+
+	@include breakpoint(98em) {
+		background-image: url('../../../img/dashboard/dashboard-background--large.jpg');
+	}
+
+	@include breakpoint(140em) {
+		background-image: url('../../../img/dashboard/dashboard-background--xlarge.jpg');
+	}
+
+	@include breakpoint(140em) {
+		background-image: url('../../../img/dashboard/dashboard-background--xlarge.jpg');
+	}
+
+	@include breakpoint(250em) {
+		background-image: url('../../../img/dashboard/dashboard-background--xxlarge.jpg');
+	}
+}
+
+.intro__overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.intro__overlay--dashboard {
+	background-color: rgba(#d0021b, .9);
+}
+
+.intro__overlay--prime-labs {
+	background-color: rgba($pl-orange, .3);
 }
 
 .intro__copy {
 	padding: 8rem 0 3rem;
-
-	// @include breakpoint(40rem) {
-	// 	padding: 14rem 0 12rem;
-	// }
-    //
-	// @include breakpoint(60rem) {
-	// 	padding: 22rem 0 16rem;
-	// }
 }
 
 .intro__title {
@@ -83,40 +116,7 @@
 	}
 }
 
-// .intro__backdrop {
-// 	position: fixed;
-// 	top: 0;
-// 	bottom: 0;
-// 	right: 0;
-// 	left: 0;
-// 	background-size: cover;
-// 	z-index: -1;
-// }
-
-
-.intro__overlay {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
-.intro__overlay--dashboard {
-	background-color: rgba(#d0021b, .9);
-}
-
-.intro__overlay--prime-labs {
-	background-color: rgba($pl-orange, .3);
-}
-
 .intro__content {
 	position: relative;
 	margin: auto 0;
-}
-
-
-.intro--prime-labs {
-	background-color: rgba($pl-orange, .9);
-	background-image: url('../../../img/primelabs/prime-labs-background.jpg');
 }

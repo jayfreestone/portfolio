@@ -1,8 +1,12 @@
 .nav-link {
 	display: block;
 	text-align: center;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	padding: 2rem 0;
+
+	@include breakpoint(40rem) {
+		font-size: 1.5rem;
+	}
 
 }
 

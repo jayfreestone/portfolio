@@ -65,10 +65,11 @@ video {
 }
 
 blockquote {
-	border-left: 4px solid $grey;
+	border-left: 6px solid $grey;
 	margin-left: 0;
 	padding-left: 1rem;
 	font-style: italic;
+	color: lighten($black, 25%);
 }
 
 cite {

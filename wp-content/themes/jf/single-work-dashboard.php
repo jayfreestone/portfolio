@@ -1,23 +1,7 @@
 <?php get_header(); ?>
 <article class="dashboard">
-	<header class="intro intro--dashboard whiteout cf">
-		<div class="intro__background intro__background--dashboard is-hidden"></div>
-		<div class="intro__overlay intro__overlay--dashboard"></div>
-		<div class="intro__content l-container">
-			<div class="intro__copy">
-				<span class="badge">Case Study</span>
-				<h1 class="heading-1 intro__title"><?php the_field( 'title' ); ?></h1>
-				<div class="intro__description"><?php the_field( 'intro' ); ?></div>
-			</div>
-		</div>
-		<ul class="intro__skillset l-container">
-			<?php if ( have_rows( 'skills' ) ) : ?>
-				<?php while ( have_rows( 'skills' ) ) : the_row(); ?><!--
-					--><li><?php the_sub_field( 'skill' ); ?></li><!--
-				--><?php endwhile; ?>
-			<?php endif; ?>
-		</ul>
-	</header>
+
+	<?php require( 'includes/intro.php' ); ?>
 
 	<div class="site-main">
 		<section class="chunk dashboard__section dashboard__setup cf">
@@ -37,12 +21,12 @@
 					<?php the_field( 'problem_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
-					<img srcset="<?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube--xlarge.jpg 2000w,
-								 <?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube--large.jpg 1200w,
-								 <?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube--medium.jpg 700w,
-								 <?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube--small.jpg 250w"
+					<img srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-cube--xlarge.jpg 2000w,
+								 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-cube--large.jpg 1200w,
+								 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-cube--medium.jpg 700w,
+								 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-cube--small.jpg 250w"
 						 sizes="(min-width: 60em) 17vw, 33.33vw"
-						 src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dash-cube--medium.jpg" alt="Photo of a rubix cube.">
+						 src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-cube--medium.jpg" alt="Photo of a rubix cube.">
 				</div>
 			</div>
 		</section>
@@ -60,7 +44,16 @@
 		</section>
 
 		<section class="dashboard__preview">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-ipad-flat.png" alt="Dashboard displayed on an iPad.">
+			<div class="image-wrapper image-wrapper--dashboard-preview">
+				<img data-srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--large.png 2560w,
+							 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--medium.png 1280w,
+							 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--small.png 640w"
+					 sizes="100vw, (min-width: 80em) 80rem"
+					 data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--medium.png" alt="Dashboard displayed on an iPad." class="lazyload">
+				<noscript>
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--medium.png" alt="Dashboard displayed on an iPad.">
+				</noscript>
+			</div>
 		</section>
 		
 		<section class="chunk chunk--swap dashboard__section dashboard__deployment cf">
@@ -85,7 +78,7 @@
 					<?php the_field( 'bonus_round_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dash-composer.png" alt="Composer Generator on OV Dash">
+					<img class="lazyload" data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-composer.png" alt="Composer Generator on OV Dash">
 				</div>
 			</div>
 		</section>
@@ -93,11 +86,14 @@
 
 </article>
 
-<?php
-if ( get_previous_post() ) {
-	previous_post_link( '%link', 'Next' );
-} else {
-	next_post_link( '%link', 'Previous' );
-}
-?>
+<?php if ( get_previous_post() ) : ?>
+	<span class="nav-link nav-link--next">
+		<?php previous_post_link( '%link', 'Previous' ); ?>
+	</span>
+<?php else : ?>
+	<span class="nav-link nav-link--previous">
+		<?php next_post_link( '%link', 'Next' ); ?>
+	</span>
+<?php endif; ?>
+
 <?php get_footer(); ?>

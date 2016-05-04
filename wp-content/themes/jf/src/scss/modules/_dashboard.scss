@@ -1,115 +1,35 @@
-.dashboard__process {
-	background: #f9f9f9;
-	overflow: hidden;
+.dashboard__setup {
 	position: relative;
-	font-size: .7rem;
+
+	.chunk__primary {
+		max-width: 32rem; 
+
+		@include breakpoint(50rem) {
+			width: 70%;
+		}
+	}
 }
 
-.dashboard__process__inner {
-	white-space: nowrap;
-	padding: 1rem;
+.dashboard__setup__bg {
+	transition: all 1s ease-in-out;
+	background-size: cover;
+	position: absolute;
 	top: 0;
+	bottom: 0;
 	right: 0;
-	min-width: 100%;
-	position: absolute;
-
-	@include breakpoint(50em) {
-		right: auto;
-		margin: 0 auto;
-		display: flex;
-		justify-content: space-between;
-	}
-}
-
-.dashboard__height {
-	visibility: hidden;
-	padding: 1rem;
-}
-
-.dashboard__figure {
-	text-align: center;
-	font-weight: bold;
-	text-transform: uppercase;
-	margin-left: 0;
-	margin-right: 0;
-
-	svg {
-		height: 2rem;
-		width: auto;
-		margin-bottom: .6rem;
-	}
-
-}
-
-.dashboard__connector {
-	margin: 0 1rem;
-	flex-grow: 1;
-}
-
-.dashboard__connector__label {
-	padding: 0 1rem;
-	text-align: center;
-}
-
-.dashboard__connector__line {
-	position: relative;
-	background: $black;
-	height: .2rem;
-	margin-top: .5rem;
-	width: 0;
-}
-
-.dashboard__connector__pulse {
-	position: absolute;
-	top: -100%;
 	left: 0;
-	opacity: 0;
+	z-index: -1;
 
-	span {
-		display: block;
-		position: relative;
-
-		&,
-		&:before {
-			border-radius: 50%;
-			background: #22b573;
-			width: .7rem;
-			height: .7rem;
-		}
-
-		&:before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			content: '';
-			animation: pulse .5s infinite;
-		}
+	@media only screen and (min-width: 40em) { 
+		background-image: url('../../../img/dashboard/dashboard-setup--medium.jpg');
 	}
-}
 
-@keyframes pulse {
-	0% {
-		transform: scale(1);
-		opacity: 0;
+	@media only screen and (min-width: 80em) { 
+		background-image: url('../../../img/dashboard/dashboard-setup--large.jpg');
 	}
-	50% {
-		transform: scale(1.5);
-		opacity: .4;
-	}
-	100% {
-		transform: scale(1);
-		opacity: 0;
-	}
-}
 
-.dashboard__figure,
-.dashboard__connector {
-	opacity: 0;
-	display: inline-block;
-	vertical-align: middle;
-
-	&:first-of-type {
-		position: relative;
+	@media only screen and (min-width: 140em) { 
+		background-image: url('../../../img/dashboard/dashboard-setup--xlarge.jpg');
 	}
 }
 
@@ -122,7 +42,6 @@
 		margin: 2rem auto 0;
 		display: block;
 	}
-
 }
 
 .dashboard__groundwork {
@@ -153,6 +72,31 @@
 			}
 
 		}
+	}
+}
+
+.dashboard__preview {
+	background: $ov-grey;
+	padding: 4rem 0;
+
+	> .image-wrapper {
+		@include breakpoint(50em) {
+			margin-top: -10rem;
+			margin-bottom: -8rem;
+		}
+
+		@include breakpoint(80em) {
+			margin-top: -12rem;
+			margin-bottom: -10rem;
+		}
+	}
+
+	img {
+		width: 100%;
+		max-width: 80rem;
+		margin: 0 auto;
+		display: block;
+		transition: all .3s;
 	}
 }
 
@@ -211,54 +155,6 @@
 
 	&:after {
 		background: #28ca41;	
-	}
-}
-
-
-.dashboard__setup {
-	position: relative;
-
-	.chunk__primary {
-		max-width: 32rem; 
-
-		@include breakpoint(50rem) {
-			width: 70%;
-		}
-
-	}
-}
-
-.dashboard__setup__bg {
-	background-image: url('../../../img/dashboard/dashboard-setup.jpg');
-	transition: all 1s ease-in-out;
-	background-size: cover;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	z-index: -1;
-}
-
-.dashboard__preview {
-	background: $ov-grey;
-	padding: 4rem 0;
-
-	img {
-		width: 100%;
-		max-width: 80rem;
-		margin: 0 auto;
-		display: block;
-
-		@include breakpoint(50em) {
-			margin-top: -10rem;
-			margin-bottom: -8rem;
-		}
-
-		@include breakpoint(80em) {
-			margin-top: -12rem;
-			margin-bottom: -10rem;
-		}
 	}
 }
 

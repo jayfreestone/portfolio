@@ -15,7 +15,6 @@
 }
 
 .about__image {
-	// @include full();
 	margin-bottom: 1.5rem;
 
 	@include breakpoint(60em) {
@@ -30,5 +29,3 @@
 		@include span(8 of 12 omega);
 	}
 }
-
-

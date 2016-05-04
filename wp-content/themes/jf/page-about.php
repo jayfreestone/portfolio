@@ -46,6 +46,10 @@
 										  <?php echo esc_url( $photo_sizes['portrait-300'] ) ?> 300w">
 			         <img class="lazyload" data-src="<?php echo esc_url( $photo_sizes['portrait-600'] ); ?>" alt="Photo of Jay Freestone">
 			      </picture>
+
+				  <noscript>
+			         <img class="lazyload" src="<?php echo esc_url( $photo_sizes['portrait-600'] ); ?>" alt="Photo of Jay Freestone">
+				  </noscript>
 			   </div>
 			</div>
 

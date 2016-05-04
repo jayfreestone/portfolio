@@ -1,4 +1,5 @@
 .image-wrapper {
+	display: block;
 	background: $grey;
 	position: relative;
 	height: 0;
@@ -7,12 +8,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		opacity: 0;
 		transition: all 1s;
-	}
-
-	.lazyloaded {
-		opacity: 1;
 	}
 }
 
@@ -32,11 +28,11 @@
 	}
 }
 
-.image-wrapper--dashboard-intro {
-	padding-bottom: 56.3535912%;
-	background: none;
-}
-
 .image-wrapper--16-9 {
 	padding-bottom: 56.25%;
+}
+
+.image-wrapper--dashboard-preview {
+	background: none;
+	padding-bottom: 57.421875%;
 }

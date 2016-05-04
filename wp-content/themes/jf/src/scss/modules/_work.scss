@@ -4,19 +4,21 @@
 }
 
 .work__image  {
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 
 	@include breakpoint(40em) {
 	   margin-bottom: 2rem;
 	}
 
-	// @include breakpoint(60em) {
-	//    margin-bottom: 4rem;
-	// }
+	@include breakpoint(60em) {
+		pointer-events: none;
+	}
 }
 
 .work__url {
-   &:after {
-	  @include arrow();
-   }
+	white-space: nowrap;
+	
+	&:after {
+		@include arrow();
+	}
 }

@@ -1,3 +1,6 @@
+/**
+ * Fades in background images with 'is-hidden' class
+ */
 import fadeBackgroundImage from './fadeBackgroundImage.js';
 
 let fadeIsHidden = (function () {
