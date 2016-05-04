@@ -76,7 +76,8 @@ gulp.task('node-js', function() {
 		'node_modules/viewport-units-buggyfill/viewport-units-buggyfill.js',
 		'node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
 		'node_modules/gsap/src/minified/TweenMax.min.js',
-		'node_modules/hammerjs/hammer.min.js'
+		'node_modules/hammerjs/hammer.min.js',
+		'node_modules/webfontloader/webfontloader.js'
 	])
 	.pipe(gulp.dest(dist + 'js'));
 });

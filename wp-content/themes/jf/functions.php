@@ -198,7 +198,7 @@ function web_font_loader() {
 
 		(function(d) {
 		  var wf = d.createElement('script'), s = d.scripts[0];
-		  wf.src = '//public/assets/js/webfontloader.js';
+		  wf.src = '<?php echo get_template_directory_uri(); ?>/public/assets/js/webfontloader.js';
 		  s.parentNode.insertBefore(wf, s);
 		})(document);
 	</script>
