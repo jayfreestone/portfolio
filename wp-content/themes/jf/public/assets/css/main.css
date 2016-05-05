@@ -1459,86 +1459,15 @@ code {
      -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   max-height: 60rem;
+  background-color: #323232;
 }
 
 @media only screen and (min-width: 60em) {
   .intro {
     text-align: center;
   }
-}
-
-.intro--dashboard {
-  background: #d2011a;
-}
-
-.intro--prime-labs {
-  background-color: rgba(247, 93, 55, 0.9);
-  background-image: url("../../../img/primelabs/prime-labs-background.jpg");
-}
-
-.intro__background {
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  -webkit-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-}
-
-.intro__background--dashboard {
-  background-color: #d0021b;
-  background-image: url("../../../img/dashboard/dashboard-background--small.jpg");
-}
-
-@media only screen and (min-width: 47em) {
-  .intro__background--dashboard {
-    background-image: url("../../../img/dashboard/dashboard-background--medium.jpg");
-  }
-}
-
-@media only screen and (min-width: 98em) {
-  .intro__background--dashboard {
-    background-image: url("../../../img/dashboard/dashboard-background--large.jpg");
-  }
-}
-
-@media only screen and (min-width: 140em) {
-  .intro__background--dashboard {
-    background-image: url("../../../img/dashboard/dashboard-background--xlarge.jpg");
-  }
-}
-
-@media only screen and (min-width: 140em) {
-  .intro__background--dashboard {
-    background-image: url("../../../img/dashboard/dashboard-background--xlarge.jpg");
-  }
-}
-
-@media only screen and (min-width: 250em) {
-  .intro__background--dashboard {
-    background-image: url("../../../img/dashboard/dashboard-background--xxlarge.jpg");
-  }
-}
-
-.intro__overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.intro__overlay--dashboard {
-  background-color: rgba(208, 2, 27, 0.9);
-}
-
-.intro__overlay--prime-labs {
-  background-color: rgba(247, 93, 55, 0.3);
 }
 
 .intro__copy {

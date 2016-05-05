@@ -284,11 +284,12 @@ function add_home_image( $image, $image_prefix, $image_size, $breakpoint, $numbe
  * Home Background images
  */
 function home_images() {
-	$work = get_recent_work();
 	$image_css = '';
 
 	if ( is_front_page() ) {
 		$i = 0;
+		$work = get_recent_work();
+
 		while ( $work->have_posts() ) : $work->the_post();
 			$i++;
 			$work_image = get_field( 'homepage_image' );

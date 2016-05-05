@@ -1,6 +1,12 @@
-<header class="intro intro--dashboard whiteout cf">
-	<div class="intro__background intro__background--dashboard is-hidden"></div>
-	<div class="intro__overlay intro__overlay--dashboard"></div>
+<?php
+	$intro_class = 'intro';
+
+	if ( get_field( 'header_whiteout' ) ) {
+		$intro_class .= ' whiteout';
+	}
+?>
+
+<header class="<?php echo esc_attr($intro_class); ?> cf" style="background-color: <?php echo esc_attr( get_field( 'intro_background_color' ) ); ?>">
 	<div class="intro__content l-container">
 		<div class="intro__copy">
 			<span class="badge">Case Study</span>
