@@ -77,7 +77,9 @@ gulp.task('node-js', function() {
 		'node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
 		'node_modules/gsap/src/minified/TweenMax.min.js',
 		'node_modules/hammerjs/hammer.min.js',
-		'node_modules/webfontloader/webfontloader.js'
+		'node_modules/webfontloader/webfontloader.js',
+		'node_modules/lazysizes/lazysizes.min.js',
+		'node_modules/picturefill/dist/picturefill.min.js'
 	])
 	.pipe(gulp.dest(dist + 'js'));
 });
