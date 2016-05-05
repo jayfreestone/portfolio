@@ -86,14 +86,6 @@
 
 </article>
 
-<?php if ( get_previous_post() ) : ?>
-	<span class="nav-link nav-link--next">
-		<?php previous_post_link( '%link', 'Previous' ); ?>
-	</span>
-<?php else : ?>
-	<span class="nav-link nav-link--previous">
-		<?php next_post_link( '%link', 'Next' ); ?>
-	</span>
-<?php endif; ?>
+<?php get_template_part( 'includes/work-navigation' ); ?>
 
 <?php get_footer(); ?>
