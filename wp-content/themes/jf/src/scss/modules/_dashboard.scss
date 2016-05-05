@@ -78,6 +78,11 @@
 .dashboard__preview {
 	background: $ov-grey;
 	padding: 4rem 0;
+}
+
+.dashboard__preview__image {
+	max-width: 80em;
+	margin: 0 auto;
 
 	> .image-wrapper {
 		@include breakpoint(50em) {

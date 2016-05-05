@@ -2024,21 +2024,26 @@ code {
   padding: 4rem 0;
 }
 
+.dashboard__preview__image {
+  max-width: 80em;
+  margin: 0 auto;
+}
+
 @media only screen and (min-width: 50em) {
-  .dashboard__preview > .image-wrapper {
+  .dashboard__preview__image > .image-wrapper {
     margin-top: -10rem;
     margin-bottom: -8rem;
   }
 }
 
 @media only screen and (min-width: 80em) {
-  .dashboard__preview > .image-wrapper {
+  .dashboard__preview__image > .image-wrapper {
     margin-top: -12rem;
     margin-bottom: -10rem;
   }
 }
 
-.dashboard__preview img {
+.dashboard__preview__image img {
   width: 100%;
   max-width: 80rem;
   margin: 0 auto;

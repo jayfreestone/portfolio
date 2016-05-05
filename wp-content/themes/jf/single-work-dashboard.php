@@ -44,15 +44,17 @@
 		</section>
 
 		<section class="dashboard__preview">
-			<div class="image-wrapper image-wrapper--dashboard-preview">
-				<img data-srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--large.png 2560w,
-							 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--medium.png 1280w,
-							 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--small.png 640w"
-					 sizes="100vw, (min-width: 80em) 80rem"
-					 data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--medium.png" alt="Dashboard displayed on an iPad." class="lazyload">
-				<noscript>
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--medium.png" alt="Dashboard displayed on an iPad.">
-				</noscript>
+			<div class="dashboard__preview__image">
+				<div class="image-wrapper image-wrapper--dashboard-preview">
+					<img data-srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--large.png 2560w,
+								 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--medium.png 1280w,
+								 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--small.png 640w"
+						 sizes="100vw, (min-width: 80em) 80rem"
+						 data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--medium.png" alt="Dashboard displayed on an iPad." class="lazyload">
+					<noscript>
+						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dashboard-ipad-flat--medium.png" alt="Dashboard displayed on an iPad.">
+					</noscript>
+				</div>
 			</div>
 		</section>
 		
