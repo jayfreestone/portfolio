@@ -27,7 +27,7 @@
     "advanced-custom-fields/advanced-custom-fields-pro": "5.3.7",
 	"wpackagist-plugin/wordpress-seo": "3.2.4",
 	"wpackagist-plugin/google-analytics-for-wordpress": "5.5",
-	"wpackagist-plugin/wp-smushit": "2.2.2",
+	"wpackagist-plugin/ewww-image-optimizer-cloud": "2.8.0",
 	"wpackagist-plugin/nginx-helper": "1.9.6",
 	"wpackagist-plugin/redis-cache": "1.3.2"
   },
