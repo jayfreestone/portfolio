@@ -267,7 +267,7 @@ add_action( 'save_post', 'reset_recent_work_on_save' );
 function add_home_image( $image, $image_prefix, $image_size, $breakpoint, $number ) {
 	$css = '';
 
-	$css .= '.work-preview--' . esc_html( $number ) . ' .work-preview__image {';
+	$css .= '.no-js .work-preview--' . esc_html( $number ) . ' .work-preview__image {';
 	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . ((int)$image_size * 2)] ) . ');';
 	$css .= '}';
 
