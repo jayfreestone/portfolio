@@ -1,9 +1,8 @@
 .intro {
-	position: relative;
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh;
-	max-height: 60rem;
+	height: 100vh;
+	max-height: 50rem;
 	background-color: $black;
 
 	@include breakpoint(60em) {
