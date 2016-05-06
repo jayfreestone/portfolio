@@ -1247,6 +1247,10 @@ code {
           transform: translate3d(0, 0, 0);
 }
 
+.work-preview__image-preload {
+  display: none;
+}
+
 .work-preview--current .work-preview__image,
 .work-preview--current .work-preview__copy {
   -webkit-transform: translate3d(0, 0, 0);
@@ -1446,7 +1450,6 @@ code {
 }
 
 .intro {
-  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -1459,8 +1462,8 @@ code {
      -moz-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100vh;
-  max-height: 60rem;
+  height: 100vh;
+  max-height: 50rem;
   background-color: #323232;
 }
 
