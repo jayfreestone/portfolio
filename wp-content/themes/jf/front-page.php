@@ -51,17 +51,18 @@
 					</a>
 				</div>
 
-				<a class="work-preview__image is-hidden" href="<?php the_permalink(); ?>"></a>
+				<a class="work-preview__image is-hidden" href="<?php the_permalink(); ?>">
+					<?php $work_image = get_field( 'homepage_image' ); ?>
 
-				<?php $work_image = get_field( 'homepage_image' ); ?>
+					<img class="work-preview__image-preload" 
+						 srcset="<?php echo esc_url( $work_image['sizes']['homepage-300'] ); ?> 300w,
+								 <?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?> 600w,
+								 <?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?> 1200w,
+								 <?php echo esc_url( $work_image['sizes']['homepage-2000'] ); ?> 2000w"
+						 sizes="(min-width: 60em) 55vw, (min-width: 40em) calc(100vw - 16rem), calc(100vw - 3rem)" 
+						 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="<?php the_title(); ?>">
+				</a>
 
-				<img class="work-preview__image-preload" 
-					 srcset="<?php echo esc_url( $work_image['sizes']['homepage-300'] ); ?> 300w,
-					 		 <?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?> 600w,
-					 		 <?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?> 1200w,
-					 		 <?php echo esc_url( $work_image['sizes']['homepage-2000'] ); ?> 2000w"
-					 sizes="calc(100vw - 3rem), (min-width: 40em) calc(100vw - 16rem), (min-width: 60em) 50vw" 
-					 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="<?php the_title(); ?>">
 
 			</article>
 
