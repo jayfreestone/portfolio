@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "89ed8fc83b720cf068b6b8d059c28ec1",
-    "content-hash": "82282811f2676e9174eb4ecd82dc7e3f",
+    "hash": "a710283eafeaf90bedb356a67ebda4f2",
+    "content-hash": "d671a44241edfa13faf2ee26a73e247a",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -224,16 +224,16 @@
             "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
         },
         {
-            "name": "wpackagist-plugin/ewww-image-optimizer-cloud",
+            "name": "wpackagist-plugin/ewww-image-optimizer",
             "version": "2.8.0",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer-cloud/",
+                "url": "https://plugins.svn.wordpress.org/ewww-image-optimizer/",
                 "reference": "tags/2.8.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer-cloud.2.8.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.2.8.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -241,7 +241,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/ewww-image-optimizer-cloud/"
+            "homepage": "https://wordpress.org/plugins/ewww-image-optimizer/"
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
