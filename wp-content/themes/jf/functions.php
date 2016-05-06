@@ -8,10 +8,10 @@ function jf_setup() {
 	/**
 	 * Sets up image sizes
 	 */
-	add_image_size( 'homepage-300', '300' );
-	add_image_size( 'homepage-600', '600' );
-	add_image_size( 'homepage-1200', '1200' );
-	add_image_size( 'homepage-2400', '2400' );
+	add_image_size( 'homepage-300', '300', '0', false );
+	add_image_size( 'homepage-600', '600', '0', false );
+	add_image_size( 'homepage-1200', '1200', '0', false );
+	add_image_size( 'homepage-2000', '2000', '0', false );
 
 	add_image_size( 'landscape-300', '300', '200' );
 	add_image_size( 'landscape-600', '600', '400' );
@@ -261,20 +261,6 @@ function reset_recent_work_on_save() {
 add_action( 'save_post', 'reset_recent_work_on_save' );
 
 /**
- * Add Home Image
- * Generates the CSS for a work-preview background-image.
- */
-function add_home_image( $image, $image_prefix, $image_size, $breakpoint, $number ) {
-	$css = '';
-
-	$css .= '.no-js .work-preview--' . esc_html( $number ) . ' .work-preview__image {';
-	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . ((int)$image_size * 2)] ) . ');';
-	$css .= '}';
-
-	return $css;
-}
-
-/**
  * Home Background images
  * Used only as a backup for users with JS disabled.
  */
@@ -297,6 +283,20 @@ function home_images() {
 	wp_reset_postdata();
 }
 add_action( 'wp_head', 'home_images' );
+
+/**
+ * Add Home Image
+ * Generates the CSS for a work-preview background-image.
+ */
+function add_home_image( $image, $image_prefix, $image_size, $breakpoint, $number ) {
+	$css = '';
+
+	$css .= '.no-js .work-preview--' . esc_html( $number ) . ' .work-preview__image {';
+	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . $image_size] ) . ');';
+	$css .= '}';
+
+	return $css;
+}
 
 /**
  * Page Slug Body Class

@@ -59,7 +59,7 @@
 					 srcset="<?php echo esc_url( $work_image['sizes']['homepage-300'] ); ?> 300w,
 					 		 <?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?> 600w,
 					 		 <?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?> 1200w,
-					 		 <?php echo esc_url( $work_image['sizes']['homepage-2400'] ); ?> 2400w"
+					 		 <?php echo esc_url( $work_image['sizes']['homepage-2000'] ); ?> 2000w"
 					 sizes="calc(100vw - 3rem), (min-width: 40em) calc(100vw - 16rem), (min-width: 60em) 50vw" 
 					 src="<?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?>" alt="<?php the_title(); ?>">
 
