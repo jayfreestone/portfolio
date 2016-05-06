@@ -210,6 +210,10 @@
 	}
 }
 
+.work-preview__image-preload {
+	display: none;
+}
+
 .work-preview--current {
 	.work-preview__image,
 	.work-preview__copy {

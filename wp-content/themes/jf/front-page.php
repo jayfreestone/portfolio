@@ -53,15 +53,15 @@
 
 				<a class="work-preview__image is-hidden" href="<?php the_permalink(); ?>"></a>
 
+				<?php // To force BG images to download in parallel with other resources. ?>
 				<?php $work_image = get_field( 'homepage_image' ); ?>
-
-				<img style="display: none;" 
+				<img class="work-preview__image-preload" 
 					 srcset="<?php echo $work_image['sizes']['homepage-300']; ?> 300w,
 					 		<?php echo $work_image['sizes']['homepage-600']; ?> 600w,
 					 		<?php echo $work_image['sizes']['homepage-1200']; ?> 1200w,
 					 		<?php echo $work_image['sizes']['homepage-2400']; ?> 2400w"
 					 sizes="100vw, (min-width: 600px) 50vw" 
-					 src="<?php echo $work_image['sizes']['homepage-600']; ?> 600w" alt="<?php the_title(); ?>">
+					 src="<?php echo $work_image['sizes']['homepage-600']; ?>" alt="<?php the_title(); ?>">
 
 			</article>
 
