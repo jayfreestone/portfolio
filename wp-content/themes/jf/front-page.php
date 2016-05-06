@@ -59,7 +59,7 @@
 								 <?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?> 600w,
 								 <?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?> 1200w,
 								 <?php echo esc_url( $work_image['sizes']['homepage-2000'] ); ?> 2000w"
-						 sizes="(min-width: 60em) 55vw, (min-width: 40em) calc(100vw - 16rem), calc(100vw - 3rem)" 
+						 sizes="(min-width: 60em) 65vw, (min-width: 40em) calc(100vw - 16rem), calc(100vw - 3rem)" 
 						 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="<?php the_title(); ?>">
 				</a>
 
