@@ -22,6 +22,41 @@ let homeScroll = (function () {
 		}
 		animateInitial();
 		bindUIEvents();
+		loadImages();
+
+	}
+
+	function loadImages() {
+
+		let previewImages = document.querySelectorAll('.work-preview');
+
+		for ( let i = 0; i < previewImages.length; i++ ) {
+			loadImage( previewImages[i] );
+		}
+
+	}
+
+	// Displays the images as background images.
+	// Allows for parallel requests to js etc (unlike bg images) 
+	// and benefits from srcset's asset selection.
+	function loadImage(image) {
+		let imageHolder = image.querySelector( '.work-preview__image' );
+
+		// Image is display none
+		let imagePreload = image.querySelector( '.work-preview__image-preload' );
+		let backgroundStyle = imagePreload.currentSrc;
+
+		// Seems to be more reliable than attaching directly
+		let tmpImg = document.createElement('img');
+		tmpImg.src = backgroundStyle;
+
+		tmpImg.addEventListener('load', (function(){
+			// Image placeholder is given background image
+			if ( backgroundStyle ) {
+				imageHolder.style.backgroundImage = 'url("' + backgroundStyle + '")';
+				imageHolder.classList.remove('is-hidden');
+			}
+		}));
 	}
 
 	function resetScroll() {
@@ -51,15 +86,6 @@ let homeScroll = (function () {
 			navItems[0].parentNode.classList.add('work-preview-container__nav__item--is-active');
 		}, 200);
 	}
-
-	// Displays background images only once loaded
-	// function fadeImagesOnLoad() {
-	// 	let workImages = document.querySelectorAll('.work-preview__image');
-    //
-	// 	for (let i = 0; i < workImages.length; i++) {
-	// 		fadeBackgroundImage.fade(workImages[i]);
-	// 	}
-	// }
 
 	function bindUIEvents() {
 		window.addEventListener('keydown', keyboardNav);
@@ -95,6 +121,11 @@ let homeScroll = (function () {
 		for (let i = 0; i < navItems.length; i++) {
 			navItems[i].addEventListener('click', handleNav);
 		}
+
+		// Re-evaluate image sizes
+		window.addEventListener('resize', function() {
+			loadImages();
+		});
 		
 	}
 

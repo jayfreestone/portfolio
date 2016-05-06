@@ -11,7 +11,7 @@
 					<?php the_field( 'setup_copy' ); ?>
 				</div>
 			</div>
-			<div class="dashboard__setup__bg is-hidden"></div>
+			<div class="dashboard__setup__bg is-hidden-bg"></div>
 		</section>
 		
 		<section class="chunk chunk--swap dashboard__section dashboard__problems cf">

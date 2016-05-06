@@ -260,21 +260,15 @@ function reset_recent_work_on_save() {
 }
 add_action( 'save_post', 'reset_recent_work_on_save' );
 
+/**
+ * Add Home Image
+ * Generates the CSS for a work-preview background-image.
+ */
 function add_home_image( $image, $image_prefix, $image_size, $breakpoint, $number ) {
 	$css = '';
 
 	$css .= '.work-preview--' . esc_html( $number ) . ' .work-preview__image {';
-	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . $image_size] ) . ');';
-	$css .= '}';
-	$css .= '@media only screen and (-webkit-min-device-pixel-ratio: 2),';
-	$css .= 'only screen and (min--moz-device-pixel-ratio: 2),';
-	$css .= 'only screen and (-o-min-device-pixel-ratio: 2/1),';
-	$css .= 'only screen and (min-device-pixel-ratio: 2),';
-	$css .= 'only screen and (min-resolution: 192dpi) and (min-width: ' . $breakpoint . '),';
-	$css .= 'only screen and (min-resolution: 2dppx) {';
-	$css .= '.work-preview--' . esc_html( $number ) . ' .work-preview__image {';
 	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . ((int)$image_size * 2)] ) . ');';
-	$css .= '}';
 	$css .= '}';
 
 	return $css;
@@ -282,6 +276,7 @@ function add_home_image( $image, $image_prefix, $image_size, $breakpoint, $numbe
 
 /**
  * Home Background images
+ * Used only as a backup for users with JS disabled.
  */
 function home_images() {
 	$image_css = '';
@@ -293,8 +288,6 @@ function home_images() {
 		while ( $work->have_posts() ) : $work->the_post();
 			$i++;
 			$work_image = get_field( 'homepage_image' );
-			$image_css .= add_home_image( $work_image, 'homepage', '300', '300px', $i );
-			$image_css .= add_home_image( $work_image, 'homepage', '600', '600px', $i );
 			$image_css .= add_home_image( $work_image, 'homepage', '1200', '1200px', $i );
 		 endwhile;
 

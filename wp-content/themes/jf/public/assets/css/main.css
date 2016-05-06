@@ -425,7 +425,8 @@ th {
   transition: all 1s;
 }
 
-.js .is-hidden {
+.js .is-hidden,
+.js .is-hidden-bg {
   opacity: 0 !important;
 }
 

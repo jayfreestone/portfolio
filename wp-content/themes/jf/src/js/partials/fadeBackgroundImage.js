@@ -10,10 +10,10 @@ let fadeBackgroundImage = (function () {
 			let backgroundImage = backgroundStyle.match(/\/\/([a-z0-9:\-\.\/]+)/)[0];
 			imageTemp.src = backgroundImage.replace(/"/g, '');
 			imageTemp.addEventListener('load', function() {
-				image.classList.remove('is-hidden');
+				image.classList.remove('is-hidden-bg');
 			});
 		} else {
-			image.classList.remove('is-hidden');
+			image.classList.remove('is-hidden-bg');
 		}
 
 	}
