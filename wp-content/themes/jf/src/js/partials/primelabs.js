@@ -1,9 +1,13 @@
+/**
+ * Prime Labs
+ * JS for the Prime Labs case study.
+ */
 let primelabs = (function () {
 	// Init controller
 	let controller = new ScrollMagic.Controller();
 
-	let problemSection = document.querySelector('.prime-labs__section--problems');
-	let standardSection = document.querySelector('.prime-labs__section--as-standard');
+	let problemSection = document.querySelector('.prime-labs__problems');
+	let standardSection = document.querySelector('.prime-labs__as-standard');
 	let carouselSection = document.querySelector('.prime-labs__carousel');
 	let backstorySection = document.querySelector('.prime-labs__backstory');
 
@@ -56,7 +60,7 @@ let primelabs = (function () {
 	}
 
 	function problemHandler() {
-		problemSection.classList.add('prime-labs__section--problems--is-active');
+		problemSection.classList.add('prime-labs__problems--is-active');
 	}
 
 	function standardHandler() {

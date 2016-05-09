@@ -4,34 +4,33 @@
 	<?php require( 'includes/intro.php' ); ?>
 
 	<div class="site-main">
-		<section class="chunk dashboard__section dashboard__setup cf">
+		<section class="chunk chunk--swap dashboard__section dashboard__setup cf">
 			<div class="chunk__inner l-container">
 				<div class="chunk__primary">
 					<h2 class="heading-1"><?php the_field( 'setup_title' ); ?></h2>
 					<?php the_field( 'setup_copy' ); ?>
 				</div>
 			</div>
-			<div class="dashboard__setup__bg is-hidden-bg"></div>
 		</section>
 		
-		<section class="chunk chunk--swap dashboard__section dashboard__problems cf">
+		<section class="chunk  dashboard__section dashboard__problems cf">
 			<div class="chunk__inner l-container">
 				<div class="chunk__primary">
 					<h2 class="heading-1"><?php the_field( 'problem_title' ); ?></h2>
 					<?php the_field( 'problem_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
-					<img srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-cube--xlarge.jpg 2000w,
-								 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-cube--large.jpg 1200w,
-								 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-cube--medium.jpg 700w,
-								 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-cube--small.jpg 250w"
-						 sizes="(min-width: 60em) 17vw, 33.33vw"
-						 src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-cube--medium.jpg" alt="Photo of a rubix cube.">
+					<!-- <img srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash&#45;cube&#45;&#45;xlarge.jpg 2000w, -->
+					<!-- 			 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash&#45;cube&#45;&#45;large.jpg 1200w, -->
+					<!-- 			 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash&#45;cube&#45;&#45;medium.jpg 700w, -->
+					<!-- 			 <?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash&#45;cube&#45;&#45;small.jpg 250w" -->
+					<!-- 	 sizes="(min&#45;width: 60em) 17vw, 33.33vw" -->
+					<!-- 	 src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash&#45;cube&#45;&#45;medium.jpg" alt="Photo of a rubix cube."> -->
 				</div>
 			</div>
 		</section>
 		
-		<section class="chunk dashboard__groundwork cf">
+		<section class="chunk chunk--swap dashboard__groundwork cf">
 			<div class="chunk__inner l-container">
 				<div class="chunk__primary">
 					<h2 class="heading-1"><?php the_field( 'groundwork_title' ); ?></h2>
@@ -58,7 +57,7 @@
 			</div>
 		</section>
 		
-		<section class="chunk chunk--swap dashboard__section dashboard__deployment cf">
+		<section class="chunk  dashboard__section dashboard__deployment cf">
 			<div class="chunk__inner l-container">
 				<div class="chunk__primary">
 					<h2 class="heading-1"><?php the_field( 'deployment_title' ); ?></h2>
@@ -72,18 +71,25 @@
 				</div>
 			</div>
 		</section>
-		
-		<section class="chunk dashboard__section dashboard__bonus">
+
+		<section class="chunk chunk--swap dashboard__bonus whiteout">
 			<div class="chunk__inner l-container">
 				<div class="chunk__primary">
 					<h2 class="heading-1"><?php the_field( 'bonus_round_title' ); ?></h2>
 					<?php the_field( 'bonus_round_copy' ); ?>
 				</div>
-				<div class="chunk__secondary">
-					<img class="lazyload" data-src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/dashboard/dash-composer.png" alt="Composer Generator on OV Dash">
-				</div>
+				<div class="chunk__secondary"></div>
 			</div>
 		</section>
+		
+		<section class="chunk chunk--single dashboard__section dashboard__demo">
+			<div class="chunk__inner l-container">
+					<video onclick="this.paused ? this.play() : this.pause();">
+						<source src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-deployment.mp4" type="video/mp4">
+					</video>
+			</div>
+		</section>
+
 	</div>
 
 </article>

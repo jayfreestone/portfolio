@@ -14,6 +14,11 @@
 
 	.chunk__inner {
 		justify-content: space-around;
+		flex-direction: column;
+	}
+
+	.chunk__secondary {
+		width: 100%;
 	}
 }
 

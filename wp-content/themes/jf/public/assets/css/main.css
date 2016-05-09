@@ -1263,6 +1263,11 @@ code {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   -webkit-transform: translate3d(0px, 0px, 0px);
           transform: translate3d(0px, 0px, 0px);
 }
@@ -1785,51 +1790,6 @@ code {
   }
 }
 
-.dashboard__setup {
-  position: relative;
-}
-
-.dashboard__setup .chunk__primary {
-  max-width: 32rem;
-}
-
-@media only screen and (min-width: 50rem) {
-  .dashboard__setup .chunk__primary {
-    width: 70%;
-  }
-}
-
-.dashboard__setup__bg {
-  -webkit-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  background-size: cover;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: -1;
-}
-
-@media only screen and (min-width: 40em) {
-  .dashboard__setup__bg {
-    background-image: url("../../../img/dashboard/dashboard-setup--medium.jpg");
-  }
-}
-
-@media only screen and (min-width: 80em) {
-  .dashboard__setup__bg {
-    background-image: url("../../../img/dashboard/dashboard-setup--large.jpg");
-  }
-}
-
-@media only screen and (min-width: 140em) {
-  .dashboard__setup__bg {
-    background-image: url("../../../img/dashboard/dashboard-setup--xlarge.jpg");
-  }
-}
-
 .dashboard__problems {
   background-color: #f8f8f8;
 }
@@ -1879,7 +1839,7 @@ code {
 }
 
 .dashboard__preview__image {
-  max-width: 80em;
+  max-width: 50em;
   margin: 0 auto;
 }
 
@@ -1899,8 +1859,6 @@ code {
 
 .dashboard__preview__image img {
   width: 100%;
-  max-width: 80rem;
-  margin: 0 auto;
   display: block;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
@@ -1967,7 +1925,21 @@ code {
 }
 
 .dashboard__bonus {
-  background: #f8f8f8;
+  background: #3fb0ac;
+}
+
+.dashboard__demo {
+  background: #fcfcfc;
+  padding: 3rem 0;
+}
+
+.dashboard__demo video {
+  max-width: 70rem;
+  cursor: pointer;
+}
+
+.dashboard__demo .chunk__primary {
+  padding-bottom: 0;
 }
 
 .link-widget {
@@ -2099,6 +2071,17 @@ code {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.chunk--single .chunk__secondary {
+  width: 100%;
 }
 
 .chunk__inner {
@@ -2254,48 +2237,57 @@ code {
   color: #ff622b;
 }
 
-.prime-labs__section--intro {
+.prime-labs__intro {
   background-color: #ff622b;
 }
 
-.prime-labs__section--brand {
+.prime-labs__brand {
   background-color: #223b4c;
   position: relative;
 }
 
-.prime-labs__section--brand img {
-  max-width: 20em;
-  position: absolute;
-  bottom: 0;
+.prime-labs__brand img {
+  display: block;
+  max-width: 15em;
+  margin: 0 auto;
 }
 
-.prime-labs__section--problems {
+@media only screen and (min-width: 60em) {
+  .prime-labs__brand img {
+    max-width: 18em;
+    position: absolute;
+    right: 4rem;
+    bottom: 0;
+  }
+}
+
+.prime-labs__problems {
   background-color: #223b4c;
   color: #fff;
   text-align: center;
 }
 
-.prime-labs__section--problems ol {
+.prime-labs__problems ol {
   counter-reset: problems;
   list-style: none;
   padding-left: 0;
 }
 
-.prime-labs__section--problems li {
+.prime-labs__problems li {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
 
-.prime-labs__section--problems li:not(:last-child) {
+.prime-labs__problems li:not(:last-child) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.js .prime-labs__section--problems li {
+.js .prime-labs__problems li {
   visibility: hidden;
   opacity: 0;
 }
 
-.prime-labs__section--problems li:before {
+.prime-labs__problems li:before {
   content: counter(problems) ". ";
   counter-increment: problems;
   font-weight: bold;
@@ -2303,15 +2295,6 @@ code {
   display: block;
   color: #ff622b;
   font-size: 1.5rem;
-}
-
-.prime-labs__section--problems .chunk__inner {
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-     -moz-box-align: stretch;
-      -ms-flex-align: stretch;
-              -ms-grid-row-align: stretch;
-          align-items: stretch;
 }
 
 .prime-labs__what-is .chunk__inner {
@@ -2330,7 +2313,7 @@ code {
   background-position: left center;
 }
 
-.js .prime-labs__section--problems--is-active li {
+.js .prime-labs__problems--is-active li {
   visibility: visible;
   opacity: 1;
   -webkit-transition: .3s all;
@@ -2338,61 +2321,61 @@ code {
   transition: .3s all;
 }
 
-.js .prime-labs__section--problems--is-active li:nth-child(1) {
+.js .prime-labs__problems--is-active li:nth-child(1) {
   -webkit-transition-delay: 0.3s;
        -o-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
 
-.js .prime-labs__section--problems--is-active li:nth-child(2) {
+.js .prime-labs__problems--is-active li:nth-child(2) {
   -webkit-transition-delay: 0.6s;
        -o-transition-delay: 0.6s;
           transition-delay: 0.6s;
 }
 
-.js .prime-labs__section--problems--is-active li:nth-child(3) {
+.js .prime-labs__problems--is-active li:nth-child(3) {
   -webkit-transition-delay: 0.9s;
        -o-transition-delay: 0.9s;
           transition-delay: 0.9s;
 }
 
-.js .prime-labs__section--problems--is-active li:nth-child(4) {
+.js .prime-labs__problems--is-active li:nth-child(4) {
   -webkit-transition-delay: 1.2s;
        -o-transition-delay: 1.2s;
           transition-delay: 1.2s;
 }
 
-.js .prime-labs__section--problems--is-active li:nth-child(5) {
+.js .prime-labs__problems--is-active li:nth-child(5) {
   -webkit-transition-delay: 1.5s;
        -o-transition-delay: 1.5s;
           transition-delay: 1.5s;
 }
 
-.js .prime-labs__section--problems--is-active li:nth-child(6) {
+.js .prime-labs__problems--is-active li:nth-child(6) {
   -webkit-transition-delay: 1.8s;
        -o-transition-delay: 1.8s;
           transition-delay: 1.8s;
 }
 
-.js .prime-labs__section--problems--is-active li:nth-child(7) {
+.js .prime-labs__problems--is-active li:nth-child(7) {
   -webkit-transition-delay: 2.1s;
        -o-transition-delay: 2.1s;
           transition-delay: 2.1s;
 }
 
-.js .prime-labs__section--problems--is-active li:nth-child(8) {
+.js .prime-labs__problems--is-active li:nth-child(8) {
   -webkit-transition-delay: 2.4s;
        -o-transition-delay: 2.4s;
           transition-delay: 2.4s;
 }
 
-.js .prime-labs__section--problems--is-active li:nth-child(9) {
+.js .prime-labs__problems--is-active li:nth-child(9) {
   -webkit-transition-delay: 2.7s;
        -o-transition-delay: 2.7s;
           transition-delay: 2.7s;
 }
 
-.js .prime-labs__section--problems--is-active li:nth-child(10) {
+.js .prime-labs__problems--is-active li:nth-child(10) {
   -webkit-transition-delay: 3s;
        -o-transition-delay: 3s;
           transition-delay: 3s;
@@ -2417,10 +2400,14 @@ code {
           transform: translateX(-110%);
 }
 
-.prime-labs__section--modular-boxes {
+.prime-labs__modular-boxes {
   overflow: hidden;
   background: #ff622b;
   color: #fff;
+}
+
+.prime-labs__modular-boxes img {
+  width: 100%;
 }
 
 .prime-labs__box--ingredients {
@@ -2436,14 +2423,14 @@ code {
           transform: translateX(110%);
 }
 
-.js .prime-labs__section--modular-boxes--is-active .prime-labs__box {
+.js .prime-labs__modular-boxes--is-active .prime-labs__box {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
        -o-transform: translateX(0);
           transform: translateX(0);
 }
 
-.js .prime-labs__section--modular-boxes--is-active .prime-labs__box--ingredients {
+.js .prime-labs__modular-boxes--is-active .prime-labs__box--ingredients {
   -webkit-transition-delay: .3s;
        -o-transition-delay: .3s;
           transition-delay: .3s;
@@ -2462,27 +2449,27 @@ code {
   opacity: 0;
 }
 
-.prime-labs__section--as-standard {
+.prime-labs__as-standard {
   background: #223b4c;
   color: #fff;
   padding-bottom: 0;
 }
 
-.prime-labs__section--as-standard a {
+.prime-labs__as-standard a {
   color: #fff;
 }
 
-.prime-labs__section--as-standard .chunk__primary {
+.prime-labs__as-standard .chunk__primary {
   padding-bottom: 6rem;
 }
 
-.prime-labs__section--as-standard .chunk__secondary {
+.prime-labs__as-standard .chunk__secondary {
   -webkit-align-self: flex-end;
       -ms-flex-item-align: end;
           align-self: flex-end;
 }
 
-.prime-labs__section--as-standard video {
+.prime-labs__as-standard video {
   display: block;
   width: 100%;
 }
@@ -2491,11 +2478,11 @@ code {
   overflow: hidden;
 }
 
-.prime-labs__section--day-life {
+.prime-labs__day-life {
   background-color: #223b4c;
 }
 
-.prime-labs__section--day-life .chunk__inner {
+.prime-labs__day-life .chunk__inner {
   -webkit-box-align: stretch;
   -webkit-align-items: stretch;
      -moz-box-align: stretch;
@@ -2504,11 +2491,20 @@ code {
           align-items: stretch;
 }
 
-.prime-labs__section--day-life .chunk__secondary {
+.prime-labs__day-life .chunk__secondary {
   background-image: url("../../../img/primelabs/pl-pill.png");
   background-position: left center;
   background-size: 100%;
   background-repeat: no-repeat;
+}
+
+.status {
+  text-align: center;
+}
+
+.status img {
+  margin: 0 auto;
+  max-width: 6rem;
 }
 
 .l-siteheader {

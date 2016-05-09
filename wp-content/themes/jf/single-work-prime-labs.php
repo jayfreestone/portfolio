@@ -2,7 +2,7 @@
 	<article class="prime-labs">
 		<?php get_template_part( 'includes/intro' ); ?>
 		<div class="site-main">
-			<section class="chunk prime-labs__section prime-labs__backstory">
+			<section class="chunk prime-labs__backstory">
 				<div class="chunk__inner l-container">
 					<div class="chunk__primary">
 						<h2 class="heading-1">The Backstory</h2>
@@ -13,7 +13,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="chunk chunk--single prime-labs__section--problems">
+			<section class="chunk chunk--single prime-labs__problems">
 				<div class="chunk__inner l-container">
 					<div class="chunk__primary">
 						<h2 class="heading-1">The Problems</h2>
@@ -31,7 +31,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="chunk whiteout prime-labs__section--day-life">
+			<section class="chunk whiteout prime-labs__day-life">
 				<div class="l-container chunk__inner">
 					<div class="chunk__primary">
 						<h2 class="heading-1">A Day in the Life</h2>
@@ -48,16 +48,19 @@
 					</div>
 				</div>
 			</section>
-			<section class="chunk prime-labs__section--modular-boxes">
+			<section class="chunk prime-labs__modular-boxes">
 				<div class="chunk__inner l-container">
 					<div class="chunk__primary">
 						<h2 class="heading-1">Modular Boxes</h2>
 						<?php the_field( 'modular_boxes_part_one' ); ?>
 						<?php the_field( 'modular_boxes_part_two' ); ?>
 					</div>
+					<div class="chunk__secondary">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/primelabs/pl-modular-boxes.svg" alt="">
+					</div>
 				</div>
 			</section>
-			<section class="chunk chunk--swap">
+			<section class="chunk chunk--single prime-labs__growth">
 				<div class="chunk__inner l-container">
 					<div class="chunk__primary">
 						<h2 class="heading-1">Graceful Growth</h2>
@@ -69,7 +72,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="chunk prime-labs__section--brand whiteout">
+			<section class="chunk prime-labs__brand whiteout">
 				<div class="chunk__inner l-container">
 					<div class="chunk__primary">
 						<h2 class="heading-1">Brand</h2>
@@ -92,7 +95,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="chunk prime-labs__section--as-standard">
+			<section class="chunk  prime-labs__as-standard">
 				<div class="chunk__inner l-container">
 					<div class="chunk__primary">
 						<h2 class="heading-1">As Standard</h2>
@@ -106,7 +109,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="chunk chunk--swap">
+			<section class="chunk chunk--single">
 				<div class="chunk__inner l-container">
 					<div class="chunk__primary">
 						<h2 class="heading-1">Reflections</h2>

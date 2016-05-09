@@ -5,10 +5,10 @@ import fadeBackgroundImage from './fadeBackgroundImage.js';
 
 let fadeIsHidden = (function () {
 	function init() {
-		let isHidden = document.querySelectorAll('.is-hidden-bg');
+		let isHiddenAll = Array.from(document.querySelectorAll('.is-hidden-bg'));
 
-		for (let i = 0; i < isHidden.length; i++) {
-			fadeBackgroundImage.fade(isHidden[i]);
+		for (const isHidden of isHiddenAll) {
+			fadeBackgroundImage.fade(isHidden);
 		}
 	}
 

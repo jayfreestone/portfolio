@@ -1,6 +1,7 @@
-// import objectFitImages from 'object-fit-images';
-import fadeBackgroundImage from './fadeBackgroundImage.js';
-
+/**
+ * Home Scroll
+ * Handles the homepage carousel
+ */
 let homeScroll = (function () {
 	let navItems;
 	let delta = 0;
@@ -19,7 +20,7 @@ let homeScroll = (function () {
 
 	function init() {
 		if (nav) {
-			navItems = nav.querySelectorAll('a');
+			navItems = Array.from(nav.querySelectorAll('a'));
 		}
 
 		animateInitial();
@@ -41,16 +42,11 @@ let homeScroll = (function () {
 
 	// Runs loadImage on the work-preview carousel images.
 	function loadImages() {
-		let previewImages = document.querySelectorAll('.work-preview');
+		let previewImages = Array.from(document.querySelectorAll('.work-preview'));
 
-		for ( let i = 0; i < previewImages.length; i++ ) {
-			loadImage( previewImages[i] );
+		for ( const previewImage of previewImages ) {
+			loadImage( previewImage );
 		}
-
-		// Re-evaluate image sizes
-		// window.addEventListener('resize', function() {
-			// loadImages();
-		// });
 	}
 
 	// Displays the images as background images.
@@ -83,8 +79,8 @@ let homeScroll = (function () {
 
 		let elms = scrolls.slice(Math.max(scrolls.length - offset, 1));
 
-		for (let i = 0; i < elms.length; i++) {
-			sum += elms[i];
+		for ( const elm of elms ) {
+			sum += elm;
 		}
 
 		return Math.ceil(sum / offset);
@@ -92,7 +88,6 @@ let homeScroll = (function () {
 
 	function animateInitial() {
 		let firstWork = document.querySelector('.work-preview--1');
-		// fadeBackgroundImage(firstWork.querySelector('.work-preview__image'));
 
 		setTimeout(function(){
 			firstWork.classList.add('work-preview--current');
@@ -131,12 +126,9 @@ let homeScroll = (function () {
 		});
 
 		// Hooks up navigation
-		for (let i = 0; i < navItems.length; i++) {
-			navItems[i].addEventListener('click', handleNav);
+		for (const navItem of navItems) {
+			navItem.addEventListener('click', handleNav);
 		}
-
-
-		
 	}
 
 	function handleNav(event) {
@@ -179,9 +171,9 @@ let homeScroll = (function () {
 				// Need to add next to ALL going forward
 				let previousSlides = workSlides.slice(nextNumber, currentNumber - 1);
 
-				for ( let i = 0; i < previousSlides.length; i++ ) {
-					previousSlides[i].classList.add('work-preview--next');
-					previousSlides[i].classList.remove('work-preview--previous');
+				for ( const previousSlide of previousSlides ) {
+					previousSlide.classList.add('work-preview--next');
+					previousSlide.classList.remove('work-preview--previous');
 				}
 
 			} else {

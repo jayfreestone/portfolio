@@ -1,36 +1,4 @@
 .dashboard__setup {
-	position: relative;
-
-	.chunk__primary {
-		max-width: 32rem; 
-
-		@include breakpoint(50rem) {
-			width: 70%;
-		}
-	}
-}
-
-.dashboard__setup__bg {
-	transition: all 1s ease-in-out;
-	background-size: cover;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	z-index: -1;
-
-	@media only screen and (min-width: 40em) { 
-		background-image: url('../../../img/dashboard/dashboard-setup--medium.jpg');
-	}
-
-	@media only screen and (min-width: 80em) { 
-		background-image: url('../../../img/dashboard/dashboard-setup--large.jpg');
-	}
-
-	@media only screen and (min-width: 140em) { 
-		background-image: url('../../../img/dashboard/dashboard-setup--xlarge.jpg');
-	}
 }
 
 .dashboard__problems {
@@ -81,7 +49,7 @@
 }
 
 .dashboard__preview__image {
-	max-width: 80em;
+	max-width: 50em;
 	margin: 0 auto;
 
 	> .image-wrapper {
@@ -98,8 +66,6 @@
 
 	img {
 		width: 100%;
-		max-width: 80rem;
-		margin: 0 auto;
 		display: block;
 		transition: all .3s;
 	}
@@ -163,6 +129,28 @@
 	}
 }
 
+.dashboard__deployment {
+
+}
+
 .dashboard__bonus {
-	background: $ov-grey;
+	background: #3fb0ac;
+}
+
+.dashboard__demo {
+	background: #fcfcfc;
+	padding: 3rem 0;
+
+	video {
+		max-width: 70rem;
+		cursor: pointer;
+	}
+
+	.chunk__primary {
+		padding-bottom: 0;
+	}
+
+	// .heading-1 {
+	// 	margin-bottom: 0;
+	// }
 }
