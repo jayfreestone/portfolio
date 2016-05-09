@@ -217,6 +217,7 @@
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+	flex: 1;
 
 	// Force hardware acceleration due to FF object fit bug
 	transform: translate3d(0px, 0px, 0px);
