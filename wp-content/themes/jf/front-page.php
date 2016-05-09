@@ -45,17 +45,15 @@
 						<?php get_template_part( 'includes/type-badge' ); ?>
 						<h2 class="heading-1 work-preview__title" itemprop="name"><?php the_title(); ?></h2>
 						<div itemprop="description"><?php the_field( 'homepage_intro' ); ?></div>
-						<span class="work-preview__link">
-							View Work
-						</span>
+						<span class="work-preview__link">View Work</span>
 					</a>
 				</div>
 
 				<a class="work-preview__image" href="<?php the_permalink(); ?>">
 					<?php $work_image = get_field( 'homepage_image' ); ?>
 
-					<img class="work-preview__image-preload" 
-						 srcset="<?php echo esc_url( $work_image['sizes']['homepage-300'] ); ?> 300w,
+					<img class="work-preview__image-preload lazyload" 
+						 data-srcset="<?php echo esc_url( $work_image['sizes']['homepage-300'] ); ?> 300w,
 								 <?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?> 600w,
 								 <?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?> 1200w,
 								 <?php echo esc_url( $work_image['sizes']['homepage-2000'] ); ?> 2000w"
