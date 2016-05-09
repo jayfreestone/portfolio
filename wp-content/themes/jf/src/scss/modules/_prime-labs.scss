@@ -1,22 +1,34 @@
 .prime-labs {
+	color: $pl-blue;
 
-}
-
-.prime-labs__section {
-	padding: 2rem 0;
+	a {
+		color: $pl-orange;
+	}
 }
 
 .prime-labs__section--intro {
 	background-color: $pl-orange;
 }
 
+.prime-labs__section--brand {
+	background-color: $pl-blue;
+	position: relative;
+
+	img {
+		max-width: 20em;
+		position: absolute;
+		bottom: 0;
+	}
+}
+
 .prime-labs__section--problems {
 	background-color: $pl-blue;
 	color: #fff;
-	background-image: url('../../../img/primelabs/network.svg');
-	background-repeat: no-repeat;
-	background-size: 50%;
-	background-position: left center;
+	text-align: center;
+
+	// @include breakpoint(60em) {
+	// 	text-align: left;
+	// }
 
 	ol {
 		counter-reset: problems;
@@ -25,6 +37,17 @@
 	}
 
 	li {
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+
+		// @include breakpoint(40em) {
+		// 	font-size: 1.2rem;
+		// }
+
+		&:not(:last-child) {
+			border-bottom: 1px solid rgba(white, .3);
+		}
+
 		.js & {
 			visibility: hidden;
 			opacity: 0;
@@ -33,10 +56,36 @@
 		&:before {
 			content: counter(problems) ". ";
 			counter-increment: problems;
-			margin-left: -1.2rem;
 			font-weight: bold;
 			font-style: italic;
+			display: block;
+			color: $pl-orange;
+			font-size: 1.5rem;
+
+			// @include breakpoint(60em) {
+			// 	display: inline-block;
+			// 	margin-left: -2rem;
+			// 	margin-right: 1rem;
+			// }
 		}
+	}
+
+	.chunk__inner {
+		align-items: stretch;
+	}
+
+}
+
+.prime-labs__what-is {
+	.chunk__inner {
+		align-items: stretch;
+	}
+
+	.chunk__secondary {
+		background-image: url('../../../img/primelabs/network.svg');
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: left center;
 	}
 }
 
@@ -90,19 +139,58 @@
 	}
 }
 
+#prime-labs__backstory__logo {
+	opacity: 0;
+	width: 100%;
+	max-width: 35rem;
+	float: right;
+
+	#bubbleBottom,
+	#bubbleMiddle,
+	#bubbleTop {
+		opacity: 0;
+	}
+}
+
 .prime-labs__section--as-standard {
 	background: #223b4c;
 	color: #fff;
+	padding-bottom: 0;
 
 	a {
 		color: #fff;
 	}
+
+	.chunk__primary {
+		padding-bottom: 6rem;
+	}
+
+	.chunk__secondary {
+		align-self: flex-end;
+	}
+
+	video {
+		display: block;
+		width: 100%;
+	}
+}
+
+.prime-labs__carousel {
+	overflow: hidden;
 }
 
 .prime-labs__section--day-life {
 	background-color: $pl-blue;
-	background-image: url('../../../img/primelabs/pills@2x.png');
-	background-position: left center;
-	background-size: 40%;
-	background-repeat: no-repeat;
+
+	.chunk__inner {
+		align-items: stretch;
+	}
+
+	.chunk__secondary {
+		background-image: url('../../../img/primelabs/pl-pill.png');
+		background-position: left center;
+		// background-size: 40%;
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
 }
