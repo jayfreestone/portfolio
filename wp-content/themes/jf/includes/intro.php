@@ -10,8 +10,8 @@
 	<div class="intro__content l-container">
 		<div class="intro__copy">
 			<span class="badge">Case Study</span>
-			<h1 class="heading-1 intro__title"><?php the_field( 'title' ); ?></h1>
-			<div class="intro__description"><?php the_field( 'intro' ); ?></div>
+			<h1 class="heading-1 intro__title"><?php the_field( 'intro_title' ); ?></h1>
+			<div class="intro__description"><?php the_field( 'intro_copy' ); ?></div>
 		</div>
 	</div>
 	<ul class="intro__skillset l-container">
