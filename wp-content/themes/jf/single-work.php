@@ -6,7 +6,7 @@
 			<div itemprop="description">
 				<?php echo esc_html( wp_strip_all_tags( get_field( 'page_content' ) ) ); ?>
 				<?php if ( get_field( 'website_url' ) ) : ?>
-				   &nbsp; <a href="<?php the_field( 'website_url' ); ?>" target="blank" class="work__url">View</a>
+				   &nbsp; <a href="<?php the_field( 'website_url' ); ?>" target="blank" rel="noopener noreferrer" class="work__url">View</a>
 				<?php endif; ?>
 			</div>
 		</div>
@@ -25,7 +25,8 @@
 									  <?php echo esc_url( $image_sizes['fullwidth-300'] ); ?> 300w"
 						 data-src="<?php echo esc_url( $image_sizes['fullwidth-600'] ); ?>" 
 						 sizes="(min-width: 40em) calc(100vw - 4rem), calc(100vw - 2rem)"
-						 alt="<?php echo esc_html( $image['alt'] ); ?>" itemprop="image" />
+						 alt="<?php echo esc_html( $image['alt'] ); ?>" itemprop="image"
+						 src="data:image/gif;base64,R0lGODlhAQABAAAAADs=" />
 					<noscript>
 						<img src="<?php echo esc_url( $image_sizes['fullwidth-600'] ); ?>" alt="<?php echo esc_html( $image['alt'] ); ?>">
 					</noscript>
