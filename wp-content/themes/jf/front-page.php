@@ -44,14 +44,14 @@
 					<a href="<?php the_permalink(); ?>">
 						<?php get_template_part( 'includes/type-badge' ); ?>
 						<h2 class="heading-1 work-preview__title" itemprop="name"><?php the_title(); ?></h2>
-						<span itemprop="description"><?php the_field( 'homepage_intro' ); ?></span>
+						<div itemprop="description"><?php the_field( 'homepage_intro' ); ?></div>
 						<span class="work-preview__link">
 							View Work
 						</span>
 					</a>
 				</div>
 
-				<a class="work-preview__image is-hidden" href="<?php the_permalink(); ?>">
+				<a class="work-preview__image" href="<?php the_permalink(); ?>">
 					<?php $work_image = get_field( 'homepage_image' ); ?>
 
 					<img class="work-preview__image-preload" 

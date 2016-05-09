@@ -24,7 +24,6 @@
 .work-preview {
 	display: flex;
 	justify-content: space-between;
-	flex-wrap: wrap;
 	width: 100%;
 	background-color: $grey;
 	position: absolute;
@@ -197,6 +196,9 @@
 	align-self: flex-end;
 	opacity: 0;
 
+	display: flex;
+	flex-direction: column;
+
 	@include breakpoint(60em) {
 		flex-grow: 0;
 		align-self: auto;
@@ -211,7 +213,19 @@
 }
 
 .work-preview__image-preload {
-	display: none;
+	max-width: none;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+
+	// Force hardware acceleration due to FF object fit bug
+	transform: translate3d(0px, 0px, 0px);
+
+	@include breakpoint(60em) {
+		object-position: left top;
+	}
+
+
 }
 
 .work-preview--current {

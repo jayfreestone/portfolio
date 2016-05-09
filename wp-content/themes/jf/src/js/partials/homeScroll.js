@@ -1,3 +1,4 @@
+// import objectFitImages from 'object-fit-images';
 import fadeBackgroundImage from './fadeBackgroundImage.js';
 
 let homeScroll = (function () {
@@ -20,25 +21,39 @@ let homeScroll = (function () {
 		if (nav) {
 			navItems = nav.querySelectorAll('a');
 		}
+
 		animateInitial();
 		bindUIEvents();
-		loadImages();
-
+		objectFitTest();
 	}
 
-	function loadImages() {
+	function objectFitTest() {
+		let objectFit = 'object-fit' in document.createElement('i').style;
+		let objectPosition = 'object-position' in document.createElement('i').style;
 
+		// If the browser doesn't support either (we need both)
+		if (!objectFit || !objectPosition) {
+			// Hide the actual image and jump to the fallback 
+			document.querySelector('.work-preview__image-preload').style.display = 'none';
+			loadImages();
+		}
+	}
+
+	// Runs loadImage on the work-preview carousel images.
+	function loadImages() {
 		let previewImages = document.querySelectorAll('.work-preview');
 
 		for ( let i = 0; i < previewImages.length; i++ ) {
 			loadImage( previewImages[i] );
 		}
 
+		// Re-evaluate image sizes
+		// window.addEventListener('resize', function() {
+			// loadImages();
+		// });
 	}
 
 	// Displays the images as background images.
-	// Allows for parallel requests to js etc (unlike bg images) 
-	// and benefits from srcset's asset selection.
 	function loadImage(image) {
 		let imageHolder = image.querySelector( '.work-preview__image' );
 
@@ -78,8 +93,6 @@ let homeScroll = (function () {
 	function animateInitial() {
 		let firstWork = document.querySelector('.work-preview--1');
 		// fadeBackgroundImage(firstWork.querySelector('.work-preview__image'));
-
-		// fadeImagesOnLoad();
 
 		setTimeout(function(){
 			firstWork.classList.add('work-preview--current');
@@ -122,10 +135,7 @@ let homeScroll = (function () {
 			navItems[i].addEventListener('click', handleNav);
 		}
 
-		// Re-evaluate image sizes
-		window.addEventListener('resize', function() {
-			loadImages();
-		});
+
 		
 	}
 
