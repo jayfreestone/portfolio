@@ -261,44 +261,6 @@ function reset_recent_work_on_save() {
 add_action( 'save_post', 'reset_recent_work_on_save' );
 
 /**
- * Home Background images
- * Used only as a backup for users with JS disabled.
- */
-function home_images() {
-	$image_css = '';
-
-	if ( is_front_page() ) {
-		$i = 0;
-		$work = get_recent_work();
-
-		while ( $work->have_posts() ) : $work->the_post();
-			$i++;
-			$work_image = get_field( 'homepage_image' );
-			$image_css .= add_home_image( $work_image, 'homepage', '1200', '1200px', $i );
-		 endwhile;
-
-		echo '<style>' . $image_css . '</style>';
-	}
-
-	wp_reset_postdata();
-}
-add_action( 'wp_head', 'home_images' );
-
-/**
- * Add Home Image
- * Generates the CSS for a work-preview background-image.
- */
-function add_home_image( $image, $image_prefix, $image_size, $breakpoint, $number ) {
-	$css = '';
-
-	$css .= '.no-js .work-preview--' . esc_html( $number ) . ' .work-preview__image {';
-	$css .= 'background-image: url(' . esc_url( $image['sizes'][$image_prefix . '-' . $image_size] ) . ');';
-	$css .= '}';
-
-	return $css;
-}
-
-/**
  * Page Slug Body Class
  */
 function add_slug_body_class( $classes ) {
