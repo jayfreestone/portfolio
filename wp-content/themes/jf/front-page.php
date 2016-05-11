@@ -52,8 +52,8 @@
 				<a class="work-preview__image" href="<?php the_permalink(); ?>">
 					<?php $work_image = get_field( 'homepage_image' ); ?>
 
-					<img class="work-preview__image-preload lazyload" 
-						 data-srcset="<?php echo esc_url( $work_image['sizes']['homepage-300'] ); ?> 300w,
+					<img class="work-preview__image-preload" 
+						 srcset="<?php echo esc_url( $work_image['sizes']['homepage-300'] ); ?> 300w,
 								 <?php echo esc_url( $work_image['sizes']['homepage-600'] ); ?> 600w,
 								 <?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?> 1200w,
 								 <?php echo esc_url( $work_image['sizes']['homepage-2000'] ); ?> 2000w"

@@ -33,9 +33,14 @@ let homeScroll = (function () {
 		let objectPosition = 'object-position' in document.createElement('i').style;
 
 		// If the browser doesn't support either (we need both)
-		if (!objectFit || !objectPosition) {
+		if (!objectPosition || !objectFit) {
 			// Hide the actual image and jump to the fallback 
-			document.querySelector('.work-preview__image-preload').style.display = 'none';
+			let images = Array.from(document.querySelectorAll('.work-preview__image-preload'));
+
+			for (const image of images) {
+				image.style.display = 'none';
+			}
+
 			loadImages();
 		}
 	}
