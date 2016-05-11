@@ -7,30 +7,39 @@
 	}
 
 	.js & {
-		height: 100vh;
-		overflow-y: hidden;
+		@media screen and ( min-height: 30em ) {
+			height: 100vh;
+			overflow-y: hidden;
+		}
 	}
 }
 
 .work-preview,
 .work-preview-container__nav {
-	height: calc(100vh - 3rem);
 
-	@include breakpoint(40em) {
-		height: calc(100vh - 8rem);
+	.js & {
+		@media screen and ( min-height: 30em ) {
+			height: calc(100vh - 3rem);
+
+			@include breakpoint(40em) {
+				height: calc(100vh - 8rem);
+			}
+		}
 	}
 }
+
 
 .work-preview {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
 	background-color: $grey;
-	position: absolute;
 	transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1);
 	overflow: hidden;
-	transform: translate3d(0, 100%, 0);
 	flex-direction: column;
+
+	position: relative;
+	transform: translate3d(0, 0, 0);
 
 	@include breakpoint(60em) {
 		flex-direction: row;
@@ -48,10 +57,13 @@
 		margin: 0;
 	}
 
-	.no-js & {
-		position: relative;
-		transform: translate3d(0, 0, 0);
+	.js & {
+		@media screen and ( min-height: 30em ) {
+			position: absolute;
+			transform: translate3d(0, 100%, 0);
+		}
 	}
+
 }
 
 .work-preview-container__nav {
@@ -156,8 +168,7 @@
 	padding: 6rem 1rem 3rem;
 	transition: all 1s ease-in-out;
 	font-size: .85rem;
-	opacity: 0;
-	transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, 0, 0);
 
 	@include breakpoint(40rem) {
 		padding-left: 2rem;
@@ -168,7 +179,6 @@
 	}
 
 	@include breakpoint(60em) {
-		transform: translate3d(-100%, 0, 0);
 		width: span(4 of 12);
 		display: flex;
 		align-items: center;
@@ -179,9 +189,15 @@
 	   font-size: 1rem;
 	}
 
-	.no-js & {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
+	.js & {
+		@media screen and ( min-height: 30em ) {
+			opacity: 0;
+			transform: translate3d(0, -100%, 0);
+		}
+
+		@media screen and ( min-height: 30em ) and ( min-width: 60em ) {
+			transform: translate3d(-100%, 0, 0);
+		}
 	}
 }
 
@@ -191,10 +207,9 @@
     background-size: cover;
 	transition: all 1s ease-in-out;
 	transition: all 1s;
-	transform: translate3d(0, 100%, 0);
+	transform: translate3d(0 , 0, 0);
 	flex-grow: 1;
 	align-self: flex-end;
-	opacity: 0;
 
 	display: flex;
 	flex-direction: column;
@@ -203,12 +218,17 @@
 		flex-grow: 0;
 		align-self: auto;
 		width: span(7 of 12);
-		transform: translate3d(100%, 0, 0);
 	}
 
-	.no-js & {
-		opacity: 1;
-		transform: translate3d(0 , 0, 0);
+	.js & {
+		@media screen and ( min-height: 30em ) {
+			opacity: 0;
+			transform: translate3d(0, 100%, 0);
+		}
+
+		@media screen and ( min-height: 30em ) and ( min-width: 60em ) {
+			transform: translate3d(100%, 0, 0);
+		}
 	}
 }
 
@@ -243,11 +263,13 @@
 	}
 }
 
-.work-preview--current,
-.work-preview--previous {
-	transform: translate3d(0, 0, 0);
-}
+.js {
+	.work-preview--current,
+	.work-preview--previous {
+		transform: translate3d(0, 0, 0);
+	}
 
-.work-preview--1 {
-	transform: translate3d(0, 0, 0);
+	.work-preview--1 {
+		transform: translate3d(0, 0, 0);
+	}
 }

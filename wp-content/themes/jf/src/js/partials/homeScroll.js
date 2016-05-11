@@ -25,6 +25,7 @@ let homeScroll = (function () {
 
 		animateInitial();
 		bindUIEvents();
+		startCarousel();
 		objectFitTest();
 	}
 
@@ -101,38 +102,53 @@ let homeScroll = (function () {
 	}
 
 	function bindUIEvents() {
-		window.addEventListener('keydown', keyboardNav);
-		window.addEventListener('wheel', scrollNav);
-
-		// Stops touchmove working outright
-		window.addEventListener('touchmove', function(event) {
-			event.preventDefault();
-		});
-
-		// Sets up Hammer to handle touch events
-		let workContainer = document.querySelector('.work-preview-container');
-		let touch = new Hammer(workContainer);
-
-		// Enables vertical swipe detection
-		touch.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
-
-		// Gestures that equal forward
-		touch.on('swipeup swipeleft', function(){
-			if (isTransitioning == false) {
-				advanceSlide();
-			}
-		});
-
-		// Gestures that equal backwards
-		touch.on('swipedown swiperight', function(){
-			if (isTransitioning == false) {
-				regressSlide();
-			}
+		window.addEventListener('resize', function() {
+			startCarousel();
 		});
 
 		// Hooks up navigation
 		for (const navItem of navItems) {
 			navItem.addEventListener('click', handleNav);
+		}
+	}
+
+	function startCarousel() {
+		// Get the current rem value
+		let remValue = document.querySelector('body').style.fontSize || 16;
+
+		// At 30rem we switch to the carousel layout
+		if ( window.innerHeight > ( remValue * 30 ) ) {
+			window.addEventListener('keydown', keyboardNav);
+			window.addEventListener('wheel', scrollNav);
+
+			// Stops touchmove working outright
+			window.addEventListener('touchmove', function(event) {
+				event.preventDefault();
+			});
+
+			// Sets up Hammer to handle touch events
+			let workContainer = document.querySelector('.work-preview-container');
+			let touch = new Hammer(workContainer);
+
+			// Enables vertical swipe detection
+			touch.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+
+			// Gestures that equal forward
+			touch.on('swipeup swipeleft', function(){
+				if (isTransitioning == false) {
+					advanceSlide();
+				}
+			});
+
+			// Gestures that equal backwards
+			touch.on('swipedown swiperight', function(){
+				if (isTransitioning == false) {
+					regressSlide();
+				}
+			});
+		} else {
+			window.removeEventListener('keydown', keyboardNav);
+			window.removeEventListener('wheel', scrollNav);
 		}
 	}
 
@@ -195,6 +211,8 @@ let homeScroll = (function () {
 
 	function scrollNav(e) {
 		e.preventDefault();
+
+		console.log('scroll fired');
 
 		let scrollThreshold = 40;
 
