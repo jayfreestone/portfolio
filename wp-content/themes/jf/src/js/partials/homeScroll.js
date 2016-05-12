@@ -24,11 +24,22 @@ let homeScroll = (function () {
 		}
 
 		animateInitial();
-		bindUIEvents();
-		startCarousel();
 		objectFitTest();
+		startCarousel();
+		bindUIEvents();
 	}
 
+	// Animates the load of the initial slide
+	function animateInitial() {
+		let firstWork = document.querySelector('.work-preview--1');
+
+		setTimeout(function(){
+			firstWork.classList.add('work-preview--current');
+			navItems[0].parentNode.classList.add('work-preview-container__nav__item--is-active');
+		}, 200);
+	}
+
+	// Tests if we can use images or have to fall back to background images
 	function objectFitTest() {
 		let objectFit = 'object-fit' in document.createElement('i').style;
 		let objectPosition = 'object-position' in document.createElement('i').style;
@@ -55,7 +66,7 @@ let homeScroll = (function () {
 		}
 	}
 
-	// Displays the images as background images.
+	// Displays the content image as a background image.
 	function loadImage(image) {
 		let imageHolder = image.querySelector( '.work-preview__image' );
 
@@ -76,32 +87,9 @@ let homeScroll = (function () {
 		}));
 	}
 
-	function resetScroll() {
-		scrolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-	}
-
-	function scrollsAvg(offset) {
-		let sum = 0;
-
-		let elms = scrolls.slice(Math.max(scrolls.length - offset, 1));
-
-		for ( const elm of elms ) {
-			sum += elm;
-		}
-
-		return Math.ceil(sum / offset);
-	}
-
-	function animateInitial() {
-		let firstWork = document.querySelector('.work-preview--1');
-
-		setTimeout(function(){
-			firstWork.classList.add('work-preview--current');
-			navItems[0].parentNode.classList.add('work-preview-container__nav__item--is-active');
-		}, 200);
-	}
-
+	// Binds UI Events
 	function bindUIEvents() {
+		// On resize, re-evaluate if we should start the JS carousel
 		window.addEventListener('resize', function() {
 			startCarousel();
 		});
@@ -112,6 +100,7 @@ let homeScroll = (function () {
 		}
 	}
 
+	// Hooks up the JS carousel if window is above a certain height
 	function startCarousel() {
 		// Get the current rem value
 		let remValue = document.querySelector('body').style.fontSize || 16;
@@ -147,10 +136,29 @@ let homeScroll = (function () {
 				}
 			});
 		} else {
+			// Remove the listeners if the window is too short
 			window.removeEventListener('keydown', keyboardNav);
 			window.removeEventListener('wheel', scrollNav);
 		}
 	}
+
+	function resetScroll() {
+		scrolls = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	}
+
+	function scrollsAvg(offset) {
+		let sum = 0;
+
+		let elms = scrolls.slice(Math.max(scrolls.length - offset, 1));
+
+		for ( const elm of elms ) {
+			sum += elm;
+		}
+
+		return Math.ceil(sum / offset);
+	}
+
+
 
 	function handleNav(event) {
 		event.preventDefault();
