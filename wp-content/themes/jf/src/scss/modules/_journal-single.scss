@@ -5,7 +5,7 @@
 
 .journal-single {
 	z-index: 1;
-	width: 80%;
+	// width: 80%;
 	margin: 0 auto;
 
 	@include breakpoint(60em) {
@@ -59,7 +59,7 @@
 	align-items: center;
 	font-weight: bold;
 
-	@include breakpoint(60em) {
+	@include breakpoint(40em) {
 		position: fixed;
 		top: 0;
 		bottom: 0;
@@ -95,7 +95,7 @@
 	@include span(6 of 12);
 	text-align: left;
 
-	@include breakpoint(60em) {
+	@include breakpoint(40em) {
 		text-align: center;
 		order: 1;
 		width: span(2 of 12);
@@ -111,7 +111,7 @@
 	@include span(6 of 12 omega);
 	text-align: right;
 
-	@include breakpoint(60em) {
+	@include breakpoint(40em) {
 		text-align: center;
 		width: span(2 of 12);
 		order: 3;

@@ -22,7 +22,8 @@
 			height: calc(100vh - 3rem);
 
 			@include breakpoint(40em) {
-				height: calc(100vh - 8rem);
+				// 1px for rounding error in Chrome 
+				height: calc(100vh - 8rem + 1px);
 			}
 		}
 	}

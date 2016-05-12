@@ -13,18 +13,20 @@ html {
 	box-sizing: inherit;
 }
 
+html {
+	font-size: 14px;
+	line-height: 1.5;
+	@include fluid-type(font-size, 400px, 2000px, 14px, 20px);
+}
+
 body {
 	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-	font-size: .94rem;
+	// font-size: .94rem;
 
-	@include breakpoint(37.5em) {
-		line-height: 1.5;
-		font-size: 1rem;
-	}
     //
 	// @include breakpoint(60.5em) {
 	// 	line-height: 1.6;
