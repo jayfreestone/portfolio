@@ -198,7 +198,7 @@ function web_font_loader() {
 
 		(function(d) {
 		  var wf = d.createElement('script'), s = d.scripts[0];
-		  wf.src = '<?php echo get_template_directory_uri(); ?>/public/assets/js/webfontloader.js';
+		  wf.src = '<?php echo esc_url( get_template_directory_uri() ); ?>/public/assets/js/webfontloader.js';
 		  s.parentNode.insertBefore(wf, s);
 		})(document);
 	</script>
@@ -278,10 +278,10 @@ add_filter( 'body_class', 'add_slug_body_class' );
  * Remove WP version from css and js
  */
 function remove_wp_ver_css_js( $src ) {
-    if ( strpos( $src, 'ver=' ) ) {
-        $src = remove_query_arg( 'ver', $src );
-    }
-    return $src;
+	if ( strpos( $src, 'ver=' ) ) {
+		$src = remove_query_arg( 'ver', $src );
+	}
+	return $src;
 }
 add_filter( 'style_loader_src', 'remove_wp_ver_css_js', 9999 );
 add_filter( 'script_loader_src', 'remove_wp_ver_css_js', 9999 );
