@@ -72,7 +72,7 @@ let homeScroll = (function () {
 
 		// Image is display none
 		let imagePreload = image.querySelector( '.work-preview__image-preload' );
-		let backgroundStyle = imagePreload.currentSrc;
+		let backgroundStyle = imagePreload.currentSrc || imagePreload.src;
 
 		// Seems to be more reliable than attaching directly
 		let tmpImg = document.createElement('img');

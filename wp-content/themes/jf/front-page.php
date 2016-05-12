@@ -58,7 +58,7 @@
 								 <?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?> 1200w,
 								 <?php echo esc_url( $work_image['sizes']['homepage-2000'] ); ?> 2000w"
 						 sizes="(min-width: 60em) 58vw, (min-width: 40em) calc(100vw - 8rem), calc(100vw - 3rem)" 
-						 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="<?php the_title(); ?>">
+						 src="<?php echo esc_url( $work_image['sizes']['homepage-1200'] ); ?>" alt="<?php the_title(); ?>">
 				</a>
 
 

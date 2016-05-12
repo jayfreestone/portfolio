@@ -126,6 +126,9 @@
    }
 }
 
+// .work-preview__copy {
+// }
+
 .work-preview--text-on-right {
 	flex-direction: row-reverse;
 
@@ -198,6 +201,12 @@
 		@media screen and ( min-height: 30em ) and ( min-width: 60em ) {
 			transform: translate3d(-100%, 0, 0);
 		}
+	}
+
+	// IE 10 weirdness
+	a {
+	   display: block;
+	   max-width: 100%;
 	}
 }
 
