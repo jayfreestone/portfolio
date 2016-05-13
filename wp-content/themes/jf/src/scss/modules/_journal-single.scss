@@ -5,12 +5,12 @@
 
 .journal-single {
 	z-index: 1;
-	// width: 80%;
 	margin: 0 auto;
 
 	@include breakpoint(60em) {
 		order: 2;
 		width: span(8 of 12);
+		font-size: 1.1rem;
 	}
 }
 
