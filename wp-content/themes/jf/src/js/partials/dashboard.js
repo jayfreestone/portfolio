@@ -7,7 +7,7 @@ import fadeBackgroundImage from './fadeBackgroundImage.js';
 let dashboard = (function () {
 	let groundSection = document.querySelector('.dashboard__groundwork');
 	let deploymentSection = document.querySelector('.dashboard__deployment');
-	let demoSection = document.querySelector('.dashboard__demo');
+	// let demoSection = document.querySelector('.dashboard__demo');
 
 	function init() {
 		bindUIActions();
@@ -20,7 +20,7 @@ let dashboard = (function () {
 		// Add scenes
 		addScene(controller, groundSection, reactAnimation);
 		addScene(controller, deploymentSection, terminalAnimation);
-		addScene(controller, demoSection, demoHandler);
+		// addScene(controller, demoSection, demoHandler);
 	}
 
 	function terminalAnimation() {
@@ -45,9 +45,9 @@ let dashboard = (function () {
 		})()
 	}
 
-	function demoHandler() {
-		document.querySelector('.dashboard__demo video').play();
-	}
+	// function demoHandler() {
+	// 	document.querySelector('.dashboard__demo video').play();
+	// }
 
 	// Adds a scene with predefined options to the controller
 	function addScene(controller, element, handler) {
@@ -73,7 +73,7 @@ let dashboard = (function () {
 		}
 
 		tl.to(paths, 3, { 'stroke-dashoffset': 0, opacity: '1', ease: Power1.easeIn })
-		.to(paths, 1, { 'fill': '#00d8ff', 'stroke': '#00d8ff', ease: Power1.easeIn });
+		.to(paths, 1, { 'fill': '#D9EFEE', 'stroke': '#3fb0ac', ease: Power1.easeIn });
 	}
 
 	// Sets Dash array/offset on element

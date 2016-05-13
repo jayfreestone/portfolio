@@ -1,4 +1,11 @@
 .chunk {
+
+	&.whiteout {
+		a {
+			text-decoration: underline;
+		}
+	}
+
 }
 
 .chunk--swap {
@@ -50,8 +57,11 @@
 }
 
 .chunk__secondary {
+	padding-bottom: 4rem;
+
 	@include breakpoint(60em) {
 		max-width: none;
 		width: span(5.5 of 12);
+		padding-bottom: 0;
 	}
 }
