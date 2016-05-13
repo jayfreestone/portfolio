@@ -92,13 +92,13 @@
 			</div>
 		</section>
 		
-		<section class="chunk chunk--single dashboard__section dashboard__demo">
-			<div class="chunk__inner l-container">
-					<video onclick="this.paused ? this.play() : this.pause();">
-						<source src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-deployment.mp4" type="video/mp4">
-					</video>
-			</div>
-		</section>
+		<!-- <section class="chunk chunk&#45;&#45;single dashboard__section dashboard__demo"> -->
+		<!-- 	<div class="chunk__inner l&#45;container"> -->
+		<!-- 			<video onclick="this.paused ? this.play() : this.pause();"> -->
+		<!-- 				<source src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard&#45;deployment.mp4" type="video/mp4"> -->
+		<!-- 			</video> -->
+		<!-- 	</div> -->
+		<!-- </section> -->
 
 	</div>
 
