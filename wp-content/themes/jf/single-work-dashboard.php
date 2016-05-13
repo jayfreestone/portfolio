@@ -11,7 +11,9 @@
 					<?php the_field( 'setup_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
-					<?php include( 'img/dashboard/illustration.svg' ); ?>
+					<div class="dashboard__setup__image">
+						<?php include( 'img/dashboard/illustration.svg' ); ?>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -23,7 +25,9 @@
 					<?php the_field( 'problem_copy' ); ?>
 				</div>
 				<div class="chunk__secondary">
-					<?php include( 'img/dashboard/problems.svg' ); ?>
+					<div class="dashbaord__problems__image">
+						<?php include( 'img/dashboard/problems.svg' ); ?>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -34,8 +38,10 @@
 					<h2 class="heading-1"><?php the_field( 'groundwork_title' ); ?></h2>
 					<?php the_field( 'groundwork_copy' ); ?>
 				</div>
-				<div class="chunk__secondary dashboard__groundwork__logo">
-					<?php include( 'img/dashboard/react.svg' ); ?>
+				<div class="chunk__secondary">
+					<div class="dashboard__groundwork__logo">
+						<?php include( 'img/dashboard/react.svg' ); ?>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -74,7 +80,7 @@
 			</div>
 		</section>
 
-		<section class="chunk dashboard__bonus whiteout">
+		<section class="chunk dashboard__bonus">
 			<div class="chunk__inner l-container">
 				<div class="chunk__primary">
 					<h2 class="heading-1"><?php the_field( 'bonus_round_title' ); ?></h2>
@@ -86,13 +92,13 @@
 			</div>
 		</section>
 		
-		<!-- <section class="chunk chunk&#45;&#45;single dashboard__section dashboard__demo"> -->
-		<!-- 	<div class="chunk__inner l&#45;container"> -->
-		<!-- 			<video onclick="this.paused ? this.play() : this.pause();"> -->
-		<!-- 				<source src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard&#45;deployment.mp4" type="video/mp4"> -->
-		<!-- 			</video> -->
-		<!-- 	</div> -->
-		<!-- </section> -->
+		<section class="chunk chunk--single dashboard__section dashboard__demo">
+			<div class="chunk__inner l-container">
+					<video onclick="this.paused ? this.play() : this.pause();">
+						<source src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-deployment.mp4" type="video/mp4">
+					</video>
+			</div>
+		</section>
 
 	</div>
 

@@ -1831,18 +1831,34 @@ code {
   color: #173f3e;
 }
 
-.dashboard__setup svg {
+.dashboard__setup__image {
+  position: relative;
+  height: 0;
+  padding-bottom: 60.4%;
+}
+
+.dashboard__setup__image svg {
+  position: absolute;
+  top: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .dashboard__problems {
   background-color: #f8f8f8;
 }
 
-.dashboard__problems svg {
+.dashbaord__problems__image {
+  position: relative;
+  height: 0;
+  padding-bottom: 71.92%;
+}
+
+.dashbaord__problems__image svg {
+  position: absolute;
+  top: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .dashboard__groundwork {
@@ -1857,18 +1873,17 @@ code {
   display: flex;
 }
 
-.dashboard__groundwork__logo svg {
-  width: 50%;
-  height: auto;
-  margin: 2rem auto;
-  display: block;
+.dashboard__groundwork__logo {
+  position: relative;
+  height: 0;
+  padding-bottom: 89.47%;
 }
 
-@media only screen and (min-width: 60rem) {
-  .dashboard__groundwork__logo svg {
-    width: 80%;
-    float: right;
-  }
+.dashboard__groundwork__logo svg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .js .dashboard__groundwork__logo svg path {
@@ -1966,8 +1981,7 @@ code {
 }
 
 .dashboard__bonus {
-  background: #3fb0ac;
-  background: #D0021B;
+  background: #f8f8f8;
 }
 
 .dashboard__bonus .chunk__secondary {
@@ -2202,7 +2216,7 @@ code {
   .chunk__secondary {
     max-width: none;
     width: 44.91525%;
-    padding-bottom: 0;
+    padding: 4rem 0;
   }
 }
 
