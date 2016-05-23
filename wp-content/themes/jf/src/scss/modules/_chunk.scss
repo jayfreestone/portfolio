@@ -27,6 +27,12 @@
 	.chunk__secondary {
 		width: 100%;
 	}
+
+	@include breakpoint(60em) {
+		.chunk__primary {
+			width: span(8 of 12);
+		}
+	}
 }
 
 .chunk__inner {

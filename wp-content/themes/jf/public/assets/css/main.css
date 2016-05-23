@@ -2006,7 +2006,6 @@ code {
 
 .dashboard__demo {
   background: #fcfcfc;
-  padding: 3rem 0;
 }
 
 .dashboard__demo video {
@@ -2161,6 +2160,12 @@ code {
 
 .chunk--single .chunk__secondary {
   width: 100%;
+}
+
+@media only screen and (min-width: 60em) {
+  .chunk--single .chunk__primary {
+    width: 66.10169%;
+  }
 }
 
 .chunk__inner {
