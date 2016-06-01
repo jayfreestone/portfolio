@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import primelabs from './partials/primelabs.js';
 import menu from './partials/menu.js';
 import homeScroll from './partials/homeScroll.js';
