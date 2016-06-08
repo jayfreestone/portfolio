@@ -98,7 +98,7 @@
 					<h2 class="heading-1">In Action</h2>
 					<p>What you see is one-click deployment — what you don't see is the massive amount of time saved.</p>
 				</div>
-				<video onclick="this.paused ? this.play() : this.pause();">
+				<video onclick="this.paused ? this.play() : this.pause();" controls="true">
 					<source src="<?php echo get_template_directory_uri(); ?>/img/dashboard/dashboard-deployment.mp4" type="video/mp4">
 				</video>
 			</div>
