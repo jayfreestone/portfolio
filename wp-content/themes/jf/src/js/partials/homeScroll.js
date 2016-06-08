@@ -193,7 +193,6 @@ let homeScroll = (function () {
 			let nextNumber = nextSlide.id.substring(nextSlide.id.length -1);
 
 			if (currentNumber > nextNumber) {
-				console.log('going backwards');
 				// If we're going backwards
 				currentSlide.classList.add('work-preview--next');
 
@@ -207,20 +206,25 @@ let homeScroll = (function () {
 
 			} else {
 				// If we're going forwards
-				console.log('going forwards');
 				currentSlide.classList.add('work-preview--previous');
+
+				let previousSlides = workSlides.slice(currentNumber - 1, nextNumber - 1);
+
+				for ( const previousSlide of previousSlides ) {
+					previousSlide.classList.add('work-preview--previous');
+					previousSlide.classList.remove('work-preview--next');
+				}
+
 			}
 
 			currentSlide.classList.remove('work-preview--current');
 			nextSlide.classList.add('work-preview--current');
-			nextSlide.classList.remove('work-preview--next');
+			nextSlide.classList.remove('work-preview--next', 'work-preview--previous');
 		}
 	}
 
 	function scrollNav(e) {
 		e.preventDefault();
-
-		console.log('scroll fired');
 
 		let scrollThreshold = 40;
 
