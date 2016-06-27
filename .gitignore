@@ -8,3 +8,4 @@ db_backups/
 .idea/workspace.xml
 ov-deploy/
 config/
+.env
