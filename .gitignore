@@ -6,5 +6,5 @@ wp-config-settings.php
 wp-config.php
 db_backups/
 .idea/workspace.xml
-config/
+/config/
 .env
