@@ -1,0 +1,4 @@
+{
+    "name" : "overture/ov-deploy",
+    "description" : "Capistrano Deployment for WordPress Sites"
+}

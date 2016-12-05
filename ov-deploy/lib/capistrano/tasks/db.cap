@@ -1,0 +1,120 @@
+namespace :db do
+
+  desc "Creates a sensible backup name for SQL files"
+  task :backup_name do
+    on roles(:app) do
+
+      now = Time.now
+      execute :mkdir, "-p #{shared_path}/db_backups"
+      backup_time = [now.year,'-',now.month,'-',now.day,'_',now.hour,'-',now.min,'-',now.sec].join()
+      set :backup_filename, backup_time
+      set :backup_file, "#{shared_path}/db_backups/#{backup_time}.sql"
+
+    end
+  end
+
+  desc "Confirms the database action before proceeeding"
+  task :confirm do
+    on roles(:app) do
+
+      database = YAML::load_file('../config/database.yml')[fetch(:stage).to_s]
+
+      set :confirmed, proc {
+        puts <<-WARN
+  \033[31m
+  ========================================================================
+        WARNING: You're about to overwrite the remote database
+        Database:\033[0m #{database['database']} \033[0m \033[31m
+  ========================================================================
+  \033[0m
+        WARN
+        ask :answer, "To continue type 'y'"
+        if fetch(:answer) == 'y' then true else false end
+      }.call
+
+      unless fetch(:confirmed)
+        puts <<-WARN
+  \033[31m
+  ========================================================================
+        CANCELLED!
+  ========================================================================
+  \033[0m
+        WARN
+        exit
+      end
+
+    end
+  end
+
+  desc "Takes a database dump from remote server"
+  task :backup do
+   invoke 'db:backup_name'
+    on roles(:app) do
+
+      within release_path do
+         execute :wp, "--path=wordpress/ db export #{fetch(:backup_file)} --add-drop-table"
+      end
+
+     system('mkdir -p ../db_backups')
+     download! "#{fetch(:backup_file)}", "../db_backups/#{fetch(:backup_filename)}.sql"
+
+     within release_path do
+       execute :rm, "#{fetch(:backup_file)}"
+     end
+
+    end
+  end
+
+  desc "Imports the remote database into your local environment"
+  task :pull do
+    invoke 'db:backup'
+
+    on roles(:app) do
+
+      run_locally do
+        execute :wp, "--path=../wordpress/ db import ../db_backups/#{fetch(:backup_filename)}.sql"
+        execute :wp, "--path=../wordpress/ search-replace #{fetch(:stage_url)} #{fetch(:wp_localurl)}"
+      end
+
+    end
+
+  end
+
+  desc "Imports the local database into your remote environment"
+  task :push do
+
+      invoke 'db:confirm'
+
+    invoke 'db:backup_name'
+    on roles(:app) do
+
+      run_locally do
+        execute :mkdir, "-p ../db_backups"
+        execute :wp, "--path=../wordpress/ db export ../db_backups/#{fetch(:backup_filename)}.sql --add-drop-table"
+      end
+
+      upload! "../db_backups/#{fetch(:backup_filename)}.sql", "#{fetch(:backup_file)}"
+
+      within release_path do
+        execute :wp, "db import #{fetch(:backup_file)}"
+        execute :wp, "search-replace #{fetch(:wp_localurl)} #{fetch(:stage_url)}"
+      end
+    end
+  end
+
+  desc "Rolls back the remote database to the last remote backup"
+  task :rollback do
+
+    invoke 'db:confirm'
+
+    on roles(:app) do
+
+      within release_path do
+        rollback = capture("ls -t #{shared_path}/db_backups | head -n1")
+        set :rollback_file, rollback
+        execute :wp, "db import #{shared_path}/db_backups/#{fetch(:rollback_file)}"
+      end
+    end
+  end
+
+end

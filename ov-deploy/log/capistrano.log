@@ -1,0 +1,366 @@
+# Logfile created on 2016-12-05 17:28:49 +0000 by logger.rb/56438
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-05 17:28:49 +0000 cap production uploads:pull
+  INFO ---------------------------------------------------------------------------
+  INFO [3663216f] Running /usr/bin/env rsync -avzO deploy@151.236.219.114:/var/www/jayfreestone.com/deployment/shared/wp-content/uploads/ ../wp-content/uploads as jfree@localhost
+ DEBUG [3663216f] Command: /usr/bin/env rsync -avzO deploy@151.236.219.114:/var/www/jayfreestone.com/deployment/shared/wp-content/uploads/ ../wp-content/uploads
+ DEBUG [3663216f] 	receiving file list ... done
+ DEBUG [3663216f] 	created directory ../wp-content/uploads
+ DEBUG [3663216f] 	./
+ DEBUG [3663216f] 	.DS_Store
+ DEBUG [3663216f] 	3C-Building-1024x576.jpg
+ DEBUG [3663216f] 	3C-Building-1200x675.jpg
+ DEBUG [3663216f] 	3C-Building-1320x743.jpg
+ DEBUG [3663216f] 	3C-Building-150x150.jpg
+ DEBUG [3663216f] 	3C-Building-1800x1013.jpg
+ DEBUG [3663216f] 	3C-Building-2000x1125.jpg
+ DEBUG [3663216f] 	3C-Building-2400x1350.jpg
+ DEBUG [3663216f] 	3C-Building-2640x1485.jpg
+ DEBUG [3663216f] 	3C-Building-3000x1688.jpg
+ DEBUG [3663216f] 	3C-Building-300x169.jpg
+ DEBUG [3663216f] 	3C-Building-4000x2250.jpg
+ DEBUG [3663216f] 	3C-Building-600x338.jpg
+ DEBUG [3663216f] 	3C-Building-900x506.jpg
+ DEBUG [3663216f] 	3C-Building-900x507.jpg
+ DEBUG [3663216f] 	3C-Building.jpg
+ DEBUG [3663216f] 	3C-Comps-1024x576.jpg
+ DEBUG [3663216f] 	3C-Comps-1200x675.jpg
+ DEBUG [3663216f] 	3C-Comps-1320x743.jpg
+ DEBUG [3663216f] 	3C-Comps-150x150.jpg
+ DEBUG [3663216f] 	3C-Comps-1800x1013.jpg
+ DEBUG [3663216f] 	3C-Comps-2000x1125.jpg
+ DEBUG [3663216f] 	3C-Comps-2400x1350.jpg
+ DEBUG [3663216f] 	3C-Comps-2640x1485.jpg
+ DEBUG [3663216f] 	3C-Comps-3000x1688.jpg
+ DEBUG [3663216f] 	3C-Comps-300x169.jpg
+ DEBUG [3663216f] 	3C-Comps-4000x2250.jpg
+ DEBUG [3663216f] 	3C-Comps-600x338.jpg
+ DEBUG [3663216f] 	3C-Comps-900x506.jpg
+ DEBUG [3663216f] 	3C-Comps-900x507.jpg
+ DEBUG [3663216f] 	3C-Comps.jpg
+ DEBUG [3663216f] 	3C-iOS-1024x576.jpg
+ DEBUG [3663216f] 	3C-iOS-1200x675.jpg
+ DEBUG [3663216f] 	3C-iOS-1320x743.jpg
+ DEBUG [3663216f] 	3C-iOS-150x150.jpg
+ DEBUG [3663216f] 	3C-iOS-1800x1013.jpg
+ DEBUG [3663216f] 	3C-iOS-2000x1125.jpg
+ DEBUG [3663216f] 	3C-iOS-2400x1350.jpg
+ DEBUG [3663216f] 	3C-iOS-2640x1485.jpg
+ DEBUG [3663216f] 	3C-iOS-3000x1688.jpg
+ DEBUG [3663216f] 	3C-iOS-300x169.jpg
+ DEBUG [3663216f] 	3C-iOS-4000x2250.jpg
+ DEBUG [3663216f] 	3C-iOS-600x338.jpg
+ DEBUG [3663216f] 	3C-iOS-900x506.jpg
+ DEBUG [3663216f] 	3C-iOS-900x507.jpg
+ DEBUG [3663216f] 	3C-iOS.jpg
+ DEBUG [3663216f] 	3C_Oil_Pumps-1800x1200.jpg
+ DEBUG [3663216f] 	3C_Oil_Pumps-2400x1600.jpg
+ DEBUG [3663216f] 	3C_Oil_Pumps-3000x2000.jpg
+ DEBUG [3663216f] 	3C_Oil_Pumps-900x600.jpg
+ DEBUG [3663216f] 	3c-macbook-1024x576.jpg
+ DEBUG [3663216f] 	3c-macbook-1200x675.jpg
+ DEBUG [3663216f] 	3c-macbook-1320x743.jpg
+ DEBUG [3663216f] 	3c-macbook-150x150.jpg
+ DEBUG [3663216f] 	3c-macbook-1800x1013.jpg
+ DEBUG [3663216f] 	3c-macbook-2000x1125.jpg
+ DEBUG [3663216f] 	3c-macbook-2400x1350.jpg
+ DEBUG [3663216f] 	3c-macbook-2640x1485.jpg
+ DEBUG [3663216f] 	3c-macbook-3000x1688.jpg
+ DEBUG [3663216f] 	3c-macbook-300x169.jpg
+ DEBUG [3663216f] 	3c-macbook-4000x2250.jpg
+ DEBUG [3663216f] 	3c-macbook-600x338.jpg
+ DEBUG [3663216f] 	3c-macbook-900x506.jpg
+ DEBUG [3663216f] 	3c-macbook-900x507.jpg
+ DEBUG [3663216f] 	3c-macbook.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-1024x576.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-1200x675.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-1320x743.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-150x150.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-1800x1013.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-2000x1125.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-2400x1350.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-2640x1485.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-3000x1688.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-300x169.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-4000x2250.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-600x338.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-900x506.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views-900x507.jpg
+ DEBUG [3663216f] 	Overture-Multiple-Views.jpg
+ DEBUG [3663216f] 	Overture-iMac-1024x576.jpg
+ DEBUG [3663216f] 	Overture-iMac-1200x675.jpg
+ DEBUG [3663216f] 	Overture-iMac-1320x743.jpg
+ DEBUG [3663216f] 	Overture-iMac-150x150.jpg
+ DEBUG [3663216f] 	Overture-iMac-1800x1013.jpg
+ DEBUG [3663216f] 	Overture-iMac-2000x1125.jpg
+ DEBUG [3663216f] 	Overture-iMac-2400x1350.jpg
+ DEBUG [3663216f] 	Overture-iMac-2640x1485.jpg
+ DEBUG [3663216f] 	Overture-iMac-3000x1688.jpg
+ DEBUG [3663216f] 	Overture-iMac-300x169.jpg
+ DEBUG [3663216f] 	Overture-iMac-4000x2250.jpg
+ DEBUG [3663216f] 	Overture-iMac-600x338.jpg
+ DEBUG [3663216f] 	Overture-iMac-900x506.jpg
+ DEBUG [3663216f] 	Overture-iMac-900x507.jpg
+ DEBUG [3663216f] 	Overture-iMac.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-1024x576.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-1200x675.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-1320x743.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-150x150.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-1800x1013.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-2000x1125.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-2400x1350.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-2640x1485.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-3000x1688.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-300x169.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-4000x2250.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-600x338.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-900x506.jpg
+ DEBUG [3663216f] 	Overture-on-iPad-900x507.jpg
+ DEBUG [3663216f] 	Overture-on-iPad.jpg
+ DEBUG [3663216f] 	dashboard-ipad-1058x1200.png
+ DEBUG [3663216f] 	dashboard-ipad-1200x1361.png
+ DEBUG [3663216f] 	dashboard-ipad-1320x743.png
+ DEBUG [3663216f] 	dashboard-ipad-1410x1600.png
+ DEBUG [3663216f] 	dashboard-ipad-150x150.png
+ DEBUG [3663216f] 	dashboard-ipad-1763x2000.png
+ DEBUG [3663216f] 	dashboard-ipad-176x200.png
+ DEBUG [3663216f] 	dashboard-ipad-2000x1125.png
+ DEBUG [3663216f] 	dashboard-ipad-2000x2269.png
+ DEBUG [3663216f] 	dashboard-ipad-2054x1485.png
+ DEBUG [3663216f] 	dashboard-ipad-2054x2250.png
+ DEBUG [3663216f] 	dashboard-ipad-264x300.png
+ DEBUG [3663216f] 	dashboard-ipad-300x169.png
+ DEBUG [3663216f] 	dashboard-ipad-300x340.png
+ DEBUG [3663216f] 	dashboard-ipad-353x400.png
+ DEBUG [3663216f] 	dashboard-ipad-529x600.png
+ DEBUG [3663216f] 	dashboard-ipad-600x338.png
+ DEBUG [3663216f] 	dashboard-ipad-600x681.png
+ DEBUG [3663216f] 	dashboard-ipad-705x800.png
+ DEBUG [3663216f] 	dashboard-ipad-900x1021.png
+ DEBUG [3663216f] 	dashboard-ipad-900x507.png
+ DEBUG [3663216f] 	dashboard-ipad-903x1024.png
+ DEBUG [3663216f] 	dashboard-ipad.png
+ DEBUG [3663216f] 	jay-freestone-1024x683.jpg
+ DEBUG [3663216f] 	jay-freestone-1200x800.jpg
+ DEBUG [3663216f] 	jay-freestone-1320x743.jpg
+ DEBUG [3663216f] 	jay-freestone-150x150.jpg
+ DEBUG [3663216f] 	jay-freestone-1800x1200.jpg
+ DEBUG [3663216f] 	jay-freestone-2000x1125.jpg
+ DEBUG [3663216f] 	jay-freestone-2000x1333.jpg
+ DEBUG [3663216f] 	jay-freestone-2400x1600.jpg
+ DEBUG [3663216f] 	jay-freestone-2640x1485.jpg
+ DEBUG [3663216f] 	jay-freestone-3000x2000.jpg
+ DEBUG [3663216f] 	jay-freestone-300x169.jpg
+ DEBUG [3663216f] 	jay-freestone-300x200.jpg
+ DEBUG [3663216f] 	jay-freestone-4000x2250.jpg
+ DEBUG [3663216f] 	jay-freestone-5184x3376.jpg
+ DEBUG [3663216f] 	jay-freestone-600x338.jpg
+ DEBUG [3663216f] 	jay-freestone-600x400.jpg
+ DEBUG [3663216f] 	jay-freestone-900x507.jpg
+ DEBUG [3663216f] 	jay-freestone-900x600.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-1200x1578.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-1217x1600.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-1320x743.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-150x150.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-1521x2000.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-152x200.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-2000x1125.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-2000x2630.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-228x300.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-2628x1485.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-2628x2250.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-2628x3376.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-300x169.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-300x395.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-304x400.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-456x600.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-600x338.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-600x789.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-608x800.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-779x1024.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-900x1184.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-900x507.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait-913x1200.jpg
+ DEBUG [3663216f] 	jay-freestone-portrait.jpg
+ DEBUG [3663216f] 	jay-freestone.jpg
+ DEBUG [3663216f] 	oil-pump-bg-1024x994.png
+ DEBUG [3663216f] 	oil-pump-bg-1200x1165.png
+ DEBUG [3663216f] 	oil-pump-bg-1236x1200.png
+ DEBUG [3663216f] 	oil-pump-bg-1320x743.png
+ DEBUG [3663216f] 	oil-pump-bg-150x150.png
+ DEBUG [3663216f] 	oil-pump-bg-1648x1600.png
+ DEBUG [3663216f] 	oil-pump-bg-2000x1125.png
+ DEBUG [3663216f] 	oil-pump-bg-2000x1941.png
+ DEBUG [3663216f] 	oil-pump-bg-2060x2000.png
+ DEBUG [3663216f] 	oil-pump-bg-206x200.png
+ DEBUG [3663216f] 	oil-pump-bg-2640x1485.png
+ DEBUG [3663216f] 	oil-pump-bg-2833x2250.png
+ DEBUG [3663216f] 	oil-pump-bg-300x169.png
+ DEBUG [3663216f] 	oil-pump-bg-300x291.png
+ DEBUG [3663216f] 	oil-pump-bg-412x400.png
+ DEBUG [3663216f] 	oil-pump-bg-600x338.png
+ DEBUG [3663216f] 	oil-pump-bg-600x582.png
+ DEBUG [3663216f] 	oil-pump-bg-618x600.png
+ DEBUG [3663216f] 	oil-pump-bg-824x800.png
+ DEBUG [3663216f] 	oil-pump-bg-900x507.png
+ DEBUG [3663216f] 	oil-pump-bg-900x874.png
+ DEBUG [3663216f] 	oil-pump-bg.png
+ DEBUG [3663216f] 	ov-website-imac-1200x1560.png
+ DEBUG [3663216f] 	ov-website-imac-1231x1600.png
+ DEBUG [3663216f] 	ov-website-imac-1320x743.png
+ DEBUG [3663216f] 	ov-website-imac-150x150.png
+ DEBUG [3663216f] 	ov-website-imac-1539x2000.png
+ DEBUG [3663216f] 	ov-website-imac-154x200.png
+ DEBUG [3663216f] 	ov-website-imac-2000x1125.png
+ DEBUG [3663216f] 	ov-website-imac-2000x2599.png
+ DEBUG [3663216f] 	ov-website-imac-2292x1485.png
+ DEBUG [3663216f] 	ov-website-imac-2292x2250.png
+ DEBUG [3663216f] 	ov-website-imac-231x300.png
+ DEBUG [3663216f] 	ov-website-imac-300x169.png
+ DEBUG [3663216f] 	ov-website-imac-300x390.png
+ DEBUG [3663216f] 	ov-website-imac-308x400.png
+ DEBUG [3663216f] 	ov-website-imac-462x600.png
+ DEBUG [3663216f] 	ov-website-imac-600x338.png
+ DEBUG [3663216f] 	ov-website-imac-600x780.png
+ DEBUG [3663216f] 	ov-website-imac-616x800.png
+ DEBUG [3663216f] 	ov-website-imac-788x1024.png
+ DEBUG [3663216f] 	ov-website-imac-900x1170.png
+ DEBUG [3663216f] 	ov-website-imac-900x507.png
+ DEBUG [3663216f] 	ov-website-imac-923x1200.png
+ DEBUG [3663216f] 	ov-website-imac.png
+ DEBUG [3663216f] 	nginx-helper/
+ DEBUG [3663216f] 	nginx-helper/nginx.log
+ DEBUG [3663216f] 	
+ DEBUG [3663216f] 	sent 4912 bytes  received 40514169 bytes  3001413.41 bytes/sec
+ DEBUG [3663216f] 	total size is 44491318  speedup is 1.10
+  INFO [3663216f] Finished in 13.470 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-05 17:29:08 +0000 cap production db:pull
+  INFO ---------------------------------------------------------------------------
+  INFO [5a8ad8a8] Running /usr/bin/env mkdir -p /var/www/jayfreestone.com/deployment/shared/db_backups as deploy@151.236.219.114
+ DEBUG [5a8ad8a8] Command: /usr/bin/env mkdir -p /var/www/jayfreestone.com/deployment/shared/db_backups
+  INFO [5a8ad8a8] Finished in 11.077 seconds with exit status 0 (successful).
+ DEBUG [85e40e91] Running if test ! -d /var/www/jayfreestone.com/deployment/current; then echo "Directory does not exist '/var/www/jayfreestone.com/deployment/current'" 1>&2; false; fi as deploy@151.236.219.114
+ DEBUG [85e40e91] Command: if test ! -d /var/www/jayfreestone.com/deployment/current; then echo "Directory does not exist '/var/www/jayfreestone.com/deployment/current'" 1>&2; false; fi
+ DEBUG [85e40e91] Finished in 2.538 seconds with exit status 0 (successful).
+  INFO [44fcc51a] Running /usr/bin/env wp --path=wordpress/ db export /var/www/jayfreestone.com/deployment/shared/db_backups/2016-12-5_17-29-8.sql --add-drop-table as deploy@151.236.219.114
+ DEBUG [44fcc51a] Command: cd /var/www/jayfreestone.com/deployment/current && /usr/bin/env wp --path=wordpress/ db export /var/www/jayfreestone.com/deployment/shared/db_backups/2016-12-5_17-29-8.sql --add-drop-table
+ DEBUG [44fcc51a] 	Success: Exported to '/var/www/jayfreestone.com/deployment/shared/db_backups/2016-12-5_17-29-8.sql'.
+  INFO [44fcc51a] Finished in 0.465 seconds with exit status 0 (successful).
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 0.0%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 2.99%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 5.98%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 8.96%
+  INFO Downloading ../db_backups/2016-12-5_17-29-8.sql 11.95%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 14.94%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 17.93%
+  INFO Downloading ../db_backups/2016-12-5_17-29-8.sql 20.91%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 23.9%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 26.89%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 29.88%
+  INFO Downloading ../db_backups/2016-12-5_17-29-8.sql 32.87%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 35.85%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 38.84%
+  INFO Downloading ../db_backups/2016-12-5_17-29-8.sql 41.83%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 44.82%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 47.8%
+  INFO Downloading ../db_backups/2016-12-5_17-29-8.sql 50.79%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 53.78%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 56.77%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 59.75%
+  INFO Downloading ../db_backups/2016-12-5_17-29-8.sql 62.74%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 65.73%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 68.72%
+  INFO Downloading ../db_backups/2016-12-5_17-29-8.sql 71.71%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 74.69%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 77.68%
+  INFO Downloading ../db_backups/2016-12-5_17-29-8.sql 80.67%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 83.66%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 86.64%
+  INFO Downloading ../db_backups/2016-12-5_17-29-8.sql 92.62%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 95.61%
+ DEBUG Downloading ../db_backups/2016-12-5_17-29-8.sql 98.6%
+  INFO Downloading ../db_backups/2016-12-5_17-29-8.sql 100.0%
+ DEBUG [e4540760] Running if test ! -d /var/www/jayfreestone.com/deployment/current; then echo "Directory does not exist '/var/www/jayfreestone.com/deployment/current'" 1>&2; false; fi as deploy@151.236.219.114
+ DEBUG [e4540760] Command: if test ! -d /var/www/jayfreestone.com/deployment/current; then echo "Directory does not exist '/var/www/jayfreestone.com/deployment/current'" 1>&2; false; fi
+ DEBUG [e4540760] Finished in 0.111 seconds with exit status 0 (successful).
+  INFO [411db716] Running /usr/bin/env rm /var/www/jayfreestone.com/deployment/shared/db_backups/2016-12-5_17-29-8.sql as deploy@151.236.219.114
+ DEBUG [411db716] Command: cd /var/www/jayfreestone.com/deployment/current && /usr/bin/env rm /var/www/jayfreestone.com/deployment/shared/db_backups/2016-12-5_17-29-8.sql
+  INFO [411db716] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [e786711f] Running /usr/bin/env wp --path=../wordpress/ db import ../db_backups/2016-12-5_17-29-8.sql as jfree@localhost
+ DEBUG [e786711f] Command: /usr/bin/env wp --path=../wordpress/ db import ../db_backups/2016-12-5_17-29-8.sql
+ DEBUG [e786711f] 	Success: Imported from '../db_backups/2016-12-5_17-29-8.sql'.
+  INFO [e786711f] Finished in 0.506 seconds with exit status 0 (successful).
+  INFO [86572476] Running /usr/bin/env wp --path=../wordpress/ search-replace https://www.jayfreestone.com http://jayfreestone.dev as jfree@localhost
+ DEBUG [86572476] Command: /usr/bin/env wp --path=../wordpress/ search-replace https://www.jayfreestone.com http://jayfreestone.dev
+ DEBUG [86572476] 	Warning: mysqli_real_connect(): (HY000/2002): No such file or directory in /Users/jfree/Sites/Personal/JF/wordpress/wp-includes/wp-db.php on line 1490
+ DEBUG [86572476] 	Deprecated: mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /Users/jfree/Sites/Personal/JF/wordpress/wp-includes/wp-db.php on line 1520
+ DEBUG [86572476] 	Warning: mysql_connect(): No such file or directory in /Users/jfree/Sites/Personal/JF/wordpress/wp-includes/wp-db.php on line 1520
+ DEBUG [86572476] 	Fatal error: Call to undefined function wp_die() in /Users/jfree/Sites/Personal/JF/wordpress/wp-includes/wp-db.php on line 3103
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-05 17:30:07 +0000 cap production db:pull
+  INFO ---------------------------------------------------------------------------
+  INFO [5eaba901] Running /usr/bin/env mkdir -p /var/www/jayfreestone.com/deployment/shared/db_backups as deploy@151.236.219.114
+ DEBUG [5eaba901] Command: /usr/bin/env mkdir -p /var/www/jayfreestone.com/deployment/shared/db_backups
+  INFO [5eaba901] Finished in 8.182 seconds with exit status 0 (successful).
+ DEBUG [dc31ac5a] Running if test ! -d /var/www/jayfreestone.com/deployment/current; then echo "Directory does not exist '/var/www/jayfreestone.com/deployment/current'" 1>&2; false; fi as deploy@151.236.219.114
+ DEBUG [dc31ac5a] Command: if test ! -d /var/www/jayfreestone.com/deployment/current; then echo "Directory does not exist '/var/www/jayfreestone.com/deployment/current'" 1>&2; false; fi
+ DEBUG [dc31ac5a] Finished in 1.845 seconds with exit status 0 (successful).
+  INFO [cd4557a8] Running /usr/bin/env wp --path=wordpress/ db export /var/www/jayfreestone.com/deployment/shared/db_backups/2016-12-5_17-30-7.sql --add-drop-table as deploy@151.236.219.114
+ DEBUG [cd4557a8] Command: cd /var/www/jayfreestone.com/deployment/current && /usr/bin/env wp --path=wordpress/ db export /var/www/jayfreestone.com/deployment/shared/db_backups/2016-12-5_17-30-7.sql --add-drop-table
+ DEBUG [cd4557a8] 	Success: Exported to '/var/www/jayfreestone.com/deployment/shared/db_backups/2016-12-5_17-30-7.sql'.
+  INFO [cd4557a8] Finished in 0.272 seconds with exit status 0 (successful).
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 0.0%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 2.99%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 5.98%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 8.96%
+  INFO Downloading ../db_backups/2016-12-5_17-30-7.sql 11.95%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 14.94%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 17.93%
+  INFO Downloading ../db_backups/2016-12-5_17-30-7.sql 20.91%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 23.9%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 26.89%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 29.88%
+  INFO Downloading ../db_backups/2016-12-5_17-30-7.sql 32.87%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 35.85%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 38.84%
+  INFO Downloading ../db_backups/2016-12-5_17-30-7.sql 41.83%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 44.82%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 47.8%
+  INFO Downloading ../db_backups/2016-12-5_17-30-7.sql 50.79%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 53.78%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 56.77%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 59.75%
+  INFO Downloading ../db_backups/2016-12-5_17-30-7.sql 62.74%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 65.73%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 68.72%
+  INFO Downloading ../db_backups/2016-12-5_17-30-7.sql 71.71%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 74.69%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 77.68%
+  INFO Downloading ../db_backups/2016-12-5_17-30-7.sql 80.67%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 83.66%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 86.64%
+ DEBUG Downloading ../db_backups/2016-12-5_17-30-7.sql 89.63%
+  INFO Downloading ../db_backups/2016-12-5_17-30-7.sql 95.61%
+  INFO Downloading ../db_backups/2016-12-5_17-30-7.sql 100.0%
+ DEBUG [20ec2f89] Running if test ! -d /var/www/jayfreestone.com/deployment/current; then echo "Directory does not exist '/var/www/jayfreestone.com/deployment/current'" 1>&2; false; fi as deploy@151.236.219.114
+ DEBUG [20ec2f89] Command: if test ! -d /var/www/jayfreestone.com/deployment/current; then echo "Directory does not exist '/var/www/jayfreestone.com/deployment/current'" 1>&2; false; fi
+ DEBUG [20ec2f89] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [6be111cc] Running /usr/bin/env rm /var/www/jayfreestone.com/deployment/shared/db_backups/2016-12-5_17-30-7.sql as deploy@151.236.219.114
+ DEBUG [6be111cc] Command: cd /var/www/jayfreestone.com/deployment/current && /usr/bin/env rm /var/www/jayfreestone.com/deployment/shared/db_backups/2016-12-5_17-30-7.sql
+  INFO [6be111cc] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [d9255779] Running /usr/bin/env wp --path=../wordpress/ db import ../db_backups/2016-12-5_17-30-7.sql as jfree@localhost
+ DEBUG [d9255779] Command: /usr/bin/env wp --path=../wordpress/ db import ../db_backups/2016-12-5_17-30-7.sql
+ DEBUG [d9255779] 	Success: Imported from '../db_backups/2016-12-5_17-30-7.sql'.
+  INFO [d9255779] Finished in 0.492 seconds with exit status 0 (successful).
+  INFO [0c2d4303] Running /usr/bin/env wp --path=../wordpress/ search-replace https://www.jayfreestone.com http://jayfreestone.dev as jfree@localhost
+ DEBUG [0c2d4303] Command: /usr/bin/env wp --path=../wordpress/ search-replace https://www.jayfreestone.com http://jayfreestone.dev
+ DEBUG [0c2d4303] 	Warning: mysqli_real_connect(): (HY000/2002): No such file or directory in /Users/jfree/Sites/Personal/JF/wordpress/wp-includes/wp-db.php on line 1490
+ DEBUG [0c2d4303] 	Deprecated: mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /Users/jfree/Sites/Personal/JF/wordpress/wp-includes/wp-db.php on line 1520
+ DEBUG [0c2d4303] 	Warning: mysql_connect(): No such file or directory in /Users/jfree/Sites/Personal/JF/wordpress/wp-includes/wp-db.php on line 1520
+ DEBUG [0c2d4303] 	Error: Error establishing a database connection. This either means that the username and password information in your `wp-config.php` file is incorrect or we can’t contact the database server at `localhost`. This could mean your host’s database server is down.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-05 17:49:18 +0000 cap production db:pull
+  INFO ---------------------------------------------------------------------------
+  INFO [9a5ff789] Running /usr/bin/env mkdir -p /var/www/jayfreestone.com/deployment/shared/db_backups as deploy@151.236.219.114
+ DEBUG [9a5ff789] Command: /usr/bin/env mkdir -p /var/www/jayfreestone.com/deployment/shared/db_backups
