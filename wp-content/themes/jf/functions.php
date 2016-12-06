@@ -35,6 +35,11 @@ function jf_setup() {
 	add_image_size( 'fullwidth-4000', '4000', '2250', true );
 	add_image_size( 'fullwidth', '6000', '3376', true );
 
+	add_image_size( 'journal-300', '300', '99999', false );
+	add_image_size( 'journal-600', '600', '99990', false );
+	add_image_size( 'journal-900', '900', '99999', false );
+	add_image_size( 'journal-1200', '1200', '99999', false );
+
 	/**
 	 * Registers custom menus
 	 */

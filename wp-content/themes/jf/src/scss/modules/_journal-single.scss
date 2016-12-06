@@ -54,6 +54,22 @@
 	font-size: .8rem;
 }
 
+.journal-single__image {
+	margin-bottom: 1rem;
+
+	@include breakpoint(70em) {
+		margin-left: -20%;
+		width: 140%;
+	}
+}
+
+.journal-single__image-caption {
+	font-style: italic;
+    font-size: 0.9rem;
+	color: lighten($black, 30%);
+  	margin: 1rem 0 0;
+}
+
 .journal-single__navigation {
 	display: flex;
 	align-items: center;
