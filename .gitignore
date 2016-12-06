@@ -2,6 +2,7 @@ wordpress/
 vendor/
 wp-content/uploads
 wp-content/plugins
+wp-content/ewww
 wp-config-settings.php
 wp-config.php
 db_backups/
