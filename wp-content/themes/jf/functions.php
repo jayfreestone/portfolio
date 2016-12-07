@@ -52,6 +52,10 @@ function jf_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	/**
+	 * Add support for the featured image
+	 */
+	add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'jf_setup' );
 
