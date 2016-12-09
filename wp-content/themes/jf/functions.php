@@ -159,6 +159,7 @@ function enqueue_assets() {
 	wp_enqueue_script( 'tweenmax', get_template_directory_uri() . '/public/assets/js/TweenMax.min.js', false, false, true );
 	wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/public/assets/js/lazysizes.min.js', false, false, true );
 	wp_enqueue_script( 'picturefill', get_template_directory_uri() . '/public/assets/js/picturefill.min.js', false, false, true );
+
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_assets' );
 
@@ -214,6 +215,25 @@ function web_font_loader() {
 	<?php
 }
 add_action( 'wp_footer', 'web_font_loader', 100 );
+
+/**
+ * Initializes hotjar
+ */
+function hotjar_loader() {
+	?>
+    <script>
+		(function(h,o,t,j,a,r){
+			h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+			h._hjSettings={hjid:357293,hjsv:5};
+			a=o.getElementsByTagName('head')[0];
+			r=o.createElement('script');r.async=1;
+			r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+			a.appendChild(r);
+		})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+	<?php
+}
+add_action( 'wp_footer', 'hotjar_loader', 100 );
 
 /**
  * Handles returning font loading
