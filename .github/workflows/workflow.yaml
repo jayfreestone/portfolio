@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build & push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@master
+      - name: Create dotenv file
+        run: echo "ACF_PRO_KEY=${{ secrets.ACF_PRO_KEY }}" > .env
+      - name: Build container image
+        run: docker build -t registry.digitalocean.com/platform/portfolio-05:$(echo $GITHUB_SHA | head -c7) -t registry.digitalocean.com/platform/portfolio-05:latest .
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Authenticate with registry
+        run: doctl registry login
+      - name: Push image to Digital Ocean
+        run: docker push registry.digitalocean.com/platform/portfolio-05
