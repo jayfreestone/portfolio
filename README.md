@@ -1,11 +1,13 @@
-# Portfolio
+# Portfolio 05
 
-Jay Freestone's personal portfolio site, built in WordPress.
+![Argo CD sync status](https://cd.jayfreestone.com/api/badge?name=portfolio-05)
+![Build & Deploy](https://github.com/jayfreestone/portfolio-05/workflows/Build%20&%20Deploy/badge.svg)
 
-## Deployment
+A WordPress build for my portfolio (v5).
 
-A few quick reminders (for myself) about deployment:
+Dependencies managed by Composer.
 
-- Config files are not stored in the repo, for obvious security reasons. The config files for OV-Deploy will need to added or created.
-- There needs to be a `.env` file containing a valid ACF key in order for the [relevant Composer plugin to work](https://github.com/PhilippBaschke/acf-pro-installer).
-- MySQL/PHP running locally will need to be in your PATH to use helpers like db:pull etc. since they rely on WP-CLI.
+Notes:
+
+- Expects the environment to provide a mounted `wp-config.php` file.
+- An `.env` file [will be required for ACF](https://github.com/PhilippBaschke/acf-pro-installer) installation. An actual `dotenv` file is required, not just an environment variable. Since this is required for downloading the plugin, it is a build-time requirement.
